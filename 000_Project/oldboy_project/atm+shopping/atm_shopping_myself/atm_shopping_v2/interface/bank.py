@@ -53,3 +53,13 @@ def repay_interface(username,amount):
     db_handler.save(user_dic)
     bank_logger.info('%s 还款 %s 元，还款成功。' % (username,amount))
     return True,'repay successfully.'
+
+def consume_interface(username,amount):
+    user_dic = db_handler.select(username)
+    if user_dic['balance'] >= amount:
+        user_dic['balance'] -= amount
+        user_dic['bankflow'].append('cost :%s' % (amount))
+        db_handler.save(user_dic)
+        return True
+    else:
+        return False

@@ -1,1 +1,1 @@
-{"username": "11", "password": "11", "lock": false, "balance": 14020.4, "credit": 15000, "bankflow": ["11\u541122\u8f6c\u8d2622\u5143", "11 \u8fd8\u6b3e 136\u5143\u3002", "11 \u8fd8\u6b3e 20\u5143\u3002"], "shoppingcart": {}}
+{"username": "11", "password": "11", "lock": false, "balance": 14970, "credit": 15000, "bankflow": ["cost :30"], "shoppingcart": {"coffee": {"price": 10, "count": 1}, "chicken": {"price": 20, "count": 1}}}

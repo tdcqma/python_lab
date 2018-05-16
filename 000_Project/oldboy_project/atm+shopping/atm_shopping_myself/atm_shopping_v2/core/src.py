@@ -1,4 +1,4 @@
-from interface import user,bank
+from interface import user,bank,shop
 from lib import common
 
 # 跟踪用户状态
@@ -117,6 +117,70 @@ def repay():
         else:
             print('please input a correct amount')
 
+@common.login_auth
+def shopping():
+    print('shopping...')
+    '''
+    购物车
+    :return:
+    '''
+    goods_list = [
+        ['coffee',10],
+        ['chicken',20],
+        ['car',100000],
+    ]
+
+    user_balance = bank.check_balance_interface(user_dic['username'])
+    cost = 0
+    shoppingcart = {}
+    # {name:{'price':10,count:1}}
+
+    while True:
+        for i,goods in enumerate(goods_list,start=1): # enumerate用于将列表下标也打印出，设置从1开始
+            print('%s:%s' % (i,goods))
+        choice_buy = input('please input goods No that you want to buy (press \'q\' to exit.): ').strip()
+        if choice_buy.isdigit():
+            choice_buy = int(choice_buy)
+
+            if choice_buy <len(goods_list):
+                goods_name = goods_list[choice_buy-1][0]
+                goods_price = goods_list[choice_buy-1][1]
+
+                if user_balance >= goods_price:
+                    if goods_name not in shoppingcart:
+                        shoppingcart[goods_name] = {'price':goods_price,'count':1}
+                    else:
+                        shoppingcart[goods_name]['count'] += 1
+
+                    user_balance -= goods_price
+                    cost += goods_price
+                    print('add goods to shopping_cart successfully.')
+                else:
+                    print('the balance is not enough to buy this goods.')
+            else:
+                print('please choice goods that in the shop.')
+        elif choice_buy == 'q':
+            if shoppingcart:
+                flag,msg = shop.shopping_interface(user_dic['username'],cost,shoppingcart)
+                if flag:
+                    print(msg)
+                    break
+                else:
+                    print(msg)
+                    break
+        else:
+            print('please input a correct goods No.')
+
+@common.login_auth
+def check_shoppingcart():
+    '''
+    查看购物车
+    :return:
+    '''
+
+    shoppingcart = shop.check_shoppingcart_interface(user_dic['username'])
+    print(shoppingcart)
+
 
 menu_dic = {
     '1':[register,'register'],
@@ -125,7 +189,9 @@ menu_dic = {
     '4':[transfer,'transfer'],
     '5':[withdraw,'withdraw'],
     '6':[check_records,'check records'],
-    '7':[repay,'repay']
+    '7':[repay,'repay'],
+    '8':[shopping,'shopping'],
+    '9':[check_shoppingcart,'check shoppingcart']
 }
 
 def run():
