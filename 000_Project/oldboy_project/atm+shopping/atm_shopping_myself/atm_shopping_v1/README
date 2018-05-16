@@ -1,0 +1,81 @@
+# ATM更新记录
+
+2018-05-11
+    1. 更新README内容，添加ATM树结构图
+    2. 添加认证装饰器
+    3. 如果用户还未添加任何商品到购物车就选择查看购物车会报错，解决搞错并替换为友情提示。
+
+2018-05-10
+    1. 格式化输出1-1的用户信息显示
+
+2018-05-09
+    1.完成添加商品到购物车的功能
+    2.添加查看购物车并结算功能
+    3.添加查看购买记录功能
+    4.添加购物车购买状态功能，实现已购买的商品不可重复付款。
+    5.添加退出ATM功能
+    6.添加冻结用户功能
+        6.1 特设系统管理用户001，即"admin"状态为1的特权用户
+        6.2 只有使用用户001与密码001的系统管理用户登录才可以冻结其他用户
+        6.3 锁定时判断用户是否已被锁定，如果已被锁定则提示无法再次锁定
+    7.添加商品被成功购买后减少相应的库存数量功能,库存数量为0时无法进行任何购买
+
+2018-05-08
+    1. 完成新用户注册功能
+        1.1 判断数据库中不存在时允许该用户注册
+    2. 完成转账功能
+        2.1 判断当前用户被扣款成功后才进行账户转入
+        2.2 判断被转账用户是否存在，存在则进行转入
+    3. 完成商品列表展示功能
+
+2018-05-07
+    1. 完成框架搭建并详细注释框架部分
+    2. 完成还款功能
+    3. 完成提现功能
+
+*** ATM树结构图 ***
+ATM
+├── README
+├── bin
+│   ├── __init__.py
+│   └── atm_start.py
+├── conf
+│   ├── __pycache__
+│   │   └── settings.cpython-36.pyc
+│   └── settings.py
+├── core
+│   ├── __pycache__
+│   │   ├── accounts.cpython-36.pyc
+│   │   ├── auth.cpython-36.pyc
+│   │   ├── db_handler.cpython-36.pyc
+│   │   ├── goods.cpython-36.pyc
+│   │   ├── logger.cpython-36.pyc
+│   │   ├── main.cpython-36.pyc
+│   │   ├── payCheckShow.cpython-36.pyc
+│   │   └── transaction.cpython-36.pyc
+│   ├── accounts.py
+│   ├── auth.py
+│   ├── db_handler.py
+│   ├── goods.py
+│   ├── logger.py
+│   ├── main.py
+│   ├── payCheckShow.py
+│   └── transaction.py
+├── db
+│   ├── accounts
+│   │   ├── 001.json
+│   │   ├── 111.json
+│   │   ├── 1234.json
+│   │   ├── 222.json
+│   │   └── 555.json
+│   ├── goods
+│   │   └── goods.json
+│   └── shopping_car
+│       ├── 111.json
+│       └── 1234.json
+├── demo.py
+└── log
+    ├── access.log
+    └── transactions.log
+
+10 directories, 32 files

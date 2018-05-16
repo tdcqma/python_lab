@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="006962b6-9dd0-40f4-ba68-6572e1eb0d72" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/000_linshi/hello.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/000_linshi/临时测试.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/001_python基础/dict和set.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/001_python基础/使用list和tuple.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/001_python基础/变量.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/001_python基础/字符串和编码.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/001_python基础/循环.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/001_python基础/数据类型.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/001_python基础/条件判断.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/001_python基础/转义字符.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/002_python小实例/x的n次方.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/002_python小实例/列出当前目录的所有文件和目录名.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/002_python小实例/删除一个序列中的空字符串.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/002_python小实例/把字节型数字转换为整数型.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/002_python小实例/斐波拉契数列.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/002_python小实例/构造一个1, 3, 5, 7, ..., 99的列表.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/.文件处理.py.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/a.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/b.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/c.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/changeFile.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/copy.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/d.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/fileIO.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/src.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/003_文件操作/src.txt.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/偏函数.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/匿名函数.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/实例属性和类属性.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/装饰器.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/返回函数.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/高阶函数/filter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/高阶函数/map/reduce.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/高阶函数/sorted(排序).py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数式编程/高阶函数/高阶函数.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/函数的参数.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/定义函数/myabs.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/定义函数/定义函数.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/数据类型转换.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/调用函数.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/004_函数/递归函数.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象编程/类和实例.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象编程/继承和多态.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象编程/获取对象信息.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象编程/访问限制.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象编程/面向对象编程.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象高级编程/使用@property.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象高级编程/使用__slots__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象高级编程/使用枚举类.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象高级编程/多重继承.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/005_面向对象/面向对象高级编程/定制类.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/006_模块/test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/006_模块/使用模块.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/006_模块/安装第三方模块.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/007_高级特性/切片.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/007_高级特性/列表生成器.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/007_高级特性/列表生成式.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/007_高级特性/迭代.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/007_高级特性/迭代器.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/.idea/ATM+shopping.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/.idea/dictionaries/oldboy.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/conf/setting.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/core/src.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/db/admin.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/db/db_handler.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/db/lqz.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/db/lqz1.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/interface/bank.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/interface/shop.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/interface/user.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/lib/common.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/log/log.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/readme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/ATM+shopping_By_liuqingzheng20180513/start.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/atm+shopping/atm_shopping_myself/readme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/sql解析器/db_interpreter_v3.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/sql解析器/employee_db.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/008_project/模拟计算器/my_calc.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/009_网络编程/sockConn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/010_Python工具/SSH连接工具/ssh_connect.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/010_Python工具/SSH连接工具/ssh_connect.py.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/010_Python工具/socket_connect.py" afterPath="" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pylearn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pylearn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pylearn" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pylearn" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pylearn" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pylearn" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="006962b6-9dd0-40f4-ba68-6572e1eb0d72" name="Default" comment="" />
+      <created>1526435639309</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1526435639309</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23909532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30821916" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
