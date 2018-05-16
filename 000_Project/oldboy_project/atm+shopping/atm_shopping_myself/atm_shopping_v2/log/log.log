@@ -1,0 +1,5 @@
+[2018-05-16 16:55:36,008][MainThread][4321375104][task_id:bank][bank.py:19][INFO] 11向22转账22元
+[2018-05-16 16:59:46,633][MainThread][4321375104][task_id:bank][bank.py:21][INFO] 11向22转账22元
+[2018-05-16 17:01:31,946][MainThread][4321375104][task_id:bank][bank.py:21][INFO] 11向22转账22元
+[2018-05-16 17:41:56,169][MainThread][4321375104][task_id:bank][bank.py:54][INFO] 11 还款 136 元，还款成功。
+[2018-05-16 17:43:38,087][MainThread][4321375104][task_id:bank][bank.py:54][INFO] 11 还款 20 元，还款成功。
