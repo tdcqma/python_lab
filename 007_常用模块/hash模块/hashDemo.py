@@ -60,7 +60,7 @@ with open('test_video.mp4',mode='rb') as f:
     #     m2.update(line)
 
     m2.update(f.read())  # => 45dedcf3a27fb861bfdbf0bb48cab7fd
-    # print('test_video.mp4\'s hash value: ',m2.hexdigest())
+    print('test_video.mp4\'s hash value: ',m2.hexdigest())
 
 # 3.4 hashlib.md5()括号内加的值也会与update()括号里的值叠加后进行hash运算，如下所示，m3与m4两次运算得到的结果相同
 m3 = hashlib.md5(b'hello')
