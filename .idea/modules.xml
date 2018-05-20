@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../atm_shopping_v2/.idea/atm_shopping_v2.iml" filepath="$PROJECT_DIR$/../atm_shopping_v2/.idea/atm_shopping_v2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Limon/.idea/Limon.iml" filepath="$PROJECT_DIR$/../Limon/.idea/Limon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../chose_course/.idea/chose_course.iml" filepath="$PROJECT_DIR$/../chose_course/.idea/chose_course.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/python_lab.iml" filepath="$PROJECT_DIR$/.idea/python_lab.iml" />
     </modules>
   </component>
