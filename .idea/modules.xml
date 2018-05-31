@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Limon/.idea/Limon.iml" filepath="$PROJECT_DIR$/../Limon/.idea/Limon.iml" />
       <module fileurl="file://$PROJECT_DIR$/../chose_course/.idea/chose_course.iml" filepath="$PROJECT_DIR$/../chose_course/.idea/chose_course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../chose_course_v1/.idea/chose_course_v1.iml" filepath="$PROJECT_DIR$/../chose_course_v1/.idea/chose_course_v1.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/course_other/.idea/course_other.iml" filepath="$USER_HOME$/PycharmProjects/course_other/.idea/course_other.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/python_lab.iml" filepath="$PROJECT_DIR$/.idea/python_lab.iml" />
     </modules>
   </component>

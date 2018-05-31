@@ -1,12 +1,12 @@
 # 创建类
-# class OldboyStudent:
-#     school = 'Oldboy'
-#
-#     def choose_course(self):
-#         print('is choosing course')
+class OldboyStudent:
+    school = 'Oldboy'
+
+    def choose_course(self):
+        print('%s is choosing course' % self)
 
 # 类有两种用途
-# 用途一：类本身就是一个容器（名称空间），所以可以增删改查类的属性
+# 【1】用途一：类本身就是一个容器（名称空间），所以可以增删改查类的属性
 # print(OldboyStudent.__dict__)   # 打印类所有的属性（数据与函数）
 # print(OldboyStudent.__dict__['school']) # Oldboy
 # print(OldboyStudent.__dict__['choose_course'])
@@ -17,16 +17,20 @@
 # print(OldboyStudent.choose_course)
 # OldboyStudent.choose_course(123)
 
+# 类的属性可以进行增删查改操作
 # 增
 # OldboyStudent.country="China"
+# print(OldboyStudent.__dict__)
+
 # 改
 # OldboyStudent.school = "Oldgirl"
 # print(OldboyStudent.__dict__)
+
 # 删
 # del OldboyStudent.school
 # print(OldboyStudent.__dict__)
 
-# 用途二：调用类来产生对象，调用类的过程又称为实例化
+# 【2】用途二：调用类来产生对象，调用类的过程又称为实例化
 
 class OldboyStudent:
     school = "Oldboy"
@@ -56,6 +60,6 @@ init(stu3,'张随便','female',48)
 # print(stu2.school,id(stu2.school))
 # print(stu3.school,id(stu3.school))
 
-# print(stu1.choose_course,id(stu1.choose_course))
-# print(stu2.choose_course,id(stu2.choose_course))
-# print(stu3.choose_course,id(stu3.choose_course))
+print(stu1.choose_course,id(stu1.choose_course))
+print(stu2.choose_course,id(stu2.choose_course))
+print(stu3.choose_course,id(stu3.choose_course))
