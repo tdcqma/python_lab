@@ -8,6 +8,7 @@ from optparse import OptionParser
 parser = OptionParser()
 
 # 使用add_option来增加命令行参数
+
 # parser.add_option('-f','--file',
 #                   dest='filename',
 #                   help='write report to file',
@@ -18,15 +19,22 @@ parser = OptionParser()
 #                   default=True,
 #                   help='dont\'t print status messages to stdout')
 
-parser.add_option("-g", "--group", dest="group", help='group name', type="string")
-parser.add_option("-c", "--commend", dest="cmd", help='commend', type="string")
-parser.add_option("-m", "--module", dest="module", help='module', type="string")
-parser.add_option("-s", "--src", dest="src", help='source file or path', type="string")
-parser.add_option("-d", "--dst", dest="dst", help='destination file or path', type="string")
-parser.add_option("-a", "--action", dest="action", help='action for module file, [get/put]', type="string")
+# parser.add_option("-g", "--group", dest="group", help='group name', type="string")
+# parser.add_option("-c", "--commend", dest="cmd", help='commend', type="string")
+# parser.add_option("-m", "--module", dest="module", help='module', type="string")
+# parser.add_option("-s", "--src", dest="src", help='source file or path', type="string")
+# parser.add_option("-d", "--dst", dest="dst", help='destination file or path', type="string")
+# parser.add_option("-a", "--action", dest="action", help='action for module file, [get/put]', type="string")
+#
+# # 使用parse_args()来解析程序对命令行参数
+# (opt,args) = parser.parse_args()
+#
+#
+# # 客户端输入：python3 1.py -g group1 -c ls -m hashlib -s config.txt -d /hello.py -a get
+# print(opt)
+# # {'group': 'group1', 'cmd': 'ls', 'module': 'hashlib', 'src': 'config.txt', 'dst': '/hello.py', 'action': 'get'}
+#
+# print(opt.group)
+# # group1
 
-# 使用parse_args()来解析程序对命令行参数
-(opt,args) = parser.parse_args()
 
-print(opt.group)
-print(args)
