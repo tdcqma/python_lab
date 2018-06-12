@@ -1,3 +1,6 @@
-a = [1,2,1,3,5,7,8,8,2,8,]
-s = set(a)
-print(s)
+if int((50 / 50) * 100):
+    print('ok')
+else:
+    print('no')
+
+
