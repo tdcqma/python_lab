@@ -19,4 +19,3 @@ sftp = paramiko.SFTPClient.from_transport(transport)
 
 print('transfer ok!')
 transport.close()
-

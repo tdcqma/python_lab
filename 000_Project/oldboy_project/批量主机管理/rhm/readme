@@ -1,0 +1,69 @@
+题目:简单主机批量管理工具
+
+需求:
+
+主机分组
+主机信息配置文件用configparser解析
+可批量执行命令、发送文件，结果实时返回，执行格式如下
+batch_run  -h h1,h2,h3   -g web_clusters,db_servers    -cmd  "df -h"　
+batch_scp   -h h1,h2,h3   -g web_clusters,db_servers  -action put  -local test.py  -remote /tmp/　
+主机用户名密码、端口可以不同
+执行远程命令使用paramiko模块
+批量命令需使用multiprocessing并发
+
+
+------------------
+
+执行效果：
+
+tdcqma:rhm $ python3 start.py -H h1,h2,h3 -g group1,group2 -m shell -c 'pwd'
+    主机(h3)IP:192.168.23.127
+    返回结果:/root
+
+    主机(h1)IP:172.27.137.18
+    返回结果:/root
+
+    主机(h2)IP:172.27.137.16
+    返回结果:/home/pentester
+
+tdcqma:rhm $ python3 start.py -H h1,h2,h3 -m shell -c 'pwd'
+    主机(h3)IP:192.168.23.127
+    返回结果:/root
+
+    主机(h2)IP:172.27.137.16
+    返回结果:/home/pentester
+
+    主机(h1)IP:172.27.137.18
+    返回结果:/root
+
+tdcqma:rhm $ python3 start.py -H h1 -m shell -c 'pwd'
+    主机(h1)IP:172.27.137.18
+    返回结果:/root
+
+tdcqma:rhm $ python3 start.py -g group1 -m shell -c 'pwd'
+    主机(h1)IP:172.27.137.18
+    返回结果:/root
+
+    主机(h2)IP:172.27.137.16
+    返回结果:/home/pentester
+
+tdcqma:rhm $ python3 start.py -g group2 -m shell -c 'pwd'
+    主机(h3)IP:192.168.23.127
+    返回结果:/root
+
+tdcqma:rhm $ python3 start.py -H h1 -g group2 -m shell -c 'pwd'
+    主机(h3)IP:192.168.23.127
+    返回结果:/root
+
+    主机(h1)IP:172.27.137.18
+    返回结果:/root
+
+tdcqma:rhm $ python3 start.py -H h1,h2 -g group2 -m shell -c 'pwd'
+    主机(h3)IP:192.168.23.127
+    返回结果:/root
+
+    主机(h2)IP:172.27.137.16
+    返回结果:/home/pentester
+
+    主机(h1)IP:172.27.137.18
+    返回结果:/root
