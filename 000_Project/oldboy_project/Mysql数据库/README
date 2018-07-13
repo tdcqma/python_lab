@@ -1,0 +1,4 @@
+#准备表、记录
+mysql> create database db1;
+mysql> use db1;
+mysql> source /root/init.sql
