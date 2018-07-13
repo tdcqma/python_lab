@@ -101,3 +101,44 @@ LEFT JOIN (
 	#14	刘一		
 	#15	刘二		
 	#16	刘四		
+	
+#6、 查询姓李老师的个数
+SELECT
+	COUNT(tname) 个数
+FROM
+	teacher
+WHERE
+	tname LIKE '李%';
+	#2
+
+#7、 查询没有报李平老师课的学生姓名(找出报名李平老师课程的学生，然后取反就可以)
+# teacher表、student表,course表
+# 分析过程
+# 7.1 首先需要找出李平老师都讲哪些课，找出对应的课程id，即cid。
+SELECT course.cid FROM course
+INNER JOIN teacher ON course.teacher_id = teacher.tid
+WHERE teacher.tname='李平老师';
+
+# 7.2 知道了李平老师讲的课程ID（cid）后，找出选择这些课程ID的学生，
+# 注意，学生可能选择其中一门课程，也可能选择多门课程，如果选择多门课程则筛选出的student_id就会出现多次，
+# 因此需要借助distinct来去重。
+SELECT DISTINCT score.student_id FROM score
+WHERE course_id IN (2,4);
+
+# 7.3 上一步已经拿到了学习李平老师学生的id，即score.student_id,
+# 接下来在学生里表里搜索除去这些ID以外的学生名即可，将7.1与7.2添加到7.3中后如下所示：
+
+SELECT student.sname FROM student
+WHERE sid NOT IN (
+	SELECT DISTINCT score.student_id FROM score
+	WHERE course_id IN (
+		SELECT course.cid FROM course
+		INNER JOIN teacher ON course.teacher_id = teacher.tid
+		WHERE teacher.tname='李平老师'
+	)
+);
+	#刘三
+	#刘一
+	#刘二
+	#刘四
+
