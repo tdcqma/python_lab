@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .one{
+            height:2000px;
+            background-color: wheat;
+        }
+        .two{
+            background-color: black;
+            height:2050px;
+            position:absolute;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
+            /*opacity:0.5;*/
+        }
+        .hide{
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <input type="button" value="添加" onclick="showModal();" />
+
+    <!--遮罩层开始-->
+    <div id="one" class="one hide">
+
+    </div>
+    <!--遮罩层结束-->
+
+    <!--模态层开始-->
+    <div id="two" class="two hide">
+        <input type="text" name="username" placeholder="用户名"><br>
+        <input type="password" name="password" placeholder="密码"><br>
+        <input type="button" value="取消" onclick="cancelModal();">
+    </div>
+    <!--模态层结束-->
+
+    <script>
+
+        function showModal(){
+            var one = document.getElementById('one');
+            var two = document.getElementById('two');
+
+            one.classList.remove('hide');
+            two.classList.remove('hide');
+        }
+
+         function cancelModal(){
+            var one = document.getElementById('one');
+            var two = document.getElementById('two');
+
+            one.classList.add('hide');
+            two.classList.add('hide');
+         }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+        .fluid{
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background-color: black;
+            opacity: 0.5;
+        }
+        .modal{
+            position: absolute;
+            top:20%;
+            left:35%;
+            background-color: white;
+            width:300px;
+            height:200px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+
+<body>
+
+<table border="1px">
+    <tr>
+        <th>IP</th>
+        <th>端口</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td>1.1.1.1</td>
+        <td>80</td>
+        <td>
+            <input type="button" value="编辑" class="edit">
+
+        </td>
+    </tr>
+    <tr>
+        <td>2.2.2.2</td>
+        <td>81</td>
+        <td><input type="button" value="编辑" class="edit"></td>
+    </tr>
+    <tr>
+        <td>3.3.3.3</td>
+        <td>82</td>
+        <td><input type="button" value="编辑" class="edit"></td>
+    </tr>
+</table>
+
+<!--遮罩层-->
+<div class="fluid hide">
+
+</div>
+
+<div class="modal hide">
+    <p>
+        IP: <input type="text" name="ip" id="ip">
+    </p>
+    <p>
+        端口: <input type="text" name="port" id="port">
+    </p>
+    <p><input type="button" value="ok"><input type="button" value="cancel" id="cancel"></p>
+</div>
+
+<script src="jquery.js"></script>
+<script>
+    $('.edit').click(function(){
+        $(".fluid").removeClass('hide');
+        $(".modal").removeClass('hide');
+
+        var tds = $(this).parent().prevAll();
+        $("#port").val(tds[0].innerText);
+        $("#ip").val(tds[1].innerText);
+
+    });
+
+    $('#cancel').click(function(){
+        $(".fluid").addClass('hide');
+        $(".modal").addClass('hide');
+    });
+</script>
+
+</body>
+</html>

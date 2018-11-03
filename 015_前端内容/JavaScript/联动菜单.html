@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <select name="province" id="province" onchange="ld();">
+        <option value="-1">请选择</option>
+        <option value="0">北京</option>
+        <option value="1">上海</option>
+    </select>
+
+    <select name="city" id="city">
+
+    </select>
+
+    <script>
+        var areas = [
+            ['海淀','朝阳','昌平','西城'],
+            ['浦东','静安','嘉定','普陀']
+        ]
+
+        function ld(){
+            var province = document.getElementById('province').value;
+            console.log(province)
+            var opt = '';
+            for(var i=0; i<areas[province].length;i=i+1){
+                opt += "<option value=" + i + ">"+areas[province][i]+"</option>";
+            }
+            console.log(opt);
+            document.getElementById('city').innerHTML = opt;
+        }
+    </script>
+</body>
+</html>

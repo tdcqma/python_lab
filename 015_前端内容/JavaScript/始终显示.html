@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    当前时间: <input type="text" value="" id="time">
+    当前时间: <input type="text" value="hello world" id="time2">
+
+function change(){
+	var time = document.getElementById("time");
+	var d = new Date();
+	time.value = d;
+}
+
+setInterval(change,1000);
+</body>
+</html>

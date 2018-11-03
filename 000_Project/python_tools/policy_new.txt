@@ -1,0 +1,20 @@
+    edit 3333
+        set uuid 0623alce-a144-51e8-6bd3-3dc00e6993e3
+        set srcintf "TEST"
+        set dstintf "PROD"
+        set srcaddr "10.129.69.111/32"
+        set dstaddr "10.255.168.66/32"
+        set action accept
+        set achedule "always"
+        set service "SSH"
+    next
+    edit 5555
+        set uuid 0623alce-a144-51e8-6bd3-3dc00e6993e3
+        set srcintf "TEST"
+        set dstintf "PROD"
+        set srcaddr "10.129.69.111/32"
+        set dstaddr "10.255.168.66/32"
+        set action accept
+        set achedule "always"
+        set service "SSH"
+    next

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    table>tr*3>td*3 -->
+    <table border="1px">
+        <tr onmouseover="t1('i1');" onmouseout="t2('i1');" id="i1">
+            <td>1234</td>
+            <td>1234</td>
+            <td>1234</td>
+        </tr>
+        <tr onmouseover="t1('i2');" onmouseout="t2('i2');" id="i2">
+            <td>1234</td>
+            <td>1234</td>
+            <td>1234</td>
+        </tr>
+        <tr onmouseover="t1('i3');" onmouseout="t2('i3');" id="i3">
+            <td>1234</td>
+            <td>1234</td>
+            <td>1234</td>
+        </tr>
+        <tr onmouseover="t1('i4');" onmouseout="t2('i4');" id="i4">
+            <td>1234</td>
+            <td>1234</td>
+            <td>1234</td>
+        </tr>
+    </table>
+
+    <script>
+        function t1(n){
+            var tag = document.getElementById(n);
+            tag.style.backgroundColor = 'red';
+        }
+
+        function t2(n){
+            var tag = document.getElementById(n);
+            tag.style.backgroundColor = 'white';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+-- 创建数据库 DOSEC
+CREATE DATABASE DOSEC CHARACTER SET utf8;
+
+-- 切换至dosec数据库
+use dosec;
+
+-- 创建表 vms
+create table vms(
+    id int primary key auto_increment,
+    name varchar(64),
+    owner varchar(20),
+    v_level varchar(20),
+    v_origin varchar(20),
+    receive_time date,
+    complete_time date,
+    cur_status varchar(20),
+    comment varchar(256),
+    v_action varchar(20)
+) character set utf8;
+
+-- 查看表结构信息
+desc vms;
+    /*
+    +---------------+--------------+------+-----+---------+----------------+
+    | Field         | Type         | Null | Key | Default | Extra          |
+    +---------------+--------------+------+-----+---------+----------------+
+    | id            | int(11)      | NO   | PRI | NULL    | auto_increment |
+    | name          | varchar(64)  | YES  |     | NULL    |                |
+    | owner         | varchar(20)  | YES  |     | NULL    |                |
+    | v_level       | varchar(20)  | YES  |     | NULL    |                |
+    | v_origin      | varchar(20)  | YES  |     | NULL    |                |
+    | receive_time  | date         | YES  |     | NULL    |                |
+    | complete_time | date         | YES  |     | NULL    |                |
+    | cur_status    | varchar(20)  | YES  |     | NULL    |                |
+    | comment       | varchar(256) | YES  |     | NULL    |                |
+    | v_action      | varchar(20)  | YES  |     | NULL    |                |
+    +---------------+--------------+------+-----+---------+----------------+
+    */
+
+-- 插入数据
+insert into vms values
+(1,'跨站脚本攻击','移动医疗团队','高危','PSRC','2018-10-31','2018-11-30','修复中','漏洞新提交，已反馈给开发进行修复','修改'),
+(2,'SQL注入','主客团队','中危','漏洞盒子','2018-10-18','2018-11-17','复核中','漏洞已反馈给集团，目前复核中','修改');
+
+
+--查看表数据

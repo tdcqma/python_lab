@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高逼格</title>
+</head>
+<body>
+<!--    table>tr*3>td*3 -->
+    <table border="1px">
+        <tr>
+            <td>1234</td>
+            <td>1234</td>
+            <td>1234</td>
+        </tr>
+        <tr>
+            <td>1234</td>
+            <td>1234</td>
+            <td>1234</td>
+        </tr>
+        <tr>
+            <td>1234</td>
+            <td>1234</td>
+            <td>1234</td>
+        </tr>
+        <tr>
+            <td>1234</td>
+            <td>1234</td>
+            <td>1234</td>
+        </tr>
+    </table>
+
+    <script>
+        var trs = window.document.getElementsByTagName('tr');
+        console.log(trs)
+        for (var i = 0; i< trs.length; i++){
+            trs[i].onmouseover = function(){
+                this.style.backgroundColor = 'red';
+            };
+
+            trs[i].onmouseout = function(){
+                this.style.backgroundColor = 'white';
+            };
+        }
+
+    </script>
+
+
+</body>
+</html>

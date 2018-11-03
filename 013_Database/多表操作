@@ -1,0 +1,56 @@
+--create database duobiao;
+--use duobiao
+
+--创建教师表
+CREATE TABLE ClassCharger(
+    id TINYINT PRIMARY KEY auto_increment,
+    name VARCHAR(20),
+    age INT,
+    is_marriged boolean
+) character set utf8;
+
+--向教师表里插入数据
+INSERT INTO ClassCharger(name,age,is_marriged)
+VALUE
+("哈利波特",22,0),
+("奇异博士",50,0),
+("郭靖",30,0),
+("姗姗",46,0),
+("小雨",18,0);
+
+--修改数据库的编码
+ALTER DATABASE database_name character set utf8;
+
+--删除表
+drop table table_name
+
+--更新ClassCharger表内容
+update ClassCharger set name="冰冰",age=52 where id=1;
+update ClassCharger set name="丹丹",age=34 where id=2;
+update ClassCharger set name="歪歪",age=32 where id=3;
+update ClassCharger set age=28 where id=4;
+update ClassCharger set age=61 where id=5;
+
+--创建学生表
+CREATE TABLE Student(
+    ID INT primary key auto_increment,
+    name varchar(20),
+    charger_id TINYINT
+) ENGINE=INNODB character set utf8;
+
+--向学生表中插入数据
+INSERT INTO  Student(name,charger_id)
+values
+("alvin1",2),
+("alvin2",4),
+("alvin3",1),
+("alvin4",3),
+("alvin5",1),
+("alvin6",3),
+("alvin7",2);
+
+--删除班主任为冰冰的记录
+
+
+
+

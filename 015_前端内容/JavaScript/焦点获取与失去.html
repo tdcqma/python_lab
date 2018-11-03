@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" value="请输入用户名" onfocus="Focus();" onblur="Blur();" id="i1">
+    <hr>
+    <input type="text" placeholder="请输入用户名">
+    <input type="password" placeholder="请输入密码">
+
+    <script>
+        function Focus(){
+            var i1 = document.getElementById('i1');
+            if (i1.value == "请输入用户名"){
+                i1.value = "";
+            }
+        }
+
+        function Blur(){
+            var i1 = document.getElementById('i1');
+            if (i1.value == ""){
+                i1.value = "请输入用户名";
+            }
+        }
+    </script>
+</body>
+</html>

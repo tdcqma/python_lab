@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .item{
+            width: 300px;
+            background-color: #2459a2;
+            height:38px;
+            line-height: 38px;
+        }
+        .menu{
+            float:left;
+            border-right:1px solid blue;
+            padding:0 10px;
+            color: white;
+            cursor: pointer;
+        }
+        .hide{
+            display: none;
+        }
+        .active{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="item">
+    <div class="menu active">菜单一</div>
+    <div class="menu">菜单二</div>
+    <div class="menu">菜单三</div>
+</div>
+
+<div class="content">
+    <div class="info">内容一</div>
+    <div class="info hide">内容二</div>
+    <div class="info hide">内容三</div>
+</div>
+
+
+<script src="jquery.js"></script>
+<script>
+    $(".menu").click(function(){
+        var i = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $(".info").eq(i).show().siblings().hide();
+    });
+</script>
+</body>
+</html>

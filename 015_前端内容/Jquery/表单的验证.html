@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="http://localhost/reg">
+    <p>用户名</p>
+    <p>
+        <input type="text" name="username" id="username">
+        <span id="username_error"></span>
+    </p>
+    
+    <p>密码</p>
+    <p>
+        <input type="text" name="pwd" id="pwd">
+        <span id="pwd_error"></span>
+    </p>
+    
+    <p>确认密码</p>
+    <p>
+        <input type="text" name="repwd" id="repwd">
+        <span id="repwd_error"></span>
+    </p>
+    <input type="submit" value="提交">
+</form>
+
+<script src="jquery.js"></script>
+<script>
+
+    $("#username").blur(function () {
+        var username = $(this).val();
+        if(username.length < 6){
+            $(this).data({"s":0});
+            $("#username_error").text("用户名小于6位").css({"color":"red"});
+        }else{
+            $(this).data({"s":1});
+            $("#username_error").text("");
+        }
+    });
+
+    $("#pwd").blur(function () {
+        var pwd = $(this).val();
+        if(pwd.length < 8){
+            $(this).data({"s":0});
+            $("#pwd_error").text("密码长度小于8位").css({"color":"red"});
+        }else{
+            $(this).data({"s":1});
+            $("#pwd_error").text("");
+        }
+    });
+
+    $("#pwd").blur(function () {
+        var pwd = $(this).val();
+        if(pwd.length < 8){
+            $(this).data({"s":0});
+            $("#pwd_error").text("密码长度小于8位").css({"color":"red"});
+        }else{
+            $(this).data({"s":1});
+            $("#pwd_error").text("");
+        }
+    });
+
+</script>
+
+</body>
+</html>

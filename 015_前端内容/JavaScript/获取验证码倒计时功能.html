@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取验证码倒计时功能</title>
+</head>
+<body>
+    <input type="button" id="i1" value="发送验证码">
+
+    <script>
+        var curTime = 10;
+        var tag = document.getElementById('i1');
+
+        tag.onclick = function () {
+            this.setAttribute('disabled',true);
+            this.value = "请在" + curTime + "秒内填写验证码";
+            mytimer = setInterval("setRemainTime();",1000);
+        };
+
+        function setRemainTime() {
+            if(curTime == 1){
+                clearInterval(mytimer);
+                tag.removeAttribute('disabled');
+                tag.value = "发送验证码";
+                curTime = 10;
+            }else{
+                curTime = curTime - 1 ;
+                tag.value = "请在" + curTime + "秒内填写验证码";
+            }
+        }
+    </script>
+</body>
+</html>

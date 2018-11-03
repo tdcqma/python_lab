@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .pg-header{
+            position: absolute;
+            top:0;
+            right:0;
+            left:0;
+            background-color: #2459a2;
+            height:48px;
+        }
+        .pg-left{
+            position: absolute;
+            top:48px;
+            left:0;
+            bottom:0;
+            background-color: yellow;
+            width:15%;
+        }
+        .pg-content{
+            position: absolute;
+            top:48px;
+            right:0;
+            bottom: 0;
+            background-color: wheat;
+            width:85%;
+            overflow: auto;
+        }
+        .pg-header .logo{
+            width:15%;
+            color: white;
+            text-align: center;
+            height:48px;
+            line-height: 48px;
+            background-color: blue;
+            float: left;
+        }
+        .header-menu{
+            width:980px;
+            margin:0 auto;
+            float: left;
+        }
+        .header-menu a{
+            display: inline-block;
+            padding: 13px 17px;
+            color: white;
+        }
+        .header-menu a:hover{
+            background-color: #e7e7e7;
+            color: red;
+        }
+        .userinfo img{
+            width:40px;
+            height:40px;
+            float: right;
+            margin-right: 20px;
+            margin-top: 5px;
+            border-radius:50%;
+            position: relative;
+        }
+        .usermenu {
+            position: absolute;
+            top:49px;
+            right:0;
+            z-index:10;
+            display: none;
+            width:200px;
+            height:200px;
+            background-color: white;
+        }
+        .userinfo:hover .usermenu{
+            display: block;
+        }
+        .usermenu a{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pg-header">
+        <div class="logo">
+            老女孩
+        </div>
+        <div class="header-menu">
+            <a>全部</a>
+            <a>42区</a>
+            <a>段子</a>
+        </div>
+        <div class="userinfo">
+            <a>
+                <img src="02.png">
+            </a>
+            <div class="usermenu">
+                <a>我的信息</a>
+                <a>登出</a>
+            </div>
+        </div>
+    </div>
+    <div class="pg-left"></div>
+    <div class="pg-content">
+        <p>dnsmandksa</p>
+    </div>
+
+</body>
+</html>

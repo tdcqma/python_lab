@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <titlTitle</title>
+    <style>
+        .tr{
+            width:30px;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="全选"onclick="chooseAll();">
+<input type="button" value="取消"onclick="cancelAll();">
+<input type="button" value="反选"onclick="reverseAll();">
+<!--  table>tr*3>td*3  -->
+<table border="1px">
+    <tr>
+        <th>IP</th>
+        <th>PORT</th>
+        <th>ACTION</th>
+    </tr>
+    <tr>
+        <td>1.1.1.1</td>
+        <td>80</td>
+        <td><input type="checkbox"></td>
+    </tr>
+    <tr>
+        <td>1.1.1.2</td>
+        <td>8800</td>
+        <td><input type="checkbox" id="one"></td>
+    </tr>
+</table>
+
+<script>
+    function chooseAll(){
+        var trList = document.getElementsByTagName('tr');
+        for (i = 1; i<trList.length;i=i+1){
+            var input = trList[i].children[2].children[0];
+            input.checked = true;
+        }
+    }
+
+    function cancelAll(){
+        var trList = document.getElementsByTagName('tr');
+        for (i = 1; i<trList.length;i=i+1){
+            var input = trList[i].children[2].children[0];
+            input.checked = false;
+        }
+    }
+
+    function reverseAll(){
+        var trList = document.getElementsByTagName('tr');
+        for (i = 1; i<trList.length;i=i+1){
+            var input = trList[i].children[2].children[0];
+            if(input.checked){
+                input.checked = false;
+            }else{
+                input.checked = true;
+            }
+        }
+    }
+</script>
+</body>
+</html>
