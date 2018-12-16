@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/000_Project/oldboy_project/选课系统/liuqingzheng/courseSelection" vcs="Git" />
   </component>
 </project>
