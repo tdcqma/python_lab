@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>包含选择器</title>
+
+    <style type="text/css">
+        div p {
+            font-size:30px;
+            background-color:red;
+        }
+
+        .div1 div {
+            background-color:pink;
+        }
+
+        .div1 .div2{
+            background-color:gold;
+        }
+
+        .div1 .cuihua111 {
+            background-color:gold;
+        }
+
+        .div1+div {
+            color:blue;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+<ul>
+    <li>要有包含的关系，即一个标签里嵌套另外一个标签，才会用后代选择器。用空格表示</li>
+</ul>
+<hr>
+    <p>包含选择器：仅对div块里的p标签起到效果</p>
+
+    <div>
+        <p>div外边</p>
+    </div>
+
+    <p>hello python</p>
+    <div>与div1毗邻的div，使用+号来设置，紧挨着的div</div>
+    <div class="div1">
+        <div class="hello">
+            <a href="">点我</a>
+            <p class="cuihua111">ppp</p>
+            <div>div 里面</div>
+        </div>
+
+        <p>p ele</p>
+        <div class="div2">div2</div>
+
+    </div>
+    <div>与div1毗邻的div,也就是class=div1后面的div，使用+号来设置，紧挨着的div</div>
+
+</body>
+</html>

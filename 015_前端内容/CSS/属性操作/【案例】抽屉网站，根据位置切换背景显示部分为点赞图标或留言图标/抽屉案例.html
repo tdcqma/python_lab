@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>【案例】抽屉网站，根据位置切换背景显示部分为点赞图标或留言图标</title>
+
+    <style>
+        .span1{
+            display:inline-block;
+            width:18px;
+            height:20px;
+            background-image:url("icon_18_118.png");
+            background-position: 0 -100px;
+        }
+
+        .span2{
+            display:inline-block;
+            width:18px;
+            height:20px;
+            background-image:url("icon_18_118.png");
+            background-position: 0 -80px;
+        }
+
+        .span3{
+            display:inline-block;
+            width:18px;
+            height:20px;
+            background-image:url("icon_18_118.png");
+            background-position: 0 -60px;
+        }
+
+        .span4{
+            display:inline-block;
+            width:18px;
+            height:20px;
+            background-image:url("icon_18_118.png");
+            background-position: 0 -196px;
+        }
+    </style>
+
+</head>
+<body>
+
+<ul>
+    <li>仅通过一张图片，通过变更【background-position: 0 -196px;】中的"-196"的数值大小来改变要显示的小图片</li>
+</ul>
+<hr>
+
+<span class="span1"></span>
+<span class="span2"></span>
+<span class="span3"></span>
+<span class="span4"></span>
+
+</body>
+</html>

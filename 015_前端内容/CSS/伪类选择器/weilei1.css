@@ -1,0 +1,19 @@
+.div1{
+    width:100px;
+    height:100px;
+    color:red;
+}
+
+.top,.bottom {
+    width:100px;
+    height:100px;
+    background-color:yellow;
+}
+
+.top:hover {
+    background-color:blue;
+}
+
+.bottom:hover{
+    background-color:blue;
+}

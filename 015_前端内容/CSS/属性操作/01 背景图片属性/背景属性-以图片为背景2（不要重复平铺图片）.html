@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景属性-以图片为背景2（不要重复平铺图片）</title>
+
+    <style>
+         p {
+            color:#FF7256;
+         }
+
+         .back{
+            width:800px;
+            height:800px;
+            background-image:url("gyy.jpg");
+            background-repeat:no-repeat;
+         }
+
+    </style>
+
+</head>
+<body>
+    <p>独在异乡为异客</p>
+    <ul>
+        <li>如果div特别大，但是图片尺寸特别小的时候，图片会被平铺成很多张</li>
+        <li>如果不想被平铺成很多张的时候使用"background-repeat:no-repeat"来表示</li>
+    </ul>
+    <div class="back">
+    </div>
+</body>
+</html>

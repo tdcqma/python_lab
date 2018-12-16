@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优先级</title>
+
+    <style>
+        .div1{
+            color:red;
+        }
+
+        div {
+            color:yellow;
+        }
+
+        #id1 {
+            color:blue;
+        }
+
+
+        #div1 .div3{
+            color:green;
+        }
+
+        #div1 .div2 div{
+            color:pink;
+        }
+
+        .div4 .div5 {
+            color:red;
+        }
+
+        .div5 {
+            color:blue!important;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<ol>
+    <li>测试需求：让"优先级"这三个字变红</li>
+    <li>CSS样式北浏览器解析优先级顺序：
+        <ul>
+            <li>有[!important]的时候，不计算权值，优先级高于一切。</li>
+            <li>文内样式，内联样式表中的权值最高： style=""  ,权值：1000</li>
+            <li>统计选择符ID：id=""  ,权值：100</li>
+            <li>统计选择符CLASS：class=""  ,权值：10</li>
+            <li>统计选择符HTML标签：p=""  ,权值：1</li>
+            <li>优先级一样的时候，style里描述的后边的样式覆盖前边的样式</li>
+        </ul>
+    </li>
+</ol>
+
+<hr>
+
+    <div class="div1" id="id1" style="color:green;">优先级测试</div>
+
+
+<hr>
+<p>测试2: <br>
+    需要进行优先级权值的计算后，才知道"嵌套优先级"到底显示什么颜色。</p>
+
+    <div id="div1">
+        <div class="div2">
+            <div class="div3">
+                经过计算，嵌套优先级 显示粉色 <br>
+                >>div1 .div3 是110的权值 <br>
+                >>div1 .div2 div 是111的权值， <br>
+                所以，最后选择粉色
+            </div>
+        </div>
+    </div>
+<hr>
+测试3：<br>
+    有时候优先级加来加去，自己会不清楚到底是哪里起的css样式效果，就想指定显示某一颜色而忽略优先级的时候，添加【!important】后即可实现。
+<ul>
+    <li>理论上，[.div4 .div5的优先级权值是20（红色），单独一个.div5是10（蓝色），通过权值来看显示红色]</li>
+    <li>但是，在[.div5后面加上"！important"]后，虽然权值低，也强制显示蓝色了。</li>
+</ul>
+
+    <div class="div4">
+        <div class="div5">
+            hello world!
+        </div>
+    </div>
+</body>
+</html>

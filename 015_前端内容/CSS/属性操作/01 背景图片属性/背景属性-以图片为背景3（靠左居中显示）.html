@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景属性-以图片为背景3（靠左居中显示）</title>
+
+    <style>
+         p {
+            color:#FF7256;
+         }
+
+         .back{
+            border: 1px solid red;
+            width:800px;
+            height:800px;
+            background-image:url("gyy.jpg");
+            background-repeat:no-repeat;
+            background-position:0 center;
+         }
+    </style>
+
+</head>
+<body>
+    <p>独在异乡为异客</p>
+    <hr style="color:green;">
+    <ul>
+        <li>0：代表左右的距离，即仅靠着左边</li>
+        <li>后边的center代表上下的距离，center代表上下居中</li>
+        <li>例如：background-position:0 0表示最左上角显示</li>
+        <li>例如：background-position:center 0表示靠最上边，居中显示</li>
+    </ul>
+
+    <div class="back">
+    </div>
+</body>
+</html>

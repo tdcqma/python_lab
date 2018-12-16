@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+
+    <style>
+        div[pyn="hello"]{
+            color:red;
+        }
+
+        p[pyn="ok"]{
+            font-family:"Times New Roman";
+            font-size:30px;
+            background-color:pink;
+        }
+
+        .div1 {
+            color:pink;
+        }
+
+        .div2{
+            background-color:black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div pyn="hello">hello1</div>
+    <div pyn="ok">hello2</div>
+    <p pyn="ok">hello3</p>
+    <div>hello4</div>
+    <div>hello5</div>
+
+
+    <hr>
+
+    <div class="div1 div2">我即有div1的css样式，又有div2的css样式</div>
+
+</body>
+</html>
