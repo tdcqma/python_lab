@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            background-color: #FF6347;
+        }
+        span{
+            display:inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+        }
+        .outer{
+            word-spacing: -5px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>首先"百度"是a标签，属于内联元素</li>
+        <li>其次，span原本是内联标签，但是设置了display:inline-block属性后，有了以下两个特性：</li>
+        <ol>
+            <li>块级元素占用多行的性质</li>
+            <li>内联元素不占一整行的性质</li>
+        </ol>
+        <li>基于该特性，可以给span属性设置width和height了。</li>
+    </ul>
+
+    <div class="outer">
+        <a href="#">百度</a>
+        <span>hello span</span>
+    </div>
+</body>
+</html>

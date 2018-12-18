@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过display属性更改块级标签成内联标签，或更改内联标签为块级标签</title>
+    <style>
+        div,p,span,a{
+            width: 100px;
+            height: 100px;
+        }
+
+        div{
+            background-color: #009900;
+            display: inline;
+        }
+
+        p {
+            background-color: #2459a2;
+        }
+
+        span{
+            background-color: deeppink;
+            display: block;
+        }
+
+        a {
+            background-color: blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>默认情况下：div是块级标签、p是块级标签</li>
+    <li>默认情况下：span是内联标签、a也是内联标签</li>
+    <li>内联标签变成块级标签：在内联标签的css样式中添加：display: block;</li>
+    <li>块级标签变成内联标签：在块级标签的css样式中添加：display: inline;</li>
+
+</ul>
+
+<hr color="red">
+
+    <div>hello div</div>
+    <p>hello p</p>
+    <span>hello span</span>
+    <a href="">click a</a>
+</body>
+</html>

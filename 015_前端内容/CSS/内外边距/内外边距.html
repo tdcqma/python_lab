@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border:1px solid green;
+            padding: 10px;
+            /*margin-bottom: 40px; 设置底部外边距为10px*/
+            margin-top: 30px;
+        }
+
+        .div2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border:1px solid hotpink;
+            padding: 30px;
+            /*margin-left: 500px;*/
+            /*margin-bottom: 10px;*/
+            /*margin: 40px 30px 30px 10px;*/
+        }
+
+        body{
+            border:1px solid darkred;
+            /*margin: 0px;    可将body的外边距设置为0*/
+        }
+
+        .outer{
+            height: 1000px;
+            background-color: blanchedalmond;
+            /*border: 1px solid blue;*/
+        }
+
+        .outer2 {
+            width: 100px;
+            height: 100px;
+            background-color: mediumvioletred;
+        }
+
+    </style>
+</head>
+<body>
+    <!--<ul>-->
+        <!--<li>padding:用来控制内容与边框（border）之间的距离</li>-->
+        <!--<li>margin:用来控制元素与元素之间的距离,margin最基本的用途就是控制元素周围空间的间隔，从视觉上达到相互隔开的效果。</li>-->
+        <!--<li>Border(边框)：围绕在内边距与外边距之间的距离</li>-->
+        <!--<li>Content(内容)：盒 子的内容，显示文本或图像</li>-->
+        <!--<li>[margin: 40px 30px 20px 10px;]代表边框距离上、右、下、左的边距，即顺时针方向。padding同理。</li>-->
+        <!--<li>当上面的div1设置margin-bottom为40px,下面的div2设置margin-top为30px的时候，以两个值的最大值为基准，-->
+        <!--即，这里div1与div2之间的就是40px，而不是70px，也不是30px。</li>-->
+    <!--</ul>-->
+    <!--<hr>-->
+    <div class="outer2">
+
+    </div>
+    <div class="outer">
+        <div class="div1">hello div1</div>
+        <div class="div2">hello div2</div>
+    </div>
+</body>
+</html>
