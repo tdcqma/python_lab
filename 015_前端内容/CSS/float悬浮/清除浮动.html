@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        /*通配符去除浏览器默认的margin*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            border: 1px solid red;
+            width: 300px;
+        }
+
+        #box1{
+            background-color: green;
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+
+        #box2{
+            background-color: #6b9aff;
+            float: right;
+            width: 100px;
+            height: 100px;
+        }
+
+        #box3{
+            background-color:pink;
+            height: 40px;
+        }
+
+        /* 使用以下代码可实现在css中替换body中的 <div style="clear:both"></div> （推荐使用）*/
+        .clearfix:after{
+            content:"";
+            display:block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container clearfix">
+        <div id="box1">box1 向左浮动</div>
+        <div id="box2">box2 向右浮动</div>
+        <!--<div style="clear:both"></div>  &lt;!&ndash; style="clear:both" 清除浮动（不推荐使用）&ndash;&gt;-->
+    </div>
+    <div id="box3">box3</div>
+</body>
+</html>

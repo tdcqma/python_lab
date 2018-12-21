@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="006962b6-9dd0-40f4-ba68-6572e1eb0d72" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/015_前端内容/1. 临促的人员准备情况" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/CSS/成品案例/【案例】抽屉网站，根据位置切换背景显示部分为点赞图标或留言图标/icon_18_118.png" beforeDir="false" afterPath="$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站，根据位置切换背景显示部分为点赞图标或留言图标/icon_18_118.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/CSS/成品案例/【案例】抽屉网站，根据位置切换背景显示部分为点赞图标或留言图标/抽屉切换点赞或留言等图标的案例.html" beforeDir="false" afterPath="$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站，根据位置切换背景显示部分为点赞图标或留言图标/抽屉切换点赞或留言等图标的案例.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/Jquery/jquery-1.12.4.js" beforeDir="false" afterPath="$PROJECT_DIR$/015_前端内容/Jquery/jquery-1.12.4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/Jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/015_前端内容/Jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/example/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/example/waibu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/仿应用服务器核心代码功能.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/管理页面布局.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/015_前端内容/管理页面布局_自敲版.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,22 +19,40 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/float悬浮/案例6 使用浮动来创建拥有页眉、页脚、左侧目录和主体内容的首页.html">
+        <entry file="file://$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/抽屉示例.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/float悬浮/案例7 清楚元素的侧面.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="213">
+              <caret line="301" column="27" selection-start-line="301" selection-start-column="27" selection-end-line="301" selection-end-column="27" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#6382#6388#0" expanded="true" />
+                <element signature="n#div#4;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#5;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#6;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,6 +71,19 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>mahaibin</find>
+      <find>c120</find>
+      <find>../../../../../../Desktop/抽屉新热榜-聚合每日热门、搞笑、有趣资讯_files</find>
+      <find>user-a</find>
+      <find>digg-a</find>
+      <find>class=&quot;hand-icon icon-</find>
+      <find>share-site-to</find>
+      <find>分享到</find>
+      <find>分享各微博的按钮</find>
+      <find>share-icon</find>
+      <find>icon-douban</find>
+      <find>icon-qqzone</find>
+      <find>icon-renren</find>
+      <find>news-pic</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -54,10 +92,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../chose_course/start.py" />
-        <option value="$PROJECT_DIR$/../chose_course/conf/setting.py" />
-        <option value="$PROJECT_DIR$/../chose_course/interface/manager_interface.py" />
-        <option value="$PROJECT_DIR$/../chose_course/interface/user_interface.py" />
         <option value="$PROJECT_DIR$/../chose_course/db/db_handler.py" />
         <option value="$PROJECT_DIR$/../chose_course/test.py" />
         <option value="$PROJECT_DIR$/../chose_course/interface/teacher_interface.py" />
@@ -105,14 +139,18 @@
         <option value="$PROJECT_DIR$/015_前端内容/CSS/float悬浮/案例5 创建水平菜单.html" />
         <option value="$PROJECT_DIR$/015_前端内容/CSS/float悬浮/案例6 使用浮动来创建拥有页眉、页脚、左侧目录和主体内容的首页.html" />
         <option value="$PROJECT_DIR$/015_前端内容/CSS/float悬浮/案例7 清楚元素的侧面.html" />
+        <option value="$PROJECT_DIR$/015_前端内容/CSS/float悬浮/浮动.html" />
+        <option value="$PROJECT_DIR$/015_前端内容/CSS/float悬浮/float.html" />
+        <option value="$PROJECT_DIR$/015_前端内容/CSS/float悬浮/清除浮动.html" />
+        <option value="$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/抽屉示例.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="320" />
-    <option name="y" value="156" />
-    <option name="width" value="856" />
-    <option name="height" value="550" />
+    <option name="x" value="-1030" />
+    <option name="y" value="23" />
+    <option name="width" value="1030" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -164,8 +202,22 @@
               <item name="python_lab" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_lab" type="462c0819:PsiDirectoryNode" />
               <item name="015_前端内容" type="462c0819:PsiDirectoryNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
-              <item name="float悬浮" type="462c0819:PsiDirectoryNode" />
+              <item name="成品案例" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_lab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_lab" type="462c0819:PsiDirectoryNode" />
+              <item name="015_前端内容" type="462c0819:PsiDirectoryNode" />
+              <item name="成品案例" type="462c0819:PsiDirectoryNode" />
+              <item name="【案例】抽屉网站" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_lab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_lab" type="462c0819:PsiDirectoryNode" />
+              <item name="015_前端内容" type="462c0819:PsiDirectoryNode" />
+              <item name="成品案例" type="462c0819:PsiDirectoryNode" />
+              <item name="【案例】抽屉网站" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -177,22 +229,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/images" />
+      <recent name="$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/image" />
       <recent name="$PROJECT_DIR$/015_前端内容/CSS/float悬浮" />
       <recent name="$PROJECT_DIR$/../chose_course_v1" />
       <recent name="$PROJECT_DIR$/../chose_course" />
-      <recent name="$PROJECT_DIR$/008_面向对象" />
-      <recent name="$PROJECT_DIR$/000_Project/python_tools/校验视频等文件等hash值" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/images" />
+      <recent name="$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站" />
+      <recent name="$PROJECT_DIR$/015_前端内容" />
       <recent name="$PROJECT_DIR$/../chose_course/db" />
       <recent name="$PROJECT_DIR$/../chose_course/db/account" />
-      <recent name="$PROJECT_DIR$/../chose_course/interface" />
-      <recent name="$PROJECT_DIR$/008_面向对象/old" />
-      <recent name="$PROJECT_DIR$/000_Project/python_tools/socket连接工具" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -389,6 +441,8 @@
       <option name="presentableId" value="Default" />
       <updated>1526435639309</updated>
       <workItem from="1544970665860" duration="217000" />
+      <workItem from="1545140772878" duration="4301000" />
+      <workItem from="1545193075809" duration="28959000" />
     </task>
     <servers />
   </component>
@@ -425,17 +479,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15384000" />
+    <option name="totallyTimeSpent" value="48644000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="320" y="156" width="856" height="550" extended-state="0" />
+    <frame x="-1030" y="23" width="1030" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2911548" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3451417" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.33535966" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2890411" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -452,14 +506,14 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
       <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32947367" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21621622" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3451417" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.33535966" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2890411" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -476,7 +530,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
       <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32947367" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,87 +540,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.ini" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../chose_course/db/models.py" />
-    <entry file="file://$PROJECT_DIR$/../chose_course_v1/chose_course_v1/db/course/go.pkl" />
-    <entry file="file://$PROJECT_DIR$/../chose_course_v1/chose_course_v1/testDemo.py" />
-    <entry file="file://$PROJECT_DIR$/../chose_course_v1/chose_course_v1/db/schoolclass.py" />
-    <entry file="file://$PROJECT_DIR$/../chose_course_v1/chose_course_v1/start.py" />
-    <entry file="file://$PROJECT_DIR$/../chose_course_v1/chose_course_v1/db/models.py" />
-    <entry file="file://$PROJECT_DIR$/../chose_course_v1/chose_course_v1/core/admin.py" />
-    <entry file="file://$PROJECT_DIR$/008_面向对象/类和对象的使用.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="56" column="11" lean-forward="true" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/008_面向对象/classDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/course_other/src/classroom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../chose_course_v0/start.py" />
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/shelve.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="226" selection-start-line="226" selection-end-line="226" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/course_other/bin/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/course_other/databases/school.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret column="108" selection-start-column="108" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/course_other/databases/school.dat" />
-    <entry file="file://$USER_HOME$/PycharmProjects/course_other/conf/setting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../chose_course_v1/testDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../chose_course_v1/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../chose_course_v1/interface/common_interface.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -652,13 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/CSS继承特性/CSS继承是啥意思.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/008_面向对象/继承和派生/classDemo_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -680,9 +646,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/属性操作/04 列表属性/liebiao.http">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/属性操作/04 列表属性/liebiao.http" />
     <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/属性操作/04 有序及无序列表属性/liebiao.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -711,26 +675,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/015_前端内容/1. 临促的人员准备情况">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/015_前端内容/仿应用服务器核心代码功能.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/demo.py" />
+    <entry file="file://$PROJECT_DIR$/015_前端内容/1. 临促的人员准备情况" />
     <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/内外边距/内外边距.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -789,15 +736,132 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/float悬浮/案例7 清楚元素的侧面.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="150">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/example/index.html" />
+    <entry file="file://$PROJECT_DIR$/015_前端内容/管理页面布局.html" />
+    <entry file="file://$PROJECT_DIR$/015_前端内容/仿应用服务器核心代码功能.py" />
+    <entry file="file://$PROJECT_DIR$/015_前端内容/管理页面布局_自敲版.html" />
     <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/float悬浮/案例6 使用浮动来创建拥有页眉、页脚、左侧目录和主体内容的首页.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        <state relative-caret-position="323">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/HTML/html常用标签之img标签/img标签.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/HTML/HTML常用标签之form标签/form标签-select下拉列表.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="62" lean-forward="true" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/伪类选择器/weilei1.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/伪类选择器/以div标签的hover为例演示伪类.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/CSS继承特性/CSS继承是啥意思.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/float悬浮/float.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/float悬浮/浮动.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/伪类选择器/添加内容.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/float悬浮/清除浮动.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站，根据位置切换背景显示部分为点赞图标或留言图标/抽屉切换点赞或留言等图标的案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/CSS/伪类选择器/以a标签举例伪类.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/images/icon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/抽屉新热榜-聚合每日热门、搞笑、有趣资讯.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="3688" column="3" selection-start-line="3688" selection-start-column="3" selection-end-line="5335" selection-end-column="10" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#2;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/images/report.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/images/share_icon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/015_前端内容/成品案例/【案例】抽屉网站/抽屉示例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="301" column="27" selection-start-line="301" selection-start-column="27" selection-end-line="301" selection-end-column="27" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#6382#6388#0" expanded="true" />
+            <element signature="n#div#4;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#5;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#6;n#div#3;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

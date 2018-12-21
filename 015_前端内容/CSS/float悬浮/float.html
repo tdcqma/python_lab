@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: beige;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+        }
+        
+        .div2{
+            width: 200px;
+            height: 100px;
+            background-color: rebeccapurple;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            clear: left; /*要求左边不能有浮动的元素，自己跳到下一行重新开始*/
+        }
+
+        .div3{
+            width: 100px;
+            height: 200px;
+            background-color: green;
+            text-align: center;
+            line-height: 200px;
+            float: left;
+        }
+
+        .div4{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            text-align: center;
+            line-height: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+    <div class="div3">div3</div>
+    <div class="div4">div4</div>
+</body>
+</html>

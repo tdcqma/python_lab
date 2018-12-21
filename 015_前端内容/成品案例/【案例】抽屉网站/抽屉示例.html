@@ -1,0 +1,2894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽屉示例</title>
+
+    <style>
+        /*去除浏览器默认边框*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /*去除a标签默认蓝色下划线*/
+        a{
+            text-decoration: none;
+        }
+
+        /*设置默认字体、默认大小*/
+        body{
+            font-family: "Times New Roman";
+            font-size: 12px;
+        }
+
+        /****************head头部开始****************/
+
+        .head-box{
+            background-color: #2459a2;
+            height: 44px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .head-content{
+            width: 1016px;
+            height: 44px;
+            /*background-color: gray;*/
+            /*border: 1px solid pink;*/
+            line-height: 44px; /* 上下居中 */
+            margin: 0 auto; /* 让head-content这个盒子在head-box里面居中显示 */
+            position: relative;
+        }
+
+        .head-content .logo{
+            display: inline-block;
+            background: url("images/chouti-logo.png");
+            width: 121px;
+            height: 23px;
+            float: left;
+            margin-top: 11px; /* 使logo上下居中 */
+
+        }
+
+        .head-content .action-menu{
+            float: left;
+            margin-left: 10px;
+        }
+
+        .head-content .action-menu a.tb{
+            display: inline-block;
+            /*background-color: white;*/
+            margin-left: -3px;
+            /*border: 1px solid red;*/
+            padding: 0 16px 0 13px;
+            color: darkgray;    /*设置字体颜色*/
+        }
+
+        /*设置鼠标悬浮在a标签的元素上面时字体变白，背景变浅。*/
+        .head-content .action-menu a.tb:hover{
+            color: white;
+            background-color: #396bb3;
+        }
+
+        .head-content .action-menu a.active,.head-content .action-menu a.active:hover {
+            color:white;
+            background-color: #204982;
+        }
+
+        /*设置head里"全部"的部分即是鼠标悬浮在上面也不变成浅蓝色,也可以拆开写成如下格式*/
+        /*.head-content .action-menu a.active:hover{*/
+            /*color:white;*/
+            /*background-color: #204982;*/
+        /*}*/
+
+
+        /*----------以下部分对头部的搜索框进行设置----------*/
+        .key-search{
+            float: right;
+            margin-top: 7px;
+        }
+
+        .key-search .search-txt{
+            float: left;
+            width: 120px;
+            height: 25px;
+            padding: 2px 2px 2px 5px ;
+        }
+
+        .key-search a{
+            display: inline-block;
+            width: 31px;
+            height: 33px;
+            background-color: #f4f4f4;
+        }
+
+        .key-search a span.ico{
+            display: inline-block;
+            width: 11px;
+            height: 13px;
+            background: url("images/icon.png") no-repeat 0 -195px;
+            margin-left: 10px;
+            margin-top: 3px;
+
+        }
+
+        /*----------以下部分对头部的注册与登录进行设置----------*/
+        .action-nav{
+            position: absolute;
+            right: 180px;
+            /*border: 1px solid red;*/
+
+        }
+
+        .action-nav a{
+            display: inline-block;
+            line-height: 44px;
+            color: white;
+            margin: 0 5px;
+            padding: 0 20px;
+        }
+        
+        .action-nav a:hover{
+            color: white;
+            background-color: #396bb3;
+        }
+
+        /****************head头部设置结束****************/
+
+
+        /****************content部分设置开始****************/
+
+        .main-content-box{
+            background-color: lightgrey;
+			padding-top: 44px;
+        }
+
+		.main-content{
+			background-color:white;
+			margin: 0 auto;
+			width: 1016px;
+			height: auto!important;
+			min-height: 700px;
+			overflow: hidden;
+		}
+
+		.main-content .content-L{
+			float: left;
+			width: 630px;
+			/*padding: 30px;*/
+			margin-top: 30px;
+			margin-left: 30px;
+		}
+
+		/*置顶区域的设置 [最热 发现 人类发布]*/
+		.content-L .top-area{
+			border-bottom: 1px solid #b4b4b4;
+			height: 35px;
+		}
+
+		.top-area .child-nav{
+			float: left;
+		}
+
+		.top-area .child-nav a{
+			display: inline-block;
+			width: 60px;
+			height: 26px;
+			line-height: 26px;
+			color: #369;
+			text-align: center;
+		}
+
+		.top-area .child-nav .active{
+			background:url("images/tip.png") no-repeat 0 -299px;
+			color:black;
+			font-weight: bolder;
+		}
+
+		/*置顶区域的设置 [即时排序 24小时 3天 发布]*/
+
+		.top-area .sort-nav{
+			float: left;
+			margin-left: 100px;
+			margin-top: 7px;
+		}
+		
+		.sort-nav a{
+			display: inline-block;
+			text-align: center;
+			color: #390;
+			margin-left: 10px;
+		}
+
+		.sort-nav .active{
+			color: #b4b4b4;
+		}
+
+		.publish-btn{
+			float: right;
+			display: inline-block;
+			width: 136px;
+			height: 32px;
+			background-color: #84a42b;
+			color: white;
+			font-size: 14px;
+			text-align: center;
+			line-height: 32px;
+		}
+
+		.content-list .item{
+			border-bottom: 1px solid #b4b4b4;
+			padding-top: 10px;
+		}
+		
+		.content-list .item .news-pic{
+			float: right;
+		}
+
+		.content-list .item .news-pic img{
+			width: 50px;
+			height: 50px;
+			margin: 2px;
+		}
+
+		/*调节内容部分的行间距*/
+		.content-list .item .news-content .part1{
+			line-height: 20px;
+		}
+
+		.content-list .item .news-content .part1 a.show-content:hover {
+			text-decoration: underline;
+		}
+
+		.news-content .part2{
+			padding: 10px 0px;
+			color: #99aecb;
+			margin-top: 5px;
+		}
+
+		.news-content .part2 .user-a img{
+			width: 18px;
+			height: 18px;
+		}
+
+		.part2 .hand-icon{
+			background: url("images/icon_18_118.png") no-repeat 0 0;
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+		}
+
+		/*点赞图片设置位置*/
+		.part2 .icon-digg{
+			background-position: 0 -40px;
+		}
+
+		.part2 .icon-digg:hover{
+			background-position: 0 -20px;
+		}
+
+		/*评论图片设置位置*/
+		.part2 .icon-discus{
+			background-position: 0 -100px;
+		}
+
+		.part2 .icon-discus:hover{
+			background-position: 0 -80px;
+		}
+
+		/*加入私藏图片设置位置*/
+		.part2 .icon-collect{
+			background-position: 0 -160px;
+		}
+
+		.part2 .icon-collect:hover{
+			background-position: 0 -140px;
+		}
+
+		.part2 a{
+			margin-left: 8px;
+		}
+
+		.part2 a b,.part2 span i {
+			vertical-align: 4px;
+			font-size: 14px;
+			margin-left: 5px;
+		}
+
+
+		/*设置分享到新浪微博、豆瓣等图标*/
+
+		.share-site-to{
+			float: right;
+		}
+
+		.share-site-to .share-icon a{
+			display: inline-block;
+			background: url("images/share_icon.png") no-repeat 0 0;
+			opacity: 0.3; /*给分享图标加上透明度,值为.3*/
+		}
+
+		.share-site-to .share-icon a:hover{
+			opacity: 1; /*给分享图标加上透明度，鼠标悬浮在上面时才显示亮色*/
+		}
+
+		.share-site-to{
+			display: none;
+		}
+
+		.item:hover .share-site-to{
+			display: inline-block;
+		}
+
+		.share-icon a.icon-sina{
+			background-position: 0 -90px;
+			width: 17px;
+			height: 14px;
+		}
+
+		.share-icon a.icon-douban{
+			background-position: 0 -105px;
+			width: 17px;
+			height: 14px;
+		}
+
+		.share-icon a.icon-qqzone{
+			background-position: 0 -120px;
+			width: 17px;
+			height: 14px;
+		}
+
+		.share-icon a.icon-renren{
+			background-position: 0 -151px;
+			width: 17px;
+			height: 14px;
+		}
+
+
+
+
+
+
+		/* 右侧区域设置 */
+		.main-content .content-R {
+			float: left;
+
+		}
+
+		/* 最低侧区域设置 */
+		.footer-box{
+			clear: both;
+		}
+
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="head-box">
+    <div class="head-content">
+        <a href="/image/chouti-logo.png" class="logo"></a>
+        <div class="action-menu">
+            <a href="#" class="tb active">全部</a>
+            <a href="#" class="tb">42区</a>
+            <a href="#" class="tb">段子</a>
+            <a href="#" class="tb">图片</a>
+            <a href="#" class="tb">挨踢1024</a>
+            <a href="#" class="tb">你问我答</a>
+        </div>
+
+        <!--搜索表单-->
+        <div class="key-search">
+            <form action="/" method="post">
+                <input type="text" class="search-txt">
+                <a href="#" class="i">
+                    <span class="ico"></span>
+                </a>
+            </form>
+        </div>
+
+        <!--登录和注册-->
+        <div class="action-nav">
+            <a href="#" class="register-btn">注册</a>
+            <a href="#" class="login-btn">登录</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="main-content-box">
+
+    <div class="main-content">
+
+		<div style="font-size: 20px; color: red; text-align: left; display: none;">
+			从"04 python s3 day40 抽屉作业之content部分二"视频的第30分钟继续
+		</div>
+
+        <div class="content-L">
+
+			<!-- 最新最热按钮 -->
+			<div class="top-area" style="margin-bottom: 0px;">
+				<div class="child-nav">
+					<a href="#" hidefocus="false" class="hotbtn active">最热</a>
+					<a href="#" hidefocus="false" class="newbtn">发现</a>
+					<a href="#" hidefocus="false" class="personbtn">人类发布</a>
+				</div>
+
+				<div class="sort-nav">
+					<a href="#" hidefocus="false" class="active hotbtn" id="sort-nav-btn">即时排序</a>
+					<a href="#" hidefocus="false" class="newbtn" id="sort24-nav-btn">24小时</a>
+					<a href="#" hidefocus="false" class="newbtn" id="sort3-nav-btn">3天</a>
+				</div>
+
+				<a href="javascript:;" class="publish-btn" id="publishBtn" lang="all">
+					<span class="ico n1"></span><span class="n2">+&nbsp;发布</span>
+				</a>
+			</div>
+
+			<!-- 内容显示区域 -->
+			<div class="content-list" id="content-list">
+
+        				<div class="item">
+
+
+
+								<div class="news-pic"><img lang="23806946" original="//img3.chouti.com/CHOUTI_20181219/733059B379F141BCB66D4FAA9A617973_W690H782=C120x120.jpg?quality=80" src="images/733059B379F141BCB66D4FAA9A617973_W690H782=C120x120.jpg" alt="抽屉新热榜" style="display: inline;"></div>
+
+
+							<div class="null-item"></div>
+
+							<div class="news-content" id="newsContent23806946">
+								<div class="part1">
+
+
+										<a href="http://dig.chouti.com/pic/show?nid=a921e344e1d1077d18fc42efe8037af8&amp;lid=23806946" class="show-content color-chag" target="_blank" onmousedown="linksClickStat(23806946);">
+												效果图都给你做出来了，仁至义尽了，只能帮你到这里了！
+										</a>
+
+									<!-- 段子和谣言类别不显示类别名称 -->
+
+										<a href="https://dig.chouti.com/r/pic/hot/1" class="n2"><span class="content-kind">图片</span></a>
+
+									<!-- 来源手机客户端 -->
+
+
+
+
+									<!-- 显示话题标签 -->
+
+								</div>
+								<!-- 显示摘要 -->
+
+								<div class="part2"
+									 share-pic="http://img3.chouti.com/CHOUTI_20181219/733059B379F141BCB66D4FAA9A617973_W690H782.jpg"
+									 share-title="效果图都给你做出来了，仁至义尽了，只能帮你到这里了！" share-summary="" share-linkid="23806946"
+									 share-subject="图片" style="padding-top: 16px;">
+
+
+									<a href="javascript:;" class="digg-a" title="推荐"><span
+											class="hand-icon icon-digg"></span><b>24</b></a>
+
+
+									<a href="javascript:;" class="discus-a" title="评论"><span
+											class="hand-icon icon-discus"></span><b>8</b></a>
+
+
+									<a href="javascript:;" class="collect-a" title="加入私藏"><span
+											class="hand-icon icon-collect"></span><b>私藏</b></a>
+
+
+									<a href="https://dig.chouti.com/user/wb_1627825392/submitted/1" class="user-a">
+										<span><img
+												src="images/D440302A674F4CA18A2F12169820C6CD_W179H179=32x32.jpg"></span>
+										<b>互联网的那点事</b></a>
+
+									<span class="left time-into">
+											<a class="time-a" href="https://dig.chouti.com/link/23806946"
+											   target="_blank">
+												<b>12分钟前</b>
+											</a>
+											<i>入热榜</i>
+										</span>
+
+
+									<!-- 分享各微博的按钮 -->
+									<span class="share-site-to">
+										<i>分享到</i>
+										<span class="share-icon">
+											<a class="icon-sina" id="icon-sina" title="分享到新浪微博"></a>
+											<a class="icon-douban" id="icon-douban" title="分享到豆瓣"></a>
+											<a class="icon-qqzone" id="icon-qqzone" title="分享到QQ空间"></a>
+											<a class="icon-renren" id="icon-renren" title="分享到人人网"></a>
+											<a class="share-none"></a>
+										</span>
+									</span>
+
+								</div>
+								<!-- 评论区域 -->
+								<div class="comment-box-area" id="comment-box-area-23806946" style="display: none;">
+								<div class="pinglun arrow" id="comt-arrow-23806946"></div>
+								<a class="pinglun close-comt" title="关闭" href="javascript:;" lang="23806946"></a>
+								<div class="corner comment-box" id="comment-box-23806946">
+
+									<div class="loading-ico loading-ico-top" id="loading-comment-top-23806946" style="margin-left:230px;">加载中，请稍候...</div>
+									<div class="comment-box-top" id="comment-box-top-23806946">
+										<div class="tip-1">最热评论(<span id="newestCount-23806946">3</span>)</div>
+										<div class="tip-2"><a href="https://dig.chouti.com/link/23806946" target="_blank"><em class="pinglun em1"></em><span>去评论页面</span></a></div>
+									</div>
+									<!-- 评论树形 -->
+									<ul class="filetree comment-list-top-2" id="comment-list-top-23806946"></ul>
+
+									<!-- 谣言类别显示相信还是置疑选项 -->
+
+
+									<!-- 判断该新闻评论是否关闭 -->
+
+
+									<!-- 评论输入框和回复框 -->
+									<div class="huifu-top-box" id="huifu-top-box-23806946">
+										<div class="box-l txt-input-area-div-top corner no-corner-bottom">
+                                            <div id="lab-comment-top-23806946" class="lab-comment-top">回复  <span id="nick--23806946"></span>:</div>
+											<!-- 针对谣言文本输入框无效 -->
+
+
+
+												<textarea lang="23806946" maxlength="150" name="txt-huifu-top" id="txt-huifu-top-23806946" class="txt-huifu txt-huifu-top"></textarea>
+
+
+										</div>
+										<div class="box-r">
+											<a id="pub-btn-top-23806946" lang="23806946" href="javascript:;" class="pub-icons add-pub-btn add-pub-btn-unvalid">评论</a>
+											<a id="pub-loading-top-23806946" href="javascript:;" class="loading-ico loading-ico-top pub-loading-top">发布中...</a>
+										</div>
+									</div>
+
+
+
+
+									<div class="tip-3" id="hidden-comt-23806946">
+										<a href="javascript:;" class="hiddenCom-Btn" lang="23806946"><em class="pinglun em2"></em><span>收起</span></a>
+									</div>
+									<div class="write-error-box-top">
+										<div class="write-error-desc" id="write-error-desc-23806946"></div>
+									</div>
+								</div>
+								<input type="hidden" id="hidsubjectid-23806946" value="4">
+								</div>
+
+
+							</div>
+
+						</div>
+
+        				<div class="item">
+
+        					<div class="timeIntoPool">1545217800007000,1545219136549000</div>
+
+								<div class="news-pic"><img lang="23807346" original="//img3.chouti.com/CHOUTI_20181219/4ECA93FB88844A13AD284F304A613C00_W648H648=C120x120.jpg?quality=80" src="images/4ECA93FB88844A13AD284F304A613C00_W648H648=C120x120.jpg" alt="抽屉新热榜" style="display: inline;"></div>
+
+
+							<div class="null-item"></div>
+
+							<div class="news-content" id="newsContent23807346">
+								<div class="part1">
+
+
+										<a href="https://mp.weixin.qq.com/s/-bnVTouZ3M7TRw5sh1YfCA" class="show-content color-chag" target="_blank" onmousedown="linksClickStat(23807346);">
+
+
+
+
+
+
+
+												我为什么劝中国孩子初恋之后再留学
+
+
+										</a>
+
+
+
+										<span class="content-source">-mp.weixin.qq.com</span>
+
+									<!-- 段子和谣言类别不显示类别名称 -->
+
+										<a href="https://dig.chouti.com/r/news/hot/1" class="n2"><span class="content-kind">42区</span></a>
+
+									<!-- 来源手机客户端 -->
+
+
+
+
+									<!-- 显示话题标签 -->
+
+								</div>
+								<!-- 显示摘要 -->
+
+								<div class="part2" share-pic="http://img3.chouti.com/CHOUTI_20181219/4ECA93FB88844A13AD284F304A613C00_W648H648.jpg" share-title="我为什么劝中国孩子初恋之后再留学" share-summary="" share-linkid="23807346" share-subject="42区" style="padding-top: 16px;">
+
+
+
+
+										<a href="javascript:;" class="digg-a" title="推荐"><span class="hand-icon icon-digg"></span><b>9</b><i style="display:none">23807346</i></a>
+
+
+									<a href="javascript:;" class="discus-a" id="discus-a-23807346" timetopool="22分钟前" lang="23807346"><span class="hand-icon icon-discus"></span><b>7</b></a>
+
+
+										<a href="javascript:;" class="collect-a" id="collect-a-23807346" lang="23807346" title="加入私藏" destjid="" jid="ccavvv"><span class="hand-icon icon-collect"></span><b>私藏</b></a>
+
+
+
+
+										<a href="https://dig.chouti.com/user/ccavvv/submitted/1" class="user-a"><span><img src="images/wKgCD1W_IC6xGhqzAAAtE3cOolI463=32x32.jpg"></span><b>院长</b></a>
+
+									<span class="left time-into"><a class="time-a" href="https://dig.chouti.com/link/23807346" target="_blank"><b>22分钟前</b></a><i>入热榜</i></span>
+									<!-- 分享各微博的按钮 -->
+									<span class="share-site-to">
+										<i>分享到</i>
+										<span class="share-icon">
+											<a class="icon-sina" id="icon-sina" title="分享到新浪微博"></a>
+											<a class="icon-douban" id="icon-douban" title="分享到豆瓣"></a>
+											<a class="icon-qqzone" id="icon-qqzone" title="分享到QQ空间"></a>
+											<a class="icon-renren" id="icon-renren" title="分享到人人网"></a>
+											<a class="share-none"></a>
+										</span>
+									</span>
+
+								</div>
+								<!-- 评论区域 -->
+								<div class="comment-box-area" id="comment-box-area-23807346" style="display: none;">
+								<div class="pinglun arrow" id="comt-arrow-23807346"></div>
+								<a class="pinglun close-comt" title="关闭" href="javascript:;" lang="23807346"></a>
+								<div class="corner comment-box" id="comment-box-23807346">
+
+									<div class="loading-ico loading-ico-top" id="loading-comment-top-23807346" style="margin-left:230px;">加载中，请稍候...</div>
+									<div class="comment-box-top" id="comment-box-top-23807346">
+										<div class="tip-1">最热评论(<span id="newestCount-23807346">3</span>)</div>
+										<div class="tip-2"><a href="https://dig.chouti.com/link/23807346" target="_blank"><em class="pinglun em1"></em><span>去评论页面</span></a></div>
+									</div>
+									<!-- 评论树形 -->
+									<ul class="filetree comment-list-top-2" id="comment-list-top-23807346"></ul>
+
+									<!-- 谣言类别显示相信还是置疑选项 -->
+
+
+									<!-- 判断该新闻评论是否关闭 -->
+
+
+									<!-- 评论输入框和回复框 -->
+									<div class="huifu-top-box" id="huifu-top-box-23807346">
+										<div class="box-l txt-input-area-div-top corner no-corner-bottom">
+                                            <div id="lab-comment-top-23807346" class="lab-comment-top">回复  <span id="nick--23807346"></span>:</div>
+											<!-- 针对谣言文本输入框无效 -->
+
+
+
+												<textarea lang="23807346" maxlength="150" name="txt-huifu-top" id="txt-huifu-top-23807346" class="txt-huifu txt-huifu-top"></textarea>
+
+
+										</div>
+										<div class="box-r">
+											<a id="pub-btn-top-23807346" lang="23807346" href="javascript:;" class="pub-icons add-pub-btn add-pub-btn-unvalid">评论</a>
+											<a id="pub-loading-top-23807346" href="javascript:;" class="loading-ico loading-ico-top pub-loading-top">发布中...</a>
+										</div>
+									</div>
+
+
+
+
+									<div class="tip-3" id="hidden-comt-23807346">
+										<a href="javascript:;" class="hiddenCom-Btn" lang="23807346"><em class="pinglun em2"></em><span>收起</span></a>
+									</div>
+									<div class="write-error-box-top">
+										<div class="write-error-desc" id="write-error-desc-23807346"></div>
+									</div>
+								</div>
+								<input type="hidden" id="hidsubjectid-23807346" value="1">
+								</div>
+
+
+							</div>
+
+						</div>
+
+        				<div class="item">
+
+        					<div class="timeIntoPool">1545217200020000,1545219136549000</div>
+
+								<div class="news-pic"><img lang="23807521" original="//img3.chouti.com/CHOUTI_20181219/DC4A8DBC67FE4C219B88B0B80A8BA33F_W424H424=C120x120.jpg?quality=80" src="images/DC4A8DBC67FE4C219B88B0B80A8BA33F_W424H424=C120x120.jpg" alt="抽屉新热榜" style="display: inline;"></div>
+
+
+							<div class="null-item"></div>
+
+							<div class="news-content" id="newsContent23807521">
+								<div class="part1">
+
+
+										<a href="http://tech.qq.com/a/20181219/012915.htm" class="show-content color-chag" target="_blank" onmousedown="linksClickStat(23807521);">
+
+
+
+
+
+
+
+												【ofo押金风波背后：最惨股东滴滴3.7亿美元或打水漂】若ofo真的进入破产重整程序，根据债权先于股权的原则，债权将优先得到清偿。这也意味着，滴滴作为第一大纯股权投资机构，会成为损失最大的输家。
+
+
+										</a>
+
+
+
+										<span class="content-source">-tech.qq.com</span>
+
+									<!-- 段子和谣言类别不显示类别名称 -->
+
+										<a href="https://dig.chouti.com/r/tec/hot/1" class="n2"><span class="content-kind">挨踢1024</span></a>
+
+									<!-- 来源手机客户端 -->
+
+
+
+
+									<!-- 显示话题标签 -->
+
+								</div>
+								<!-- 显示摘要 -->
+
+								<div class="part2" share-pic="http://img3.chouti.com/CHOUTI_20181219/DC4A8DBC67FE4C219B88B0B80A8BA33F_W424H424.jpg" share-title="【ofo押金风波背后：最惨股东滴滴3.7亿美元或打水漂】若ofo真的进入破产重整程序，根据债权先于股权的原则，债权将优先得到清偿。这也意味着，滴滴作为第一大纯股权投资机构，会成为损失最大的输家。" share-summary="" share-linkid="23807521" share-subject="挨踢1024">
+
+
+
+
+										<a href="javascript:;" class="digg-a" title="推荐"><span class="hand-icon icon-digg"></span><b>9</b><i style="display:none">23807521</i></a>
+
+
+									<a href="javascript:;" class="discus-a" id="discus-a-23807521" timetopool="32分钟前" lang="23807521"><span class="hand-icon icon-discus"></span><b>10</b></a>
+
+
+										<a href="javascript:;" class="collect-a" id="collect-a-23807521" lang="23807521" title="加入私藏" destjid="" jid="qqtech"><span class="hand-icon icon-collect"></span><b>私藏</b></a>
+
+
+
+
+										<a href="https://dig.chouti.com/user/qqtech/submitted/1" class="user-a"><span><img src="images/E668F1F9FC2040FAA9E01547F2BC29FA_W48H48=32x32.jpg"></span><b>腾讯科技</b></a>
+
+									<span class="left time-into"><a class="time-a" href="https://dig.chouti.com/link/23807521" target="_blank"><b>32分钟前</b></a><i>入热榜</i></span>
+									<!-- 分享各微博的按钮 -->
+									<span class="share-site-to">
+										<i>分享到</i>
+										<span class="share-icon">
+											<a class="icon-sina" id="icon-sina" title="分享到新浪微博"></a>
+											<a class="icon-douban" id="icon-douban" title="分享到豆瓣"></a>
+											<a class="icon-qqzone" id="icon-qqzone" title="分享到QQ空间"></a>
+											<a class="icon-renren" id="icon-renren" title="分享到人人网"></a>
+											<a class="share-none"></a>
+										</span>
+									</span>
+
+								</div>
+								<!-- 评论区域 -->
+								<div class="comment-box-area" id="comment-box-area-23807521" style="display: none;">
+								<div class="pinglun arrow" id="comt-arrow-23807521"></div>
+								<a class="pinglun close-comt" title="关闭" href="javascript:;" lang="23807521"></a>
+								<div class="corner comment-box" id="comment-box-23807521">
+
+									<div class="loading-ico loading-ico-top" id="loading-comment-top-23807521" style="margin-left:230px;">加载中，请稍候...</div>
+									<div class="comment-box-top" id="comment-box-top-23807521">
+										<div class="tip-1">最热评论(<span id="newestCount-23807521">3</span>)</div>
+										<div class="tip-2"><a href="https://dig.chouti.com/link/23807521" target="_blank"><em class="pinglun em1"></em><span>去评论页面</span></a></div>
+									</div>
+									<!-- 评论树形 -->
+									<ul class="filetree comment-list-top-2" id="comment-list-top-23807521"></ul>
+
+									<!-- 谣言类别显示相信还是置疑选项 -->
+
+
+									<!-- 判断该新闻评论是否关闭 -->
+
+
+									<!-- 评论输入框和回复框 -->
+									<div class="huifu-top-box" id="huifu-top-box-23807521">
+										<div class="box-l txt-input-area-div-top corner no-corner-bottom">
+                                            <div id="lab-comment-top-23807521" class="lab-comment-top">回复  <span id="nick--23807521"></span>:</div>
+											<!-- 针对谣言文本输入框无效 -->
+
+
+
+												<textarea lang="23807521" maxlength="150" name="txt-huifu-top" id="txt-huifu-top-23807521" class="txt-huifu txt-huifu-top"></textarea>
+
+
+										</div>
+										<div class="box-r">
+											<a id="pub-btn-top-23807521" lang="23807521" href="javascript:;" class="pub-icons add-pub-btn add-pub-btn-unvalid">评论</a>
+											<a id="pub-loading-top-23807521" href="javascript:;" class="loading-ico loading-ico-top pub-loading-top">发布中...</a>
+										</div>
+									</div>
+
+
+
+
+									<div class="tip-3" id="hidden-comt-23807521">
+										<a href="javascript:;" class="hiddenCom-Btn" lang="23807521"><em class="pinglun em2"></em><span>收起</span></a>
+									</div>
+									<div class="write-error-box-top">
+										<div class="write-error-desc" id="write-error-desc-23807521"></div>
+									</div>
+								</div>
+								<input type="hidden" id="hidsubjectid-23807521" value="100">
+								</div>
+
+
+							</div>
+
+						</div>
+
+        				<div class="item">
+
+        					<div class="timeIntoPool">1545216600047000,1545219136549000</div>
+
+								<div class="news-pic"><img lang="23807451" original="//img3.chouti.com/CHOUTI_20181219/E107E4ACD8BE45F08AADE232925E0921_W800H1067=C120x120.jpg?quality=80" src="images/E107E4ACD8BE45F08AADE232925E0921_W800H1067=C120x120.jpg" alt="抽屉新热榜" style="display: inline;"></div>
+
+
+							<div class="null-item"></div>
+
+							<div class="news-content" id="newsContent23807451">
+								<div class="part1">
+
+
+										<a href="http://dig.chouti.com/pic/show?nid=8871da6ca40a92883030781550a84261&amp;lid=23807451" class="show-content color-chag" target="_blank" onmousedown="linksClickStat(23807451);">
+
+
+
+
+
+
+
+												虎扑看到个贴，给女朋友买圣诞礼物被塞了写了别人名字的错误贺卡导致女朋友提出分手，找客服理论结果被客服怼。我一开始看还觉得好倒霉，太惨了，直到划到礼物实物图，登时被吓得花容失色嗷一声叫出来，难道这就是传说中的骨灰盒水果？！这种东西，就算没有错误的贺卡也没人想收好吗！
+
+
+										</a>
+
+
+
+									<!-- 段子和谣言类别不显示类别名称 -->
+
+										<a href="https://dig.chouti.com/r/pic/hot/1" class="n2"><span class="content-kind">图片</span></a>
+
+									<!-- 来源手机客户端 -->
+
+										<span class="s-source">来自<a href="http://dig.chouti.com/download/model/iphone" target="_blank" class="s-phone">iPhone</a></span>
+
+
+
+
+									<!-- 显示话题标签 -->
+
+								</div>
+								<!-- 显示摘要 -->
+
+								<div class="part2" share-pic="http://img3.chouti.com/CHOUTI_20181219/E107E4ACD8BE45F08AADE232925E0921_W800H1067.jpg" share-title="虎扑看到个贴，给女朋友买圣诞礼物被塞了写了别人名字的错误贺卡导致女朋友提出分手，找客服理论结果被客服怼。我一开始看还觉得好倒霉，太惨了，直到划到礼物实物图，登时被吓得花容失色嗷一声叫出来，难道这就是传说中的骨灰盒水果？！这种东西，就算没有错误的贺卡也没人想收好吗！" share-summary="" share-linkid="23807451" share-subject="图片">
+
+
+
+
+										<a href="javascript:;" class="digg-a" title="推荐"><span class="hand-icon icon-digg"></span><b>18</b><i style="display:none">23807451</i></a>
+
+
+									<a href="javascript:;" class="discus-a" id="discus-a-23807451" timetopool="42分钟前" lang="23807451" onmousedown="linksClickStat(23807451);"><span class="hand-icon icon-discus"></span><b>30</b></a>
+
+
+										<a href="javascript:;" class="collect-a" id="collect-a-23807451" lang="23807451" title="加入私藏" destjid="" jid="wb_1645005104"><span class="hand-icon icon-collect"></span><b>私藏</b></a>
+
+
+
+
+										<a href="https://dig.chouti.com/user/wb_1645005104/submitted/1" class="user-a"><span><img src="images/AF66822ED43E47BAA038CD1D6BB05E59_W180H180=32x32.jpg"></span><b>废话师</b></a>
+
+									<span class="left time-into"><a class="time-a" href="https://dig.chouti.com/link/23807451" target="_blank"><b>42分钟前</b></a><i>入热榜</i></span>
+									<!-- 分享各微博的按钮 -->
+									<span class="share-site-to">
+										<i>分享到</i>
+										<span class="share-icon">
+											<a class="icon-sina" id="icon-sina" title="分享到新浪微博"></a>
+											<a class="icon-douban" id="icon-douban" title="分享到豆瓣"></a>
+											<a class="icon-qqzone" id="icon-qqzone" title="分享到QQ空间"></a>
+											<a class="icon-renren" id="icon-renren" title="分享到人人网"></a>
+											<a class="share-none"></a>
+										</span>
+									</span>
+								</div>
+								<!-- 评论区域 -->
+								<div class="comment-box-area" id="comment-box-area-23807451" style="display: none;">
+								<div class="pinglun arrow" id="comt-arrow-23807451"></div>
+								<a class="pinglun close-comt" title="关闭" href="javascript:;" lang="23807451"></a>
+								<div class="corner comment-box" id="comment-box-23807451">
+
+									<div class="loading-ico loading-ico-top" id="loading-comment-top-23807451" style="margin-left:230px;">加载中，请稍候...</div>
+									<div class="comment-box-top" id="comment-box-top-23807451">
+										<div class="tip-1">最热评论(<span id="newestCount-23807451">3</span>)</div>
+										<div class="tip-2"><a href="https://dig.chouti.com/link/23807451" target="_blank"><em class="pinglun em1"></em><span>去评论页面</span></a></div>
+									</div>
+									<!-- 评论树形 -->
+									<ul class="filetree comment-list-top-2" id="comment-list-top-23807451"></ul>
+
+									<!-- 谣言类别显示相信还是置疑选项 -->
+
+
+									<!-- 判断该新闻评论是否关闭 -->
+
+
+									<!-- 评论输入框和回复框 -->
+									<div class="huifu-top-box" id="huifu-top-box-23807451">
+										<div class="box-l txt-input-area-div-top corner no-corner-bottom">
+                                            <div id="lab-comment-top-23807451" class="lab-comment-top">回复  <span id="nick--23807451"></span>:</div>
+											<!-- 针对谣言文本输入框无效 -->
+
+
+
+												<textarea lang="23807451" maxlength="150" name="txt-huifu-top" id="txt-huifu-top-23807451" class="txt-huifu txt-huifu-top"></textarea>
+
+
+										</div>
+										<div class="box-r">
+											<a id="pub-btn-top-23807451" lang="23807451" href="javascript:;" class="pub-icons add-pub-btn add-pub-btn-unvalid">评论</a>
+											<a id="pub-loading-top-23807451" href="javascript:;" class="loading-ico loading-ico-top pub-loading-top">发布中...</a>
+										</div>
+									</div>
+
+
+
+
+									<div class="tip-3" id="hidden-comt-23807451">
+										<a href="javascript:;" class="hiddenCom-Btn" lang="23807451"><em class="pinglun em2"></em><span>收起</span></a>
+									</div>
+									<div class="write-error-box-top">
+										<div class="write-error-desc" id="write-error-desc-23807451"></div>
+									</div>
+								</div>
+								<input type="hidden" id="hidsubjectid-23807451" value="4">
+								</div>
+
+
+							</div>
+
+						</div>
+
+        				<div class="item">
+
+        					<div class="timeIntoPool">1545216000013000,1545219136549000</div>
+
+								<div class="news-pic"><img lang="23807396" original="//img3.chouti.com/CHOUTI_20181219/EE9C7EF6593042DAB6047C00A11AD78C_W480H480=C120x120.jpg?quality=80" src="images/EE9C7EF6593042DAB6047C00A11AD78C_W480H480=C120x120.jpg" alt="抽屉新热榜" style="display: inline;"></div>
+
+
+							<div class="null-item"></div>
+
+							<div class="news-content" id="newsContent23807396">
+								<div class="part1">
+
+
+										<a href="https://www.weibo.com/1677574270/H7XBWEYOO" class="show-content color-chag" target="_blank" onmousedown="linksClickStat(23807396);">
+
+
+
+
+
+
+
+												@猪蹄蹄小朋友：经济下行某个侧面上也是好事儿，像我和我身边的朋友，现在都不想着奋斗和发财了，开始平和了，人文了，对精神情感，文学艺术，家务厨艺啥的，兴趣陡增，比较严重的已经开始考虑生孩子了。
+
+
+										</a>
+
+
+
+										<span class="content-source">-www.weibo.com</span>
+
+									<!-- 段子和谣言类别不显示类别名称 -->
+
+										<a href="https://dig.chouti.com/r/news/hot/1" class="n2"><span class="content-kind">42区</span></a>
+
+									<!-- 来源手机客户端 -->
+
+
+
+
+									<!-- 显示话题标签 -->
+
+								</div>
+								<!-- 显示摘要 -->
+
+								<div class="part2" share-pic="http://img3.chouti.com/CHOUTI_20181219/EE9C7EF6593042DAB6047C00A11AD78C_W480H480.jpg" share-title="@猪蹄蹄小朋友：经济下行某个侧面上也是好事儿，像我和我身边的朋友，现在都不想着奋斗和发财了，开始平和了，人文了，对精神情感，文学艺术，家务厨艺啥的，兴趣陡增，比较严重的已经开始考虑生孩子了。" share-summary="" share-linkid="23807396" share-subject="42区">
+
+
+
+
+										<a href="javascript:;" class="digg-a" title="推荐"><span class="hand-icon icon-digg"></span><b>30</b><i style="display:none">23807396</i></a>
+
+
+									<a href="javascript:;" class="discus-a" id="discus-a-23807396" timetopool="52分钟前" lang="23807396"><span class="hand-icon icon-discus"></span><b>12</b></a>
+
+
+										<a href="javascript:;" class="collect-a" id="collect-a-23807396" lang="23807396" title="加入私藏" destjid="" jid="wb_1677574270"><span class="hand-icon icon-collect"></span><b>私藏</b></a>
+
+
+
+
+										<a href="https://dig.chouti.com/user/wb_1677574270/submitted/1" class="user-a"><span><img src="images/69E611A96BE94DD6A20AB120C8E79656_W179H179=32x32.jpg"></span><b>猪蹄蹄小朋友</b></a>
+
+									<span class="left time-into"><a class="time-a" href="https://dig.chouti.com/link/23807396" target="_blank"><b>52分钟前</b></a><i>入热榜</i></span>
+									<!-- 分享各微博的按钮 -->
+									<span class="share-site-to">
+										<i>分享到</i>
+										<span class="share-icon">
+											<a class="icon-sina" id="icon-sina" title="分享到新浪微博"></a>
+											<a class="icon-douban" id="icon-douban" title="分享到豆瓣"></a>
+											<a class="icon-qqzone" id="icon-qqzone" title="分享到QQ空间"></a>
+											<a class="icon-renren" id="icon-renren" title="分享到人人网"></a>
+											<a class="share-none"></a>
+										</span>
+									</span>
+
+								</div>
+								<!-- 评论区域 -->
+								<div class="comment-box-area" id="comment-box-area-23807396" style="display: none;">
+								<div class="pinglun arrow" id="comt-arrow-23807396"></div>
+								<a class="pinglun close-comt" title="关闭" href="javascript:;" lang="23807396"></a>
+								<div class="corner comment-box" id="comment-box-23807396">
+
+									<div class="loading-ico loading-ico-top" id="loading-comment-top-23807396" style="margin-left:230px;">加载中，请稍候...</div>
+									<div class="comment-box-top" id="comment-box-top-23807396">
+										<div class="tip-1">最热评论(<span id="newestCount-23807396">3</span>)</div>
+										<div class="tip-2"><a href="https://dig.chouti.com/link/23807396" target="_blank"><em class="pinglun em1"></em><span>去评论页面</span></a></div>
+									</div>
+									<!-- 评论树形 -->
+									<ul class="filetree comment-list-top-2" id="comment-list-top-23807396"></ul>
+
+									<!-- 谣言类别显示相信还是置疑选项 -->
+
+
+									<!-- 判断该新闻评论是否关闭 -->
+
+
+									<!-- 评论输入框和回复框 -->
+									<div class="huifu-top-box" id="huifu-top-box-23807396">
+										<div class="box-l txt-input-area-div-top corner no-corner-bottom">
+                                            <div id="lab-comment-top-23807396" class="lab-comment-top">回复  <span id="nick--23807396"></span>:</div>
+											<!-- 针对谣言文本输入框无效 -->
+
+
+
+												<textarea lang="23807396" maxlength="150" name="txt-huifu-top" id="txt-huifu-top-23807396" class="txt-huifu txt-huifu-top"></textarea>
+
+
+										</div>
+										<div class="box-r">
+											<a id="pub-btn-top-23807396" lang="23807396" href="javascript:;" class="pub-icons add-pub-btn add-pub-btn-unvalid">评论</a>
+											<a id="pub-loading-top-23807396" href="javascript:;" class="loading-ico loading-ico-top pub-loading-top">发布中...</a>
+										</div>
+									</div>
+
+
+
+
+									<div class="tip-3" id="hidden-comt-23807396">
+										<a href="javascript:;" class="hiddenCom-Btn" lang="23807396"><em class="pinglun em2"></em><span>收起</span></a>
+									</div>
+									<div class="write-error-box-top">
+										<div class="write-error-desc" id="write-error-desc-23807396"></div>
+									</div>
+								</div>
+								<input type="hidden" id="hidsubjectid-23807396" value="1">
+								</div>
+
+
+							</div>
+
+						</div>
+
+        				<div class="item">
+
+        					<div class="timeIntoPool">1545215679438000,1545219136549000</div>
+
+								<div class="news-pic"><img lang="23790791" original="//img3.chouti.com/CHOUTI_20181219/3075B0B80E4440C58F47546B5AE5EA37_W402H402=C120x120.jpg?quality=80" src="images/bai.png" alt="抽屉新热榜"></div>
+
+
+							<div class="null-item"></div>
+
+							<div class="news-content" id="newsContent23790791">
+								<div class="part1">
+
+
+										<a href="http://www.newsmth.net/bbstcon.php?board=Emprise&amp;gid=308484" class="show-content color-chag" target="_blank" onmousedown="linksClickStat(23790791);">
+
+
+
+
+
+
+
+												武侠都是北侠比南侠高一点吗？
+
+
+										</a>
+
+
+
+										<span class="content-source">-www.newsmth.net</span>
+
+									<!-- 段子和谣言类别不显示类别名称 -->
+
+										<a href="https://dig.chouti.com/r/ask/hot/1" class="n2"><span class="content-kind">你问我答</span></a>
+
+									<!-- 来源手机客户端 -->
+
+
+
+
+									<!-- 显示话题标签 -->
+
+								</div>
+								<!-- 显示摘要 -->
+
+									<div class="area-summary">
+										<span class="summary">发信人:ember(心的方向),信区:Emprise标题:武侠都是北侠比南侠高一点吗？发信站:水木社区(SunDec1620:29:132018),站内南慕蓉不如北乔峰南侠展昭不如北侠欧阳春南帝好像也略逊北丐一丢丢--发自xsmth(...</span>
+									</div>
+
+								<div class="part2" share-pic="http://img3.chouti.com/CHOUTI_20181219/3075B0B80E4440C58F47546B5AE5EA37_W402H402.jpg" share-title="武侠都是北侠比南侠高一点吗？" share-summary="发信人:ember(心的方向),信区:Emprise标题:武侠都是北侠比南侠高一点吗？发信站:水木社区(SunDec1620:29:132018),站内南慕蓉不如北乔峰南侠展昭不如北侠欧阳春南帝好像也略逊北丐一丢丢--发自xsmth(..." share-linkid="23790791" share-subject="你问我答">
+
+
+
+
+										<a href="javascript:;" class="digg-a" title="推荐"><span class="hand-icon icon-digg"></span><b>11</b><i style="display:none">23790791</i></a>
+
+
+									<a href="javascript:;" class="discus-a" id="discus-a-23790791" timetopool="57分钟前" lang="23790791"><span class="hand-icon icon-discus"></span><b>40</b></a>
+
+
+										<a href="javascript:;" class="collect-a" id="collect-a-23790791" lang="23790791" title="加入私藏" destjid="" jid="chouti0254"><span class="hand-icon icon-collect"></span><b>私藏</b></a>
+
+
+
+
+										<a href="https://dig.chouti.com/user/chouti0254/submitted/1" class="user-a"><span><img src="images/wKgCL07MonLVieuCAAAeJuxWqMQ917=32x32.gif"></span><b>水木十大热门话题</b></a>
+
+									<span class="left time-into"><a class="time-a" href="https://dig.chouti.com/link/23790791" target="_blank"><b>57分钟前</b></a><i>入热榜</i></span>
+									<!-- 分享各微博的按钮 -->
+									<span class="share-site-to">
+										<i>分享到</i>
+										<span class="share-icon">
+											<a class="icon-sina" id="icon-sina" title="分享到新浪微博"></a>
+											<a class="icon-douban" id="icon-douban" title="分享到豆瓣"></a>
+											<a class="icon-qqzone" id="icon-qqzone" title="分享到QQ空间"></a>
+											<a class="icon-renren" id="icon-renren" title="分享到人人网"></a>
+											<a class="share-none"></a>
+										</span>
+									</span>
+
+								</div>
+								<!-- 评论区域 -->
+								<div class="comment-box-area" id="comment-box-area-23790791" style="display: none;">
+								<div class="pinglun arrow" id="comt-arrow-23790791"></div>
+								<a class="pinglun close-comt" title="关闭" href="javascript:;" lang="23790791"></a>
+								<div class="corner comment-box" id="comment-box-23790791">
+
+									<div class="loading-ico loading-ico-top" id="loading-comment-top-23790791" style="margin-left:230px;">加载中，请稍候...</div>
+									<div class="comment-box-top" id="comment-box-top-23790791">
+										<div class="tip-1">最热评论(<span id="newestCount-23790791">3</span>)</div>
+										<div class="tip-2"><a href="https://dig.chouti.com/link/23790791" target="_blank"><em class="pinglun em1"></em><span>去评论页面</span></a></div>
+									</div>
+									<!-- 评论树形 -->
+									<ul class="filetree comment-list-top-2" id="comment-list-top-23790791"></ul>
+
+									<!-- 谣言类别显示相信还是置疑选项 -->
+
+
+									<!-- 判断该新闻评论是否关闭 -->
+
+
+									<!-- 评论输入框和回复框 -->
+									<div class="huifu-top-box" id="huifu-top-box-23790791">
+										<div class="box-l txt-input-area-div-top corner no-corner-bottom">
+                                            <div id="lab-comment-top-23790791" class="lab-comment-top">回复  <span id="nick--23790791"></span>:</div>
+											<!-- 针对谣言文本输入框无效 -->
+
+
+
+												<textarea lang="23790791" maxlength="150" name="txt-huifu-top" id="txt-huifu-top-23790791" class="txt-huifu txt-huifu-top"></textarea>
+
+
+										</div>
+										<div class="box-r">
+											<a id="pub-btn-top-23790791" lang="23790791" href="javascript:;" class="pub-icons add-pub-btn add-pub-btn-unvalid">评论</a>
+											<a id="pub-loading-top-23790791" href="javascript:;" class="loading-ico loading-ico-top pub-loading-top">发布中...</a>
+										</div>
+									</div>
+
+
+
+
+									<div class="tip-3" id="hidden-comt-23790791">
+										<a href="javascript:;" class="hiddenCom-Btn" lang="23790791"><em class="pinglun em2"></em><span>收起</span></a>
+									</div>
+									<div class="write-error-box-top">
+										<div class="write-error-desc" id="write-error-desc-23790791"></div>
+									</div>
+								</div>
+								<input type="hidden" id="hidsubjectid-23790791" value="151">
+								</div>
+
+
+							</div>
+
+						</div>
+			</div>
+
+			<!--<div class="no-bottom"></div>-->
+			<div id="page-area" class="page-area">
+					 <div id="dig_lcpage"><ul><li><span class="ct_pagepw">1</span></li><li><a href="https://dig.chouti.com/all/hot/recent/2" class="ct_pagepa">2</a></li><li><a href="https://dig.chouti.com/all/hot/recent/3" class="ct_pagepa">3</a></li><li><a href="https://dig.chouti.com/all/hot/recent/4" class="ct_pagepa">4</a></li><li><a href="https://dig.chouti.com/all/hot/recent/5" class="ct_pagepa">5</a></li><li><a href="https://dig.chouti.com/all/hot/recent/6" class="ct_pagepa">6</a></li><li><a href="https://dig.chouti.com/all/hot/recent/7" class="ct_pagepa">7</a></li><li><a href="https://dig.chouti.com/all/hot/recent/8" class="ct_pagepa">8</a></li><li><a href="https://dig.chouti.com/all/hot/recent/9" class="ct_pagepa">9</a></li><li><a href="https://dig.chouti.com/all/hot/recent/10" class="ct_pagepa">10</a></li><li><a href="https://dig.chouti.com/all/hot/recent/2" class="ct_page_edge">下一页</a></li></ul></div>
+			</div>
+
+		</div>
+
+        <div class="content-R"></div>
+
+        <div class="footer-box"></div>
+
+    <div class="footer-box">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="images/common-4bb579ce86.js"></script>
+
+<script src="images/load.min.js"></script>
+
+
+
+<script type="text/x-handlebars-template" id="tpl-top-content-news">
+    {{#each data}}
+    <div class="top-item">
+        <div class="top-points">
+            <a href="{{this.commentsUrl}}" class="points-a">{{this.ups}}</a>
+        </div>
+        <a class="top-content" href="{{this.commentsUrl}}" target="_blank">{{this.title}}</a>
+    </div>
+    {{/each}}
+</script>
+
+<script type="text/x-handlebars-template" id="tpl-top-content-comments">
+    {{#each data}}
+    <div class="top-item">
+        <a class="top-comm-nick" href="/user/{{this.jid}}/submitted/1" target="_blank">{{this.nick}}</a>
+        <em class="top-comm-time">{{this.commentTime}}</em>
+        <div style="float:right;">
+            {{#ifIsVote this.isVote 0}}
+            <a class="hot-comment-ding top-comm-operate-pre" lang="{{this.id}}" linkid="{{this.linkId}}" jid="{{this.jid}}" href="javascript:;">顶[{{this.ups}}]</a>
+            {{/ifIsVote}}
+            {{#ifIsVote this.isVote -1}}
+            <a class="top-comm-operate-after" href="javascript:;" lang="{{this.id}}">顶[{{this.ups}}]</a>
+            {{/ifIsVote}}
+            {{#ifIsVote this.isVote 1}}
+            <a class="top-comm-operate-after" href="javascript:;" lang="{{this.id}}">已顶[{{this.ups}}]</a>
+            {{/ifIsVote}}
+            {{#ifIsVote this.isVote 0}}
+            <a class="hot-comment-cai top-comm-operate-pre" lang="{{this.id}}" linkid="{{this.linkId}}" jid="{{this.jid}}" href="javascript:;">踩[{{this.downs}}]</a>
+            {{/ifIsVote}}
+            {{#ifIsVote this.isVote 1}}
+            <a class="top-comm-operate-after" href="javascript:;" lang="{{this.id}}">踩[{{this.downs}}]</a>
+            {{/ifIsVote}}
+            {{#ifIsVote this.isVote -1}}
+            <a class="top-comm-operate-after" href="javascript:;" lang="{{this.id}}">已踩[{{this.downs}}]</a>
+            {{/ifIsVote}}
+            <a class="top-comm-operate-pre" href="/link/{{this.linkId}}/comments/{{this.id}}" target="_blank">回复</a>
+        </div>
+        <div class="top-comm-content">
+            {{this.content}}
+        </div>
+        <a class="top-comm-linktitle" href="/link/{{this.linkId}}" target="_blank">{{this.linksTitle}}</a>
+    </div>
+    {{/each}}
+</script>
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="images/amrnb-5fc751ad41.js"></script>
+<!--<![endif]-->
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        //当用户登录后才去判断
+        if($("#userProNick").length > 0) {
+
+            $("#userProNick").html(chouti.subNickLength($("#userProNick").html(), 5));
+
+        }
+    })
+
+</script>
+
+
+
+
+<script type="text/javascript">
+    $(window).ready(function () {
+        var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+            var parseThumbnailElements = function(el) {
+                var thumbElements = $('.chat figure'),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        item;
+
+                for(var i = 0; i < numNodes; i++) {
+
+                    figureEl = thumbElements[i];
+
+                    if(figureEl.nodeType !== 1) {
+                        continue;
+                    }
+
+                    linkEl = figureEl.children[0];
+
+                    size = linkEl.getAttribute('data-size').split('x');
+
+                    // create slide object
+                    item = {
+                        src: linkEl.getAttribute('src'),
+                        w: parseInt(size[0], 10),
+                        h: parseInt(size[1], 10)
+                    };
+
+
+                    if(figureEl.children.length > 1) {
+                        item.title = figureEl.children[1].innerHTML;
+                    }
+
+                    if(linkEl.length > 0) {
+                        item.msrc = linkEl.getAttribute('src');
+                    }
+
+                    item.el = figureEl;
+                    items.push(item);
+                }
+
+                return items;
+            };
+
+            var closest = function closest(el, fn) {
+                return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+            };
+
+            var onThumbnailsClick = function(e) {
+                e = e || window.event;
+
+                if(e.target.className.indexOf('pic') != -1){
+                    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+                }
+
+
+                var eTarget = e.target || e.srcElement;
+
+                var clickedListItem = closest(eTarget, function(el) {
+                    return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                });
+
+                if(!clickedListItem) {
+                    return;
+                }
+
+                var clickedGallery = clickedListItem.parentNode,
+                        childNodes = clickedListItem.parentNode.childNodes,
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                for (var i = 0; i < numChildNodes; i++) {
+                    if(childNodes[i].nodeType !== 1) {
+                        continue;
+                    }
+
+                    if(childNodes[i] === clickedListItem) {
+                        index = nodeIndex;
+                        break;
+                    }
+                    nodeIndex++;
+                }
+
+                $('.chat figure').each(function(i,val){
+                    if($(this).children().attr('src') == clickedListItem.childNodes[0].src){
+                        index = i;
+                    }
+                })
+
+                if(index >= 0) {
+                    openPhotoSwipe( index, clickedGallery );
+                }
+                return false;
+            };
+
+            var photoswipeParseHash = function() {
+                var hash = window.location.hash.substring(1),
+                        params = {};
+
+                if(hash.length < 5) {
+                    return params;
+                }
+
+                var vars = hash.split('&');
+                for (var i = 0; i < vars.length; i++) {
+                    if(!vars[i]) {
+                        continue;
+                    }
+                    var pair = vars[i].split('=');
+                    if(pair.length < 2) {
+                        continue;
+                    }
+                    params[pair[0]] = pair[1];
+                }
+
+                if(params.gid) {
+                    params.gid = parseInt(params.gid, 10);
+                }
+
+                return params;
+            };
+
+            var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                items = parseThumbnailElements(galleryElement);
+
+                options = {
+
+                    galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                    getThumbBoundsFn: function(index) {
+                        var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                        return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+                    }
+
+                };
+
+                if(fromURL) {
+                    if(options.galleryPIDs) {
+                        for(var j = 0; j < items.length; j++) {
+                            if(items[j].pid == index) {
+                                options.index = j;
+                                break;
+                            }
+                        }
+                    } else {
+                        options.index = parseInt(index, 10) - 1;
+                    }
+                } else {
+                    options.index = parseInt(index, 10);
+                }
+
+                if( isNaN(options.index) ) {
+                    return;
+                }
+
+                if(disableAnimation) {
+                    options.showAnimationDuration = 0;
+                }
+
+                gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+                gallery.init();
+            };
+
+            var galleryElements = document.querySelectorAll( gallerySelector );
+
+            for(var i = 0, l = galleryElements.length; i < l; i++) {
+                galleryElements[i].setAttribute('data-pswp-uid', i+1);
+                galleryElements[i].onclick = onThumbnailsClick;
+            }
+
+            var hashData = photoswipeParseHash();
+            if(hashData.pid && hashData.gid) {
+                openPhotoSwipe( hashData.pid , galleryElements[ hashData.gid - 1 ], true, true );
+            }
+        };
+
+        initPhotoSwipeFromDOM('.chat');
+    })
+</script>
+
+
+
+
+
+<div class="user-opr-box" id="userOprBox">
+
+
+            <a href="https://dig.chouti.com/user/link/saved/1" style="border-top:0;">我的新热榜</a>
+
+
+            <a href="http://www.chouti.com/" target="_blank" class="ie6-a">我的收藏</a>
+
+
+            <a href="https://dig.chouti.com/user/pay/account/1" class="ie6-a">我的钱包</a>
+
+
+            <a href="https://dig.chouti.com/profile">设置</a>
+
+
+    <a class="logout" href="javascript:;">退出</a>
+
+</div>
+
+<!-- 首页通知 -->
+<!--<span class="f-time">{{createTime}}</span>-->
+<script id="homeNotice-template" type="text/x-handlebars-template">
+
+    {{#each data}}
+    <div class="f-list" id="{{id}}" messageid="{{messageId}}">
+        <span class="f-n-icon f-bs-s" id="bs_{{id}}"></span>
+        <div class="f-t" lang="{{id}}" id="ft_{{id}}">{{{title}}}</div>
+
+        <a class="f-n-icon f-close" title="设为已读" lang="{{id}}" id="close_{{id}}"> </a>
+    </div>
+    {{/each}}
+
+    <div class="clear-div"></div>
+    <div class="opr-area" id="opr_{{id}}">
+        <a href="javascript:;" class="f-n-icon f-btn-read" id="btnReadAll">全部已读</a>
+        <a href="/message/1" class="f-n-icon f-btn-all">查看所有<em>→</em></a>
+        <div class="clear-div"></div>
+    </div>
+</script>
+<div class="notice-area" id="user_notice_page">
+    <!-- 加上 iframe 是为了能遮盖住flash -->
+    <!--
+    <iframe id="noticeIframe" name="noticeIframe" scrolling="no" height="0px" width="250px" frameborder="0"
+    style="position:absolute;z-index:2;background-color:#fff" src=""></iframe>
+    -->
+    <div style="position:relative;z-index:3;" id="notice_b_box">
+        <!--
+        <b class="f-n-icon f-btn-pot"></b>
+        -->
+        <div class="notice-box" id="notice_box">
+            <a id="nots-loading" href="javascript:;" class="loading" style="display:
+        inline-block;padding:0px;padding-left:30px;color:#336699;font-weight:normal;margin-left:70px;">加载中...</a>
+        </div>
+    </div>
+</div>
+
+<!-- -->
+<div class="foot-nav">
+    <div style="display:none" id="y-destjid"></div>
+    <div style="display:none" id="y-destnick"></div>
+    <a href="https://dig.chouti.com/help/about" target="_blank">关于我们</a><span>|</span><a href="https://dig.chouti.com/help/contact" target="_blank">联系我们</a><span>|</span><a href="https://dig.chouti.com/help/service" target="_blank">服务条款</a><span>|</span><a href="https://dig.chouti.com/help/privacy" target="_blank">隐私政策</a><span>|</span><a href="https://dig.chouti.com/help/tool" target="_blank">抽屉新热榜工具</a><span>|</span><!--<a href="http://img.chouti.com/toolsffcj.html"
+        target="_blank">浏览器插件</a><span>|</span>--><a href="https://dig.chouti.com/download/model" target="_blank">下载客户端</a><span>|</span><a href="https://dig.chouti.com/feedback" target="_blank">意见与反馈</a><span>|</span><a href="https://dig.chouti.com/help/goodlink" target="_blank">友情链接</a><span>|</span><a href="https://dig.chouti.com/topic/157" target="_blank">公告</a><!--<span>|</span><a href="/points/gifts" target="_blank">积分商城</a>-->
+    <a href="http://dig.chouti.com/feed.xml" target="_blank" style="margin-left:0;vertical-align:-2px;" title="Rss订阅，Feed地址：http://dig.chouti.com/feed.xml"><img src="images/ct_rss.gif" width="36" height="14"></a>
+</div>
+<div class="foot-nav2">
+    <a target="_blank" href="http://www.gozap.com/"><img class="foot_e" src="images/gozap-logo-50_15.gif"></a>
+    <span class="foot_d">旗下站点</span>
+    <span class="foot_a">©2018
+        chouti.com</span>
+    <a target="_blank" href="http://www.miibeian.gov.cn/" class="foot_b">京ICP备09053974号-3 京公网安备 110102004562</a>
+    <div style="margin-top:6px;">
+        <span class="foot_d">违法和不良信息举报：</span>
+        <span class="foot_a">电话：010-58302039  </span>
+        <span class="foot_a" style="margin-left: 15px;">邮箱：<a style="color: #369;margin-right: 10px;" href="mailto:jubao@chouti.com">jubao@chouti.com</a> </span>
+    </div>
+    <div style="margin-top:6px;">版权所有：北京格致璞科技有限公司</div>
+</div>
+
+<!-- 评论举报 的当前时间-->
+<input type="hidden" value="" id="hidJubaoTime">
+<!-- 登录框中用到的保存信息 -->
+<input type="hidden" id="isAjax" value="0">
+<input type="hidden" id="login_ajaxInfo" value="">
+<input type="hidden" id="isComment" value="">
+
+<a href="http://dig.chouti.com/sitemap.html" title="搞笑" style="display:none"><strong>搞笑</strong></a>
+<a href="http://dig.chouti.com/sitemap.xml" title="搞笑" style="display:none"><strong>搞笑</strong></a>
+
+<iframe id="maskIframe" name="maskIframe" scrolling="no" height="475px" width="300px" frameborder="0" style="display:none;" src="images/saved_resource.html"></iframe>
+
+<!-- 邮件分享样式框 -->
+<script type="text/x-handlebars-template" id="sendMail-model">
+
+    <div id="MailShare-dialog" class="mail-dialog dialog corner">
+        <div class="dialog-titlebar">
+            <div class="dialog-title" id="mailShareTitle">
+                <span>邮件分享</span>
+            </div>
+            <div class="dialog-titlebar-close"><a id="dialog-mail-close" class="icons dialog-btn-close" title="关闭"
+                                                  href="javascript:;"></a></div>
+        </div>
+        <div class="m-dialog-content dialog-content corner-bottom">
+
+            <div id="dialog-main-content" class="dialog-main-content">
+                <div class="mail-area">
+
+
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td class="tn">收件人</td>
+                            <td>
+                                <input type="text" class="text share-mail-txt" id="receiveName" name="receiveName">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tn">主题</td>
+                            <td><input type="text" class="text share-mail-txt" id="mailTitle" name="mailTitle"></td>
+                        </tr>
+                        <tr>
+                            <td class="tn">内容</br>(选填)</td>
+                            <td>
+
+                                <textarea class="text" id="mailContent" name="mailContent"></textarea>
+
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </div>
+                <div id="dialog-pane1" class="dialog-buttonpane white bottom-null">
+                    <div id="error-box1" class="write-error-box">
+                        <div class="write-error-desc" id="MailErrDesc"></div>
+                    </div>
+                    <div class="button-container">
+                        <a id="clear-btn-mail" href="javascript:;" class="pub-clear-btn">取消</a>
+                        <a id="sendMailBtn" href="javascript:;" class="pub-icons new-pub-btn new-pub-btn-unvalid">发&nbsp;送</a>
+                        <a id="mailSend-loading" href="javascript:;" class="loading">发送中...</a>
+                    </div>
+
+                </div>
+                <div style="height:30px;clear:both;overflow:hidden"></div>
+            </div>
+        </div>
+
+    </div>
+</script>
+
+<style>
+    /*验证码使用*/
+    .hide {
+        display: none;
+    }
+    .module-login-mask{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+    }
+
+    .module-login-mask .pr{
+        position: relative;
+    }
+
+    .module-login-mask a{
+        color: #369;
+    }
+
+    .module-login-mask input:focus{
+        background: white;
+    }
+
+    .module-login-mask a:hover{
+        text-decoration: underline;
+    }
+
+    .module-login-container{
+        height: 375px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        margin-top: -188px;
+    }
+
+    .module-login-container .header{
+        background: #e7ecf2;
+        padding: 0px 10px;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        color: #abb6d2;
+        position: relative;
+    }
+
+    .box-register{
+        position: relative;
+        width: 350px;
+        z-index: 100;
+        padding-left: 350px;
+        margin: auto;
+        height: 375px;
+        border-radius: 0 5px 5px 0;
+    }
+
+    .box-login{
+        position: absolute;
+        width: 350px;
+        height: 100%;
+        background: white;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .body-register, .body-login{
+        background: white;
+        height: 345px;
+        width: 350px;
+    }
+
+    .body-register{
+        border-left: 1px dotted #808080;
+        margin-left: -1px;
+    }
+
+    .tab-box{
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        color: #abb6d2;
+        cursor: pointer;
+    }
+
+    .tab-box span:hover{
+        color: #6AA1EA;
+    }
+
+    .tab-box .active{
+        color: #2559a4 !important;
+        cursor: default;
+    }
+
+    .box-mobilelogin, .box-idlogin, .box-btn, .box-register-mobile, .box-register-detail{
+        position: relative;
+        padding: 0 70px;
+    }
+
+    .box-mobilelogin div, .box-idlogin div, .box-register-mobile div, .box-register-detail div{
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    .box-mobilelogin select, .box-register-mobile select, .box-register-detail select{
+        width: 100%;
+        padding: 5px 2px;
+        border: 1px solid #CDDDEF;
+    }
+
+    .box-mobilelogin input, .box-idlogin input, .box-register-mobile input, .box-register-detail input{
+        width: 196px;
+        padding: 6px;
+        border: 1px solid #CDDDEF;
+        font-weight: bold;
+    }
+
+    .box-register-detail input[type="radio"]{
+        width: auto;
+        margin-left: 5px;
+        vertical-align: -2px;
+        border: none;
+    }
+
+    .box-register-detail textarea{
+        width:198px;
+        height:50px;
+        resize:none;
+        padding: 5px;
+    }
+
+    .box-btn .keeplogin{
+        width: auto;
+        margin: 0;
+        vertical-align: -2px;
+    }
+
+    .box-btn .fgtpwd{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    .box-register .btn{
+
+
+
+
+
+
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .box-register .btn-disable, .box-register .btn-disable:hover{
+        cursor: not-allowed;
+        background: #a3a3a1 !important;
+    }
+
+    .box-register .btn-close{
+        cursor: pointer;
+    }
+
+    .step-box{
+        text-align: center;
+        padding: 20px 0;
+        color: #abb6d2;
+        font-size: 14px;
+    }
+
+    .step-box .step{
+    }
+
+    .step-box .step-active{
+        color: #2559a4;
+    }
+
+    .box-register-mobile .btn-getcode{
+        width:60px;
+        display: inline-block;
+        padding: 6px 5px;
+        font-size: 12px;
+        margin: 0px;
+        background: #015e98;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .box-register-mobile .btn-getcode:hover{
+        background-color: #087bb5;
+    }
+
+    .box-register .err-msg{
+        position: absolute;
+        top: -16px;
+        left: 70px;
+        color: #F60;
+    }
+</style>
+
+<div class="module-login-mask" style="display:none;">
+    <div class="module-login-container">
+        <div class="box-register" style="padding-left: 350px;">
+            <div class="box-login">
+                <div class="header box-active" style="border-radius:5px 0 0 0;">登录</div>
+                <div class="body-login" style="border-radius:0 0 0 5px;">
+                    <div class="tab-box">
+                        <span class="tab-mobilelogin active" style="margin-right:10px;">手机号登录</span>|<span class="tab-idlogin" style="margin-left:10px;">用户名登录</span>
+                    </div>
+
+                    <div class="box-mobilelogin">
+                        <div class="err-msg"></div>
+                        <div>
+                            <select class="region">
+                                <option value="86">中国(+86)</option>
+                                <option value="852">中国香港(+852)</option>
+                                <option value="853">中国澳门(+853)</option>
+                                <option value="886">中国台湾(+886)</option>
+                                <option value="1">美国(+1)</option>
+                                <option value="1">加拿大(+1)</option>
+                                <option value="60">马来西亚(+60)</option>
+                                <option value="61">澳洲(+61)</option>
+                                <option value="81">日本(+81)</option>
+                                <option value="82">韩国(+82)</option>
+                                <option value="65">新加坡(+65)</option>
+                                <option value="44">英国(+44)</option>
+                                <option value="33">法国(+33)</option>
+                                <option value="7">俄罗斯(+7)</option>
+                                <option value="91">印度(+91)</option>
+                                <option value="66">泰国(+66)</option>
+                                <option value="49">德国(+49)</option>
+                            </select>
+                        </div>
+                        <form class="form-mobilelogin" action="https://dig.chouti.com/#" autocomplete="on">
+                            <div class="pr"><input type="text" name="mobile" id="mobile" placeholder="手机号" class="mobile" tabindex="1"></div>
+                            <div class="pr"><input type="password" name="mbpwd" id="mbpwd" placeholder="密码" class="mbpwd" tabindex="2"></div>
+                        </form>
+                    </div>
+
+                    <div class="box-idlogin" style="display:none;">
+                        <div class="err-msg"></div>
+                        <form class="form-idlogin" action="https://dig.chouti.com/#" autocomplete="on">
+                            <div class="pr"><input type="text" name="userid" id="userid" placeholder="用户名" class="userid" tabindex="1"></div>
+                            <div class="pr"><input type="password" name="pwd" id="pwd" placeholder="密码" class="pwd" tabindex="2"></div>
+
+
+                        </form>
+                    </div>
+
+                    <div class="box-btn">
+                        <div style="position:relative;margin-bottom:20px;"><span><input type="checkbox" class="keeplogin" value="1" checked="">一个月内自动登录</span> <span class="fgtpwd"><a href="https://dig.chouti.com/profile/password/reset">忘记密码?</a></span></div>
+
+                        <div>
+
+
+
+                            <div class="btn btn-login pub-icons pub-btn pub-btn-valid"><span>登录</span><span style="display:none;"><img src="images/loading.gif">正在登录</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header" style="border-radius:0 5px 0 0;"><span>注册</span><div style="position:absolute;right:8px;top:8px;width:15px;height:15px;"><div class="btn-close icons
+        dialog-btn-close"></div></div></div>
+            <div class="body-register" style="border-radius:0 0 5px 0;">
+                <div class="step-box"><span class="step step-1 step-active">1 填写手机号</span><span> &gt; </span><span class="step         step-2">2 填写基本资料</span></div>
+
+                <div class="box-register-mobile">
+                    <div class="err-msg"></div>
+                    <div>
+                        <select class="rgmobileregion">
+                            <option value="86">中国(+86)</option>
+                            <option value="852">中国香港(+852)</option>
+                            <option value="853">中国澳门(+853)</option>
+                            <option value="886">中国台湾(+886)</option>
+                            <option value="1">美国(+1)</option>
+                            <option value="1">加拿大(+1)</option>
+                            <option value="60">马来西亚(+60)</option>
+                            <option value="61">澳洲(+61)</option>
+                            <option value="81">日本(+81)</option>
+                            <option value="82">韩国(+82)</option>
+                            <option value="65">新加坡(+65)</option>
+                            <option value="44">英国(+44)</option>
+                            <option value="33">法国(+33)</option>
+                            <option value="7">俄罗斯(+7)</option>
+                            <option value="91">印度(+91)</option>
+                            <option value="66">泰国(+66)</option>
+                            <option value="49">德国(+49)</option>
+                        </select>
+                    </div>
+                    <div class="pr"><div class="net-very"></div></div>
+                    <div>
+                        <input type="hidden" name="captchaId" value="474417edadf3452fa78306837a94b428">
+                        <div id="captcha"><input type="hidden" name="NECaptchaValidate" value="" class="yidun_input"></div>
+                    </div>
+                    <div class="pr"><input type="text" placeholder="手机号" style="width:120px;margin-right:6px;" class="rgmobile"><div class="btn btn-getcode">获取验证码</div><div style="text-align:right;margin-top:5px;" class="box-voicecode"><span>收不到短信？<a class="btn-getvoicecode" href="https://dig.chouti.com/#">获取语音验证码</a></span></div></div>
+                    <div class="pr"><input type="text" placeholder="验证码" class="rgcode"></div>
+                    <div class="pr"><input type="password" placeholder="密码" class="rgpwd"></div>
+
+                    <div><div class="btn btn-register pub-icons pub-btn pub-btn-valid"><span>下一步</span><span style="display:none;"><img src="images/loading.gif">正在注册</span></div></div>
+                </div>
+
+                <div class="box-register-detail" style="display:none;">
+                    <div class="err-msg"></div>
+                    <div class="pr"><input type="text" placeholder="昵称（10个汉字以内）" maxlength="10" class="nick"></div>
+                    <div class="pr"><input type="radio" name="rgsex" class="sex" value="false" checked="">女 <input type="radio" name="rgsex" class="sex" value="true">男</div>
+
+                    <div>
+                        <select class="rgregion">
+                            <option value="0">中国</option>
+                            <option value="1">海外</option>
+                        </select>
+                    </div>
+
+                    <div class="box-rgcity">
+                        <select class="rgpro" style="width:49%;">
+                            <option value="">请选择</option>
+                        <option value="北京">北京</option><option value="天津">天津</option><option value="河北">河北</option><option value="山西">山西</option><option value="内蒙古">内蒙古</option><option value="辽宁">辽宁</option><option value="吉林">吉林</option><option value="黑龙江">黑龙江</option><option value="上海">上海</option><option value="江苏">江苏</option><option value="浙江">浙江</option><option value="安徽">安徽</option><option value="福建">福建</option><option value="江西">江西</option><option value="山东">山东</option><option value="河南">河南</option><option value="湖北">湖北</option><option value="湖南">湖南</option><option value="广东">广东</option><option value="广西">广西</option><option value="海南">海南</option><option value="重庆">重庆</option><option value="四川">四川</option><option value="贵州">贵州</option><option value="云南">云南</option><option value="西藏">西藏</option><option value="陕西">陕西</option><option value="甘肃">甘肃</option><option value="青海">青海</option><option value="宁夏">宁夏</option><option value="新疆">新疆</option><option value="香港">香港</option><option value="澳门">澳门</option><option value="台湾">台湾</option></select>
+                        <select class="rgcity" style="width:49%;">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+
+                    <div class="pr"><textarea placeholder="签名档（100个汉字以内）" maxlength="100" class="sign"></textarea></div>
+
+                    <div><div class="btn btn-accomplish pub-icons pub-btn pub-btn-valid"><span>提交资料</span><span style="display:none;"><img src="images/loading.gif">正在提交</span></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    $(document).ready(function(){
+        NS_login.init();
+    });
+</script>
+
+<!-- 登录及注册对话框 -->
+<!-- 分享新发现 ,放到script中是为了在页面加载时不需要渲染该项，只有在点击后才去渲染-->
+<script type="text/x-handlebars-template" id="publish-dialog-code">
+    <div class="dialog corner" id="digg-dialog-publish">
+        <div class="dialog-titlebar">
+            <div class="dialog-title">
+                <span id="shareTitle">分享新发现</span>
+                <input type="hidden" id="hidHtTag" value="" topicId="" />
+            </div>
+            <div class="dialog-titlebar-close"><a href="javascript:;" title="关闭" class="icons dialog-btn-close"
+                                                  id="dialog-btn-close"></a></div>
+        </div>
+        <div class="dialog-content corner-bottom">
+            <div class="tab-tags nobrder W" id="tabs">
+
+                <a href="javascript:;" class="tb H w-active color" id="pubTabZixun">链接</a>
+                <a href="javascript:;" class="tb H" id="pubTabDuanzi">文字</a>
+                <a href="javascript:;" class="tb H" id="pubTabPic">图片</a>
+                <div class="tags"></div>
+            </div>
+            <div class="dialog-main-content" id="dialog-main-content">
+                <!-- 资讯区域 -->
+
+                <div class="publish-content-zixun" id="publish-content-zixun">
+                    <div class="tab-alt">添加链接</div>
+                    <div class="p1">
+                        <div class="txt-input-area float-left corner" style="width:426px;" id="txt-zixun-area">
+                            <input type="text" name="txt-zixun" id="txt-zixun" class="small-txt-input" />
+                            <label id="lab-zixun" for="txt-zixun" style="display: block;">http://</label>
+                            <input id="url" name="url" type="hidden" value="" />
+                        </div>
+                        <div class="button-container" id="zixun-button-container">
+                            <a class="pub-icons pub-btn pub-btn-unvalid" href="javascript:;" id="add-pub-btn0">获取标题</a>
+                            <a class="loading martop10" href="javascript:;" id="add-pub-loading0"></a>
+                        </div>
+
+                    </div>
+
+                    <div id="zixun-big-area">
+                        <div class="tab-alt martop8">标题</div>
+                        <div class="small-txt-input-area corner" id="zixun-http-area">
+                            <input name="txt-zixun-content" id="txt-zixun-content" maxlength="150" class="small-txt-input w496"
+                                   disabled="disabled" />
+                        </div>
+                        <div class="tab-alt martop8">添加摘要（选填）</div>
+                        <div class="txt-input-area corner" style="padding:6px;">
+                            <textarea id="txt-zhaiyao" name="txt-zhaiyao" maxlength="120" disabled="disabled"></textarea>
+                        </div>
+                        <div class="toclass-btn-area">
+                            <span class="tospan">发布到:</span>
+                            <div class="to-btn-area"></div>
+                        </div>
+
+                        <div class="toclass-btn-area codeImgArea0 hide">
+                            <span class="tospan">验证码:</span>
+                            <input name="code" class="small-txt-input code" style="width: 145px">
+                            <input type="hidden" class="randomKey" name="randomKey">
+                            <img class="codeImg" src="" onclick="showCodeImg('codeImgArea0')" style="vertical-align:top;height:32px;cursor:pointer"/>
+                        </div>
+
+                        <div class="dialog-buttonpane white bottom-null" id="dialog-buttonpane0">
+                            <div class="write-error-box" id="write-error-box0">
+                                <div class="write-error-desc">你发布过于频繁，请2分钟后重新发布</div>
+                            </div>
+                            <div class="button-container">
+                                <a class="pub-clear-btn" href="javascript:;" id="clear-btn-link">清空</a>
+                                <a class="pub-icons new-pub-btn new-pub-btn-unvalid" href="javascript:;" id="pub-btn0">发&nbsp;布</a>
+                                <a class="loading" href="javascript:;" id="pub-loading0">发布中...</a>
+                            </div>
+                            <div class="write-error">标题已超出<span id="moreLength0">10</span>个字</div>
+                        </div>
+                    </div>
+
+                    <div style="height:30px;clear:both;overflow:hidden">
+
+                    </div>
+                </div>
+                <!-- 段子区域 -->
+                <div class="publish-content-duanzi" id="publish-content-duanzi">
+                    <div class="txt-input-area corner no-corner-bottom">
+                        <textarea name="txt-duanzi" id="txt-duanzi"></textarea>
+                        <label id="lab-duanzi" for="txt-duanzi" style="display: block;">发布段子...</label>
+                    </div>
+                    <div class="dialog-buttonpane corner-bottom" id="dialog-buttonpane1">
+
+                        <div class="write-length">还可以输入<span id="showLength1">150</span>字</div>
+                        <div class="write-error">标题已超出<span id="moreLength1">10</span>个字</div>
+                    </div>
+
+                    <div class="toclass-btn-area">
+                        <span class="tospan">发布到:</span>
+                        <div class="to-btn-area"></div>
+                    </div>
+
+                    <div class="toclass-btn-area codeImgArea1 hide">
+                        <span class="tospan">验证码:</span>
+                        <input name="code" class="small-txt-input code" style="width: 145px">
+                        <input type="hidden" class="randomKey" name="randomKey">
+                        <img class="codeImg" src="" onclick="showCodeImg('codeImgArea1')" style="vertical-align:top;height:32px;cursor:pointer"/>
+                    </div>
+                    <div class="dialog-buttonpane white bottom-null" id="dialog-buttonpane1">
+                        <div class="write-error-box" id="write-error-box1">
+                            <div class="write-error-desc">你发布过于频繁，请2分钟后重新发布</div>
+                        </div>
+                        <div class="button-container">
+                            <a class="pub-clear-btn" href="javascript:;" id="clear-btn-wanzi">清空</a>
+                            <a class="pub-icons new-pub-btn new-pub-btn-unvalid" href="javascript:;" id="pub-btn1">发&nbsp;布</a>
+                            <a class="loading" href="javascript:;" id="pub-loading1">发布中...</a>
+                        </div>
+
+                    </div>
+                    <div style="height:30px;clear:both;overflow:hidden">
+
+                    </div>
+
+                </div>
+
+                <!-- 图片区域 -->
+                <div class="publish-content-pic" id="publish-content-pic">
+                    <div class="tab-alt" id="img-alt-title">添加图片</div>
+
+                    <div class="txt-input-area corner" id="upload-img-area">
+                        <form enctype="multipart/form-data" method="post" target="uploadIframe" action="/link/pic/upload"
+                              id="uploadPicFrm">
+                            <a class="pub-icons line-block add-pub-btn add-pub-btn-valid" href="javascript:;" id="add-pub-btn2">上传<input
+                                    type="file" name="imgUrl" id="imgUrl" size="1" hidefocus="true" /></a>
+                            <span class="imgRule">支持jpg、jpeg、gif、png格式，且不超过5MB</span>
+                            <a class="loading" href="javascript:;" id="add-pub-loading2">上传中...</a>
+                            <input type="hidden" id="timeHidden" name="identifie" value="">
+                        </form>
+                    </div>
+
+                    <iframe id="uploadIframe" name="uploadIframe" scrolling="no" height="0px" frameborder="0" style="display:none"
+                            src="/blank.html"></iframe>
+                    <div class="txt-input-area corner" id="show-img-area">
+                        <img id="upload-img" />
+                        <a href="javascript:;" class="repeat-upload" id="repeat-upload-btn">重新上传</a>
+                    </div>
+                    <div class="txt-input-area martop10 corner no-corner-bottom">
+                        <textarea name="txt-img" id="txt-img"></textarea>
+                        <label id="lab-img" for="txt-img" style="display: block;">请输入图片描述...</label>
+                    </div>
+                    <div class="dialog-buttonpane corner-bottom" id="dialog-buttonpane2">
+                        <!--
+                        <div class="pic-yellow"><input type="checkbox" name="boxYellow" id="boxYellow" /><label
+                        for="boxYellow">这张图片很黄很暴力</label></div>
+                        -->
+                        <div class="write-length">还可以输入<span id="showLength2">150</span>字</div>
+                        <div class="write-error">标题已超出<span id="moreLength2">10</span>个字</div>
+                    </div>
+                    <div class="toclass-btn-area">
+                        <span class="tospan">发布到:</span>
+                        <div class="to-btn-area"></div>
+                    </div>
+
+                    <div class="toclass-btn-area codeImgArea2 hide">
+                        <span class="tospan">验证码:</span>
+                        <input name="code" class="small-txt-input code" style="width: 145px">
+                        <input type="hidden" class="randomKey" name="randomKey">
+                        <img class="codeImg" src="" onclick="showCodeImg('codeImgArea2')" style="vertical-align:top;height:32px;cursor:pointer"/>
+                    </div>
+                    <div class="dialog-buttonpane white bottom-null" id="dialog-buttonpane2">
+                        <div class="write-error-box" id="write-error-box2">
+                            <div class="write-error-desc">你发布过于频繁，请2分钟后重新发布</div>
+                        </div>
+                        <div class="button-container">
+                            <a class="pub-clear-btn" href="javascript:;" id="clear-btn-pic">清空</a>
+                            <a class="pub-icons new-pub-btn new-pub-btn-unvalid" href="javascript:;" id="pub-btn2">发&nbsp;布</a>
+                            <a class="loading" href="javascript:;" id="pub-loading2">发布中...</a>
+                        </div>
+
+                    </div>
+                    <div style="height:30px;clear:both;overflow:hidden">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</script>
+<!-- 积分商城兑换显示弹出框 -->
+<script type="text/x-handlebars-template" id="gift-dialog-code">
+
+    <div id="GiftShare-dialog" class="mail-dialog dialog corner">
+        <div class="dialog-titlebar">
+            <div class="dialog-title" id="giftTitle">
+                <span>积分兑换</span>
+            </div>
+            <div class="dialog-titlebar-close" id="giftTClose"><a id="dialog-gift-close" class="icons dialog-btn-close"
+                                                                  title="关闭" href="javascript:;"></a></div>
+        </div>
+        <div class="m-dialog-content dialog-content corner-bottom" id="giftBox">
+
+            <div id="dialog-main-content" class="dialog-main-content">
+                <div class="mail-area">
+
+
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td class="tn" style="padding-bottom:3px;text-align:left;"><strong>兑换信息</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="tn">兑换礼品:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="tn tn2">兑换积分:</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="tn tn2">当前积分:</td>
+                            <td id="curPoints"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="border-bottom:1px dashed #ccc;"></td>
+                        </tr>
+                        <tr>
+                            <td class="tn" style="padding-bottom:3px;text-align:left;"><strong>收货信息</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="tn tn2">邮箱(必填):</td>
+                            <td>
+                                <input type="text" class="text share-mail-txt" id="reEmail" name="reEmail" tabindex="1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tn tn2">手机(选填):</td>
+                            <td><input type="text" class="text share-mail-txt" id="rePhone" name="rePhone" tabindex="2"></td>
+                        </tr>
+                        <tr>
+                            <td class="tn tn2">QQ/微信/MSN(选填):</td>
+                            <td><input type="text" class="text share-mail-txt" id="reContact" name="reContact" tabindex="3"></td>
+                        </tr>
+                        <!--
+                        <tr>
+                        <td class="tn">联系方式</br>(必填)</td>
+                        <td>
+
+                        <input type="text" class="text share-mail-txt" id="reAddress" name="reAddress">
+
+                        </td>
+                        </tr>
+                        -->
+                    </table>
+
+
+                </div>
+                <div id="dialog-pane1" class="dialog-buttonpane white bottom-null">
+                    <div id="error-box1" class="write-error-box">
+                        <div class="write-error-desc" id="GiftErrDesc"></div>
+                    </div>
+                    <div class="button-container">
+                        <a id="clear-btn-gift" href="javascript:;" class="pub-clear-btn">取消</a>
+                        <a id="sendGiftBtn" href="javascript:;" class="pub-icons new-pub-btn new-pub-btn-unvalid" giftId="
+        ">确&nbsp;定</a>
+
+                    </div>
+
+                </div>
+                <div style="height:30px;clear:both;overflow:hidden"></div>
+            </div>
+        </div>
+        <div id="giftSuceBox" class="gift-suc">
+            <div class="cont">兑换成功，请等待审核！</div>
+            <div class="button-opr">
+                <a id="cancel-btn-gift" href="javascript:;" class="pub-clear-btn">取消</a>
+                <a id="nextGiftBtn" href="javascript:;" class="pub-icons new-pub-btn new-pub-btn-valid">继续兑换</a>
+
+            </div>
+        </div>
+
+    </div>
+</script>
+
+
+<!-- 举报弹出框（举报原因） -->
+<script type="text/x-handlebars-template" id="jubao-dialog-code">
+
+    <div id="Jubao-dialog" class="mail-dialog dialog corner" onClick='function A(e){if (!e) var e = window.event;e.cancelBubble = true;if (e.stopPropagation) e.stopPropagation();};A();'>
+        <div class="dialog-titlebar">
+            <div class="dialog-title" id="jubaoTitle">
+                <span>举报</span>
+            </div>
+            <div class="dialog-titlebar-close" id="jbTClose"><a id="dialog-jubao-close" class="icons dialog-btn-close"
+                                                                title="关闭" href="javascript:;"></a></div>
+        </div>
+        <div class="m-dialog-content dialog-content corner-bottom" id="JubaoBox">
+
+            <div id="dialog-main-content" class="dialog-main-content">
+                <div class="mail-area" style="margin-bottom:0px;">
+
+                    <table border="0" cellspacing="0" cellpadding="0" style="width:338px;">
+                        <tr>
+                            <td class="tn" style="padding-bottom:3px;text-align:left;"><strong>举报原因：</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" value="爆粗口" name="radio_bad" id="cukao" class="W_radio" checked="checked">
+                                <label class="cholab" for="cukao">爆粗口</label>
+                            </td>
+                            <td>
+                                <input type="radio" value="广告、垃圾信息" name="radio_bad" id="laji" class="W_radio">
+                                <label class="cholab" for="laji">广告、垃圾信息</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" value="淫秽色情" name="radio_bad" id="seqing" class="W_radio">
+                                <label class="cholab" for="seqing">淫秽色情</label>
+                            </td>
+                            <td>
+                                <input type="radio" value="政治敏感话题" name="radio_bad" id="mingan" class="W_radio">
+                                <label class="cholab" for="mingan">政治敏感话题</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" value="12" name="radio_bad" id="qita" class="W_radio">
+                                <label class="cholab" for="qita">其它</label>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr id="trJubao" style="display:none;">
+                            <td colspan="2">
+                                <textarea name="otherReson" placeholder="请填写100字以内" id="otherReson" class="text"></textarea>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+                </div>
+                <div id="dialog-pane1" class="dialog-buttonpane white bottom-null">
+                    <div id="error-box1" class="write-error-box">
+                        <div class="write-error-desc" id="JubaoErrDesc"></div>
+                    </div>
+                    <div class="button-container">
+                        <a id="clear-btn-jubao" href="javascript:;" class="pub-clear-btn">取消</a>
+                        <a id="sendJubaoBtn" href="javascript:;" class="pub-icons new-pub-btn new-pub-btn-valid">确&nbsp;定</a>
+
+                    </div>
+
+                </div>
+                <div style="height:30px;clear:both;overflow:hidden"></div>
+            </div>
+        </div>
+
+
+    </div>
+</script>
+
+
+<script id="bindTpl1" type="text/template">
+    <style>
+        .mb{background:url(/images/op.png);position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;}
+        .bind-box{width: 346px;height:300px;background-color:white;border: 1px solid #797979;position: absolute;top: 30%;left: 50%;margin-left: -175px;}
+        .bind-box .header{height: 30px;line-height: 30px;margin-bottom:30px;background: #e7ecf2;color:#abb6d2;padding: 0px 10px;font-size: 14px;font-weight:bold;}
+        .bind-box .header .close-icon{position:absolute;right:8px;top:8px;width:15px;height:15px;background-position: 0 -499px;cursor: pointer}
+        .box-bind-mobile{text-align:center;}
+        .box-bind-mobile .pr{margin-bottom: 15px;}
+        .bind-box .bdmobileregion{width: 210px;padding: 5px 2px;border: 1px solid #CDDDEF;}
+        .bind-box .bdmobile{width:120px;margin-right:6px;}
+        .bind-box .btn-getMsgcode{
+            width: 60px;
+            display: inline-block;
+            padding: 6px 5px;
+            font-size: 12px;
+            margin: 0px;
+            background: #015e98;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bind-box input{padding:6px;border: 1px solid #CDDDEF;font-weight: bold;width: 196px;}
+        .bind-box .box-voicecode{
+            text-align:right;
+            margin:5px auto 0;
+            width: 210px;
+        }
+        .bind-box .box-voicecode a{color: #369;}
+        .bind-btn-area{
+            margin:20px auto 0;
+            width: 279px;
+        }
+        .btn-common{
+            display: inline-block;
+            cursor: pointer;
+        }
+        .btn-bind-cancel{
+            margin-right: 20px;
+        }
+        .bind-text{
+            width: 279px;
+            margin: 56px auto 30px;
+            text-align: left;
+            font-size: 15px;
+            line-height: 1.5em;
+            font-weight: bold;
+        }
+        .err-msg{
+            width: 210px;
+            color: #F60;
+            text-align: left;
+            margin: 0 auto;
+        }
+    </style>
+</script>
+
+<script id="bindTpl2" type="text/template">
+    <div class="mb" id="bindarea" notCloseComment="true">
+        <div class="bind-box" >
+            <div class="header">
+                绑定手机号
+                <div class="close-icon btn-close icons">
+                </div>
+            </div>
+            <div class="box-bind-mobile step1">
+                <p class="bind-text">
+                    依照《互联网跟帖评论服务管理规定》，请绑定手机号后进行发布与评论。
+                </p>
+                <div class="bind-btn-area">
+                    <div class="pub-icons pub-btn pub-btn-unvalid btn-common btn-close btn-bind-cancel">暂不绑定</div>
+                    <div class="pub-icons pub-btn pub-btn-valid btn-common btn-bind-immediately">立即绑定</div>
+                </div>
+            </div>
+
+            <div class="box-bind-mobile step2 hide">
+                <div class="err-msg"></div>
+                <div class="pr">
+                    <select class='bdmobileregion'>
+                        <option value="86">中国(+86)</option>
+                        <option value="852">中国香港(+852)</option>
+                        <option value="853">中国澳门(+853)</option>
+                        <option value="886">中国台湾(+886)</option>
+                        <option value="1">美国(+1)</option>
+                        <option value="1">加拿大(+1)</option>
+                        <option value="60">马来西亚(+60)</option>
+                        <option value="61">澳洲(+61)</option>
+                        <option value="81">日本(+81)</option>
+                        <option value="82">韩国(+82)</option>
+                        <option value="65">新加坡(+65)</option>
+                        <option value="44">英国(+44)</option>
+                        <option value="33">法国(+33)</option>
+                        <option value="7">俄罗斯(+7)</option>
+                        <option value="91">印度(+91)</option>
+                        <option value="66">泰国(+66)</option>
+                        <option value="49">德国(+49)</option>
+                    </select>
+                </div>
+                <div class="pr">
+                    <input type="text" name="phone" placeholder="手机号" class="bdmobile"/>
+                    <div class="btn btn-getMsgcode">获取验证码</div>
+                    <div class="box-voicecode">
+                        <span>收不到短信？<a class="btn-getvoicecode" href="#">获取语音验证码</a></span>
+                    </div>
+                </div>
+                <div class="pr">
+                    <input type="text" placeholder="验证码" class="bdcode" />
+                </div>
+
+                <div class="pub-icons pub-btn pub-btn-valid btn-common btn-bind ">
+                    <span>绑定</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript">
+
+    // document.domain="chouti.com";
+
+    $(document).ready(function(){
+
+        //如果是移动设备则用JS生成的聊天
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        window.captchaIns;
+
+        var roof = $('.module-login-mask');
+        var $smsBtn = $('.btn-getcode');
+        var bl = roof.find('.box-login');
+        var br = roof.find('.box-register');
+        var rm = roof.find('.box-register-mobile');
+        var rd = roof.find('.box-register-detail');
+
+        var clearErr = function () {
+            $('.err-content').remove();
+        };
+
+        var showErr = function (node, info) {
+            clearErr();
+            node.html('<span class="err-content">' + info + '</sapn>');
+            return false;
+        };
+        initNECaptcha({
+            element: '#captcha',
+            captchaId: '474417edadf3452fa78306837a94b428',
+            mode: 'bind', // 仅智能无感知验证码时，mode 才能设置为 bind
+            width: '320px',
+            onVerify: function (err, result) {
+
+                if(err) {
+                   // console.log(err);
+                }
+
+                if(!!result) {
+                    // 获取手机验证码
+
+
+                    $.ajax({
+                        url: '/profile/sendcode',
+                        data: {
+                            phone: roof.find('.rgmobileregion option:selected').val() + roof.find('.rgmobile').val(),
+                            authType: window.authType,
+                            type: 1,
+                            auth_secret: MD5(roof.find('.rgmobileregion option:selected').val() + roof.find('.rgmobile').val() + '-' + 'wbb8cadf-cc689fxycd_yw72ewqrt'),
+                            NECaptchaValidate: result.validate
+                        },
+                        success: function(data) {
+                            data = JSON.parse(data);
+                            clearErr();
+                            if(data.result.code == '9999') {
+                                if(window.authType === "msg") {
+                                    var t = 60;
+                                    $smsBtn.addClass('btn-disable');
+
+                                    var ct = setInterval(function () {
+                                        if(t > 0) {
+                                            var str = '已发送(' + t + ')'
+                                            t --;
+                                        }else {
+                                            clearInterval(ct);
+                                            str = '发送验证码';
+                                            $smsBtn.removeClass('btn-disable');
+                                        }
+                                        $smsBtn.html(str);
+                                    }, 1000);
+
+                                } else if(window.authType === "voice") {
+                                    self.html('已拨打，请等待');
+                                }
+
+
+
+                            }else {
+                                showErr(roof.find('.box-register-mobile').find('.err-msg'), data.result.message);
+                            }
+
+
+                            window.captchaIns.refresh();
+                        }
+                    });
+                }
+
+
+            }
+        }, function (instance) {
+            // 初始化成功后得到验证实例instance，可以调用实例的方法
+            captchaIns = instance
+        }, function (err) {
+            // 初始化失败后触发该函数，err对象描述当前错误信息
+        })
+
+
+
+        function dealMessage(itemObj) {
+            var content = itemObj;
+            if (content.type == 2 || content.content == undefined) {
+                return;
+            }
+            if (content.type == 3) {
+                node.chatbox.chatpage.open({
+                    hide: true,
+                    jid: content.content.user.jid,
+                    callback: function () {
+                        var groupContent = {};
+                        switch (content.content.type) {
+                            case 0:
+                                groupContent = {
+                                    text: content.content.content.text
+                                }
+                                break;
+                            case 1:
+                                groupContent = {
+                                    url: content.content.content.url,
+                                    height: content.content.content.height,
+                                    width: content.content.content.width,
+                                    filePath: content.content.content.filePath
+                                }
+                                break;
+                            case 2:
+                                groupContent = {
+                                    url: content.content.content.url,
+                                    duration: Math.floor(content.content.content.duration / 1000),
+                                    filePath: content.content.content.filePath
+                                }
+                                break;
+                            case 3:
+                                groupContent = {
+                                    location: content.content.content.location,
+                                    lat: content.content.content.lat,
+                                    lon: content.content.content.lon
+                                }
+                                break;
+                            case 7:
+                                groupContent = {
+                                    text: content.content.content.text
+                                }
+                                break;
+                        }
+                        node.chatbox.message.add({
+                            tar: $('.page-chat[tar="' + content.content.user.jid + '"]').find('.page-main-content'),
+                            status: 'private',
+                            content: {
+                                content: groupContent,
+                                createTime: content.content.createTime,
+                                user: {
+                                    img_url: replaceHttps(content.content.user.img_url),
+                                    nick: content.content.user.nick,
+                                    jid: content.content.user.jid
+                                },
+                                type: content.content.type,
+                                id: content.content.id
+                            },
+                            isnew: true
+                        });
+                    }
+                });
+            } else {
+                node.chatbox.message.add({
+                    tar: $('.chat-public-content'),
+                    status: null,
+                    content: {
+                        content: {
+                            text: content.content.content.text
+                        },
+                        createTime: content.content.createTime,
+                        user: {
+                            img_url: replaceHttps(content.content.user.img_url),
+                            nick: content.content.user.nick,
+                            jid: content.content.user.jid
+                        },
+                        type: 0,
+                        id: content.content.id
+                    },
+                    isnew: true
+                });
+            }
+        }
+
+        //订阅用户未读通知数的通知
+        gpComet = new GozapComet({
+            serviceUrl:'//comet.chouti.com/comet',
+            iframeUrl:'//comet.chouti.com/update.jsp',
+            appId:"chouti-new"
+        });
+        gpComet.broadcast(function(message){
+
+            var itemObj = eval("(" + message.data + ")");
+
+            var newsCount = parseInt(itemObj.freshNewsCount,10);
+            if(newsCount <= 0){
+                return;
+            }
+
+            if( itemObj.cometType && itemObj.cometType == 1 ) {
+                //执行添加消息的逻辑
+                if( itemObj.content.user.jid != node.chatbox.user.jid ) {
+//                                node.chatbox.message.add({
+//                                        tar: $('.chat-public-content'),
+//                                        status: null,
+//                                        content: itemObj.content,
+//                                        isnew: true
+//                                });
+
+                    dealMessage(itemObj);
+                }
+
+            } else {
+                var tempCount = parseInt($("#newIntoHotCount").val(),10);
+                tempCount = tempCount + newsCount;
+                $("#newIntoHotCount").val(tempCount);
+
+                $("#yellow-msg-box-intohot em").text(tempCount+"");
+                $("#yellow-msg-box-intohot").show().unbind();
+                //新榜入热榜黄色提示框事件
+                NS_links_hotts.yellowIntohotBoxHover();
+            }
+
+
+
+        });
+        gpComet.deliver(function(message){
+            var itemObj = eval("(" + message.data + ")");
+
+            if(itemObj.length <= 0) {
+                return;
+            }
+
+            if( itemObj.cometType && itemObj.cometType == 2 ) {
+                //执行添加私聊消息的逻辑
+                if( itemObj.content.user.jid != node.chatbox.user.jid ) {
+
+//                                node.chatbox.message.add({
+//                                        tar: $('.page-chat[tar="' + itemObj.content.user.jid + '"]').find('.page-main-content'),
+//                                        status: 'private',
+//                                        content: itemObj.content,
+//                                        isinit: true
+//                                });
+
+                    dealMessage(itemObj);
+                }
+            } else {
+                //改变未读通知数
+                var newsCount = itemObj.notifyCount;
+
+                if(newsCount != undefined){
+
+                    var newsCount2 = parseInt(itemObj.notifyCount);
+
+                    //当为0时隐藏提示
+                    if(newsCount2 <=0) {
+
+                        $("#notice-num-title").hide().children("em").text("");
+                        return;
+                    }
+
+                    chouti.chgNoticeNum(newsCount2);
+
+                }
+
+
+                //改变未读动态数
+                var DtaiCount = itemObj.flowState;
+                if(DtaiCount != undefined){
+
+                    var DtaiCount2 = parseInt(itemObj.flowState);
+                    //当为0时隐藏提示
+
+                    if(DtaiCount2 <=0) {
+                        $("#Dtai-num-title").hide().children("em").text("");
+                        return;
+                    }
+                    chouti.chgDtaiNum(DtaiCount2);
+                }
+            }
+
+
+
+        });
+
+        //以下代码实现的功能为：
+        //在新热榜登录成功后，可点击 "我的抽屉”进入后，相应的也是登录状态。
+
+        // puid = $.cookie("puid");
+
+        // $("#cookieIframe").attr("src", "http://www.chouti.com/cookieService?d="+puid);
+
+        chouti.showStreamNotice(); //触发显示通知数
+
+        //chouti.showStreamMail(); //触发显示私信数
+
+        chouti.showStreamDtai(); //触发显示动态数
+
+        chouti.showUserOprBox(); //显示登录用户操作框（点击头部用户昵时）
+
+        chouti.showHomePageNotice(); //点击通知链接显示首页通知框
+
+        chouti.logout(); //退出登录
+
+        chouti.showGoTop(); //回到页面顶部
+
+        var userAgentInfo2=navigator.userAgent;
+
+
+        if(userAgentInfo2.indexOf("Android") > 0 || userAgentInfo2.indexOf("iPhone") > 0 ||
+                userAgentInfo2.indexOf("iPad") > 0 || userAgentInfo2.indexOf("iPod") > 0){
+
+        } else {
+            chouti.fixedAdvert(); //固定广告的位置
+        }
+
+        //chouti.playVido(); //展开视频
+    })
+
+
+
+    // var _paq = _paq || [];
+    // /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    // _paq.push(['trackPageView']);
+    // _paq.push(['enableLinkTracking']);
+    // (function() {
+    //     var u="//collect.chouti.com/";
+    //     _paq.push(['setTrackerUrl', u+'piwik.php']);
+    //     _paq.push(['setSiteId', '1']);
+    //     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    //     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    // })();
+
+    //显示验证码
+    function showCodeImg(codeImgArea) {
+        var randomKey = new Date().getTime();
+        $.ajax({
+            url: '/get/code?randomKey=' + randomKey,
+            type: "POST",
+            dataType: 'json',
+            success: function (data) {
+                if (data.code == '1') {
+                    $("." + codeImgArea + " .codeImg").attr("src", data.resp.src);
+                    $("."+ codeImgArea +" .randomKey").val(randomKey);
+                } else {
+
+                }
+            }
+        });
+    }
+</script>
+<!-- 当操作平台为移动设备，如手机，ipad时，引入JS文件，用作flash聊天工具 -->
+
+
+
+
+	</div>
+    </div>
+</div>
+</body>
+</html>
