@@ -84,7 +84,6 @@
             /*background-color: #204982;*/
         /*}*/
 
-
         /*----------以下部分对头部的搜索框进行设置----------*/
         .key-search{
             float: right;
@@ -112,7 +111,6 @@
             background: url("images/icon.png") no-repeat 0 -195px;
             margin-left: 10px;
             margin-top: 3px;
-
         }
 
         /*----------以下部分对头部的注册与登录进行设置----------*/
@@ -298,7 +296,6 @@
 			margin-left: 5px;
 		}
 
-
 		/*设置分享到新浪微博、豆瓣等图标*/
 
 		.share-site-to{
@@ -347,22 +344,61 @@
 			height: 14px;
 		}
 
+		/*设置页码部分*/
 
-
-
-
-
-		/* 右侧区域设置 */
-		.main-content .content-R {
+		.page-area li{
+			display: inline-block;
 			float: left;
 
 		}
 
+		.page-area ul li a{
+			display: inline-block;
+			width: 34px;
+			/*float: left;*/
+			height: 34px;
+			color:#369;
+			line-height: 34px;
+			text-align: center;
+			border: 1px solid #e1e1e1;
+			margin-left: 5px;
+		}
+
+		.page-area ul li a.ct_page_edge{
+			width: 60px;
+		}
+
+		.page-area ul li a:hover{
+			background-color: #369;
+			color: white;
+		}
+
+		.page-area{
+			margin-top: 5px;
+			margin-left: 75px;
+			margin-bottom: 5px;
+		}
+
+		/* 右侧区域设置 */
+		.main-content .content-R {
+			float: left;
+		}
+
 		/* 最低侧区域设置 */
 		.footer-box{
+			text-align: center;
+			margin-top: 10px;
 			clear: both;
 		}
 
+		.foot-nav a{
+		    margin-left:5px;
+		}
+
+		.user-opr-box{
+			display: inline-block;
+			margin-top: 5px;
+		}
 
 
     </style>
@@ -1231,7 +1267,21 @@
 
 			<!--<div class="no-bottom"></div>-->
 			<div id="page-area" class="page-area">
-					 <div id="dig_lcpage"><ul><li><span class="ct_pagepw">1</span></li><li><a href="https://dig.chouti.com/all/hot/recent/2" class="ct_pagepa">2</a></li><li><a href="https://dig.chouti.com/all/hot/recent/3" class="ct_pagepa">3</a></li><li><a href="https://dig.chouti.com/all/hot/recent/4" class="ct_pagepa">4</a></li><li><a href="https://dig.chouti.com/all/hot/recent/5" class="ct_pagepa">5</a></li><li><a href="https://dig.chouti.com/all/hot/recent/6" class="ct_pagepa">6</a></li><li><a href="https://dig.chouti.com/all/hot/recent/7" class="ct_pagepa">7</a></li><li><a href="https://dig.chouti.com/all/hot/recent/8" class="ct_pagepa">8</a></li><li><a href="https://dig.chouti.com/all/hot/recent/9" class="ct_pagepa">9</a></li><li><a href="https://dig.chouti.com/all/hot/recent/10" class="ct_pagepa">10</a></li><li><a href="https://dig.chouti.com/all/hot/recent/2" class="ct_page_edge">下一页</a></li></ul></div>
+				 <!--<div id="dig_lcpage">-->
+				 <ul>
+					 <li><span class="ct_pagepw">1</span></li>
+					 <li><a href="#" class="ct_pagepa">2</a></li>
+					 <li><a href="#" class="ct_pagepa">3</a></li>
+					 <li><a href="#" class="ct_pagepa">4</a></li>
+					 <li><a href="#" class="ct_pagepa">5</a></li>
+					 <li><a href="#" class="ct_pagepa">6</a></li>
+					 <li><a href="#" class="ct_pagepa">7</a></li>
+					 <li><a href="#" class="ct_pagepa">8</a></li>
+					 <li><a href="#" class="ct_pagepa">9</a></li>
+					 <li><a href="#" class="ct_pagepa">10</a></li>
+					 <li><a href="#" class="ct_page_edge">下一页</a></li>
+				 </ul>
+				 <!--</div>-->
 			</div>
 
 		</div>
@@ -1593,17 +1643,18 @@
     <!--
     <iframe id="noticeIframe" name="noticeIframe" scrolling="no" height="0px" width="250px" frameborder="0"
     style="position:absolute;z-index:2;background-color:#fff" src=""></iframe>
-    -->
-    <div style="position:relative;z-index:3;" id="notice_b_box">
-        <!--
-        <b class="f-n-icon f-btn-pot"></b>
-        -->
-        <div class="notice-box" id="notice_box">
-            <a id="nots-loading" href="javascript:;" class="loading" style="display:
-        inline-block;padding:0px;padding-left:30px;color:#336699;font-weight:normal;margin-left:70px;">加载中...</a>
-        </div>
-    </div>
+    <!--&ndash;&gt;-->
+    <!--<div style="position:relative;z-index:3;" id="notice_b_box">-->
+        <!--&lt;!&ndash;-->
+        <!--<b class="f-n-icon f-btn-pot"></b>-->
+        <!--&ndash;&gt;-->
+        <!--<div class="notice-box" id="notice_box">-->
+            <!--<a id="nots-loading" href="javascript:;" class="loading" style="display:-->
+        <!--inline-block;padding:0px;padding-left:30px;color:#336699;font-weight:normal;margin-left:70px;">加载中...</a>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
+
 
 <!-- -->
 <div class="foot-nav">

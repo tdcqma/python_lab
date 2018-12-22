@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>让一个大盒子里的小盒子居中显示</title>
+    <style>
+        .bigger{
+            width: 100%;
+            height: 44px;
+            background-color: grey;
+            border: 1px solid blue;
+        }
+
+        .small{
+            width: 900px;
+            height: 44px;
+            background-color: lightgoldenrodyellow;
+            border: 1px solid red;
+
+            /*这个指令可以控制小盒子在大盒子里中间显示*/
+            margin: 0 auto;
+
+            /* 下面两个指令可以控制字体在正中间显示，line-height的高度必须等于height的值，才可以在中间显示*/
+            text-align: center;
+            line-height: 44px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bigger">
+    <div class="small">
+        我是小盒子，我在大盒子中间显示
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+/*********** 【一】CSS环境准备前的操作  ***********/
+
+/*清除浏览器默认的padding于margin*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*对所有的a标签处理，使其默认情况下都去掉下划线*/
+a {
+    text-decoration: none;
+}
+
+/*设置所有的默认字体，如果有需要其他字体形式的需要单独设置*/
+body{
+    font-family: "Times New Roman";
+    font-size: 12px;
+}
+
+
+/*********** 【二】head部分 CSS操作开始  ***********/
+
+/*设置头部的最大盒子*/
+.head-box{
+    background-color: #2459a2;
+    width: 100%;
+    height: 44px;
+
+    /* 下面三条指令将head-box盒子固定在屏幕的最上面，最左边 */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* head-content在head-box盒子里面*/
+.head-content{
+
+    /*设定小盒子head-content的宽度是1016px */
+    width: 1016px;
+
+    /*设定小盒子head-content的height与line-height高度与大盒子head-box的height高度一致，这样不会出现不等高的情况*/
+    height: 44px;
+    line-height: 44px;
+
+    /*该设置可以让head-content在head-box盒子里面居中显示*/
+    margin: 0 auto;
+
+    /*background-color: darkorchid;*/
+
+    /*border: 1px solid red;*/
+
+    /* 将head-content设置为相对定位，是因为它的儿子action-nav需要设定为绝对定位，需要以此为参照物 */
+    position: relative;
+
+}
+
+/* 设置图标logo */
+.head-content .digg-logo{
+
+    /* a标签是内联标签，内联标签不能设置长度和高度，如果想设置需要指定display:inline-block */
+    display: inline-block;
+
+    /* 为logo引入一张背景logo图片 */
+    background: url("../images/logo.png");
+    width: 121px;
+    height: 23px;
+
+    /*使其悬浮*/
+    float: left;
+
+    /*让logo图片上下居中显示*/
+    margin-top: 11px;
+    margin-right: 10px;
+}
+
+/* 设置 导航 6个标签元素*/
+.head-content .action-menu{
+    /*使其漂浮起来*/
+    float: left;
+
+    /*让action-menu盒子距离logo图标5px*/
+    margin-left: 5px;
+
+}
+
+/*设置class=tb的a标签，就是6个标签元素*/
+.head-content .action-menu a.tb{
+
+    /*首先这6个标签都是a标签，a标签是内联标签，内联标签没有长和宽，要设置成inline-block才可以增加长宽。*/
+    display: inline-block;
+    margin-left: -3px;
+    /*border: 1px solid red;*/
+
+    /*设置每个标签元素左右之间的间距*/
+    padding: 0 16px 0 13px;
+
+    /*设置字体颜色*/
+    color: darkgray;
+}
+
+/*设置class=tb的a标签，就是6个标签元素 的悬浮后，背景颜色发生变化的效果*/
+.head-content .action-menu a.tb:hover{
+    /* :hover 起到悬浮的下锅，字体颜色变白色，背景颜色变浅蓝色 */
+    color:white;
+    background-color: #396bb3;
+}
+
+/* 对"全部"这个标签设置单独的效果 */
+.head-content .action-menu a.active{
+    color: white;
+    background-color: #204982;
+}
+
+/* 对"全部"这个标签设置单独的效果，即是鼠标悬浮在上面也要求起不变色 */
+.head-content .action-menu a.active:hover{
+    color: white;
+    background-color: #204982;
+}
+
+/* 设置头部的搜索栏 */
+.key-search{
+    float: right;
+    margin-top: 7px;
+}
+
+/*设置搜索框,边框的属性*/
+.key-search .search-txt{
+    float: left;
+    width: 91px;
+    height: 25px;
+    padding: 2px 2px 2px 5px;
+}
+
+/*设置搜索边框右侧的放大镜按钮，因为是内联a标签，要想设置宽和高的化要先设置display:inline-block*/
+.key-search a{
+    display: inline-block;
+    width: 31px;
+    height: 33px;
+    background-color: #f4f4f4;
+}
+
+/*将放大镜图片引入到span标签的ico属性*/
+.key-search a span.ico{
+    display: inline-block;
+    width: 11px;
+    height: 13px;
+
+    /*引入图片*/
+    background:url("../images/icon.png") no-repeat 0 -196px;
+
+    /*调整放大镜在盒子里居中*/
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+
+/*设置"注册"和"登录"时使用定位的方法，如果设置.action-nav为定位的话，需要有一个参照物，*/
+/*这个参照物建议选择其父亲的盒子，在父亲(head-content)的盒子里设置成position: relative;*/
+.head-content .action-nav{
+    position: absolute;
+    right: 150px; /*设置距离右侧150px*/
+}
+
+/*设置"注册"和"登录"的间距*/
+.action-nav a{
+    color: white;
+    margin: 0 5px; /*上下0，左右5px*/
+    padding: 0 20px; /*上下0，左右20px*/
+    line-height: 44px;
+}
+
+/*设置"注册"和"登录"的悬浮效果*/
+.action-nav a:hover{
+    display: inline-block;
+    background-color: #396bb3;
+    line-height: 44px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
