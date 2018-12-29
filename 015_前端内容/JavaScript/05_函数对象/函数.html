@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+<script>
+
+// 函数的创建方式一
+    //定义函数
+    function f(x,y) {
+        alert(123);
+        return (x + y) // 默认返回null
+    }
+    //调用函数
+    console.log(f(23,5678))
+
+// 函数的创建方式二 (基本不用)
+    //正常写法
+    function foo(name) {
+        console.log("hello"+name)
+    }
+    foo(" python")
+
+    //方式二的写法，仅供参考，基本不用。
+    var obj = new Function("name","console.log(\"hello\"+name)")
+    obj(" javascript")
+
+</script>
+</body>
+</html>

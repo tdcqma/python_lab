@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局作用域</title>
+</head>
+<body>
+<script>
+    //第一种形式,变量在函数外定义，即为全局变量。
+    var x = 1;
+    function f (){
+        alert(x);
+    }
+    console.log(x);
+    f();
+
+    // 第二种形式，如果函数内没有使用var生命，则该变量作用域为全局
+    function myFunction(){
+        userName = "张三";
+        alert(userName);
+    }
+
+    myFunction()
+    console.log(userName)
+
+</script>
+</body>
+</html>

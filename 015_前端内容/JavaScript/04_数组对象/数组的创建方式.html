@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的数组的创建方式</title>
+</head>
+<body>
+
+<script>
+    var arr1 = [1,"hello",[1,2,3],{"name":"小李逵"}]
+    console.log(typeof arr1)
+
+    var arr2 = new Array(3) // 括号内指定3即智能创建三个元素
+    console.log(typeof arr2)
+
+    //创建二位数组、多维数组，即：数组里包含数组
+    var arr3 = new Array(1,"world",true,["a","b","c"])
+    console.log(typeof arr3)
+
+    //注意,括号内只有一个且为数字的话，会被js认为是限定元素的size，即大小。
+    var arr4 = new Array(10)
+
+    console.log('长度：'+arr1.length)
+
+
+
+
+
+</script>
+</body>
+</html>
