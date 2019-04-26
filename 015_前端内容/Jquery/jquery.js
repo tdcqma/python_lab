@@ -256,7 +256,7 @@ jQuery.extend( {
 	noop: function() {},
 
 	// See test/unit/core.js for details concerning isFunction.
-	// Since version 1.3, DOM methods and functions like alert
+	// Since version 1.3, 08_HTML DOM methods and functions like alert
 	// aren't supported. They return false on IE (#2968).
 	isFunction: function( obj ) {
 		return jQuery.type( obj ) === "function";
@@ -294,7 +294,7 @@ jQuery.extend( {
 
 		// Must be an Object.
 		// Because of IE, we also have to check the presence of the constructor property.
-		// Make sure that DOM nodes and window objects don't pass through, as well
+		// Make sure that 08_HTML DOM nodes and window objects don't pass through, as well
 		if ( !obj || jQuery.type( obj ) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
 			return false;
 		}
@@ -795,7 +795,7 @@ function Sizzle( selector, context, results, seed ) {
 
 		if ( documentIsHTML ) {
 
-			// If the selector is sufficiently simple, try using a "get*By*" DOM method
+			// If the selector is sufficiently simple, try using a "get*By*" 08_HTML DOM method
 			// (excepting DocumentFragment context, where the methods don't exist)
 			if ( nodeType !== 11 && (match = rquickExpr.exec( selector )) ) {
 
@@ -1536,7 +1536,7 @@ Sizzle.uniqueSort = function( results ) {
 };
 
 /**
- * Utility function for retrieving the text value of an array of DOM nodes
+ * Utility function for retrieving the text value of an array of 08_HTML DOM nodes
  * @param {Array|Element} elem
  */
 getText = Sizzle.getText = function( elem ) {
@@ -3533,7 +3533,7 @@ jQuery.extend( {
 } );
 
 
-// The deferred used on DOM ready
+// The deferred used on 08_HTML DOM ready
 var readyList;
 
 jQuery.fn.ready = function( fn ) {
@@ -3546,7 +3546,7 @@ jQuery.fn.ready = function( fn ) {
 
 jQuery.extend( {
 
-	// Is the DOM ready to be used? Set to true once it occurs.
+	// Is the 08_HTML DOM ready to be used? Set to true once it occurs.
 	isReady: false,
 
 	// A counter to track how many items to wait for before
@@ -3562,7 +3562,7 @@ jQuery.extend( {
 		}
 	},
 
-	// Handle when the DOM is ready
+	// Handle when the 08_HTML DOM is ready
 	ready: function( wait ) {
 
 		// Abort if there are pending holds or we're already ready
@@ -3570,10 +3570,10 @@ jQuery.extend( {
 			return;
 		}
 
-		// Remember that the DOM is ready
+		// Remember that the 08_HTML DOM is ready
 		jQuery.isReady = true;
 
-		// If a normal DOM Ready event fired, decrement, and wait if need be
+		// If a normal 08_HTML DOM Ready event fired, decrement, and wait if need be
 		if ( wait !== true && --jQuery.readyWait > 0 ) {
 			return;
 		}
@@ -3685,7 +3685,7 @@ jQuery.ready.promise = function( obj ) {
 	return readyList.promise( obj );
 };
 
-// Kick off the DOM ready check even if the user does not
+// Kick off the 08_HTML DOM ready check even if the user does not
 jQuery.ready.promise();
 
 
@@ -3762,7 +3762,7 @@ var acceptData = function( elem ) {
 	var noData = jQuery.noData[ ( elem.nodeName + " " ).toLowerCase() ],
 		nodeType = +elem.nodeType || 1;
 
-	// Do not set data on non-element DOM nodes because it will not be cleared (#8335).
+	// Do not set data on non-element 08_HTML DOM nodes because it will not be cleared (#8335).
 	return nodeType !== 1 && nodeType !== 9 ?
 		false :
 
@@ -3834,16 +3834,16 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ) {
 	var ret, thisCache,
 		internalKey = jQuery.expando,
 
-		// We have to handle DOM nodes and JS objects differently because IE6-7
-		// can't GC object references properly across the DOM-JS boundary
+		// We have to handle 08_HTML DOM nodes and JS objects differently because IE6-7
+		// can't GC object references properly across the 08_HTML DOM-JS boundary
 		isNode = elem.nodeType,
 
-		// Only DOM nodes need the global jQuery cache; JS object data is
+		// Only 08_HTML DOM nodes need the global jQuery cache; JS object data is
 		// attached directly to the object so GC can occur automatically
 		cache = isNode ? jQuery.cache : elem,
 
 		// Only defining an ID for JS objects if its cache already exists allows
-		// the code to shortcut on the same path as a DOM node with no cache
+		// the code to shortcut on the same path as a 08_HTML DOM node with no cache
 		id = isNode ? elem[ internalKey ] : elem[ internalKey ] && internalKey;
 
 	// Avoid doing any more work than we need to when trying to get data on an
@@ -3855,7 +3855,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ) {
 
 	if ( !id ) {
 
-		// Only DOM nodes need a new unique ID for each element since their data
+		// Only 08_HTML DOM nodes need a new unique ID for each element since their data
 		// ends up in the global cache
 		if ( isNode ) {
 			id = elem[ internalKey ] = deletedIds.pop() || jQuery.guid++;
@@ -4481,7 +4481,7 @@ function createSafeFragment( document ) {
 		document.createElement( "nav" ).cloneNode( true ).outerHTML !== "<:nav></:nav>";
 
 	// Check if a disconnected checkbox will retain its checked
-	// value of true after appended to the DOM (IE6/7)
+	// value of true after appended to the 08_HTML DOM (IE6/7)
 	input.type = "checkbox";
 	input.checked = true;
 	fragment.appendChild( input );
@@ -4620,7 +4620,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			} else if ( !rhtml.test( elem ) ) {
 				nodes.push( context.createTextNode( elem ) );
 
-			// Convert html into DOM nodes
+			// Convert html into 08_HTML DOM nodes
 			} else {
 				tmp = tmp || safe.appendChild( context.createElement( "div" ) );
 
@@ -4685,7 +4685,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 	}
 
 	// Reset defaultChecked for any radios and checkboxes
-	// about to be appended to the DOM in IE 6/7 (#8060)
+	// about to be appended to the 08_HTML DOM in IE 6/7 (#8060)
 	if ( !support.appendChecked ) {
 		jQuery.grep( getAll( nodes, "input" ), fixDefaultChecked );
 	}
@@ -5108,7 +5108,7 @@ jQuery.event = {
 				tmp = cur;
 			}
 
-			// Only add window if we got to document (e.g., not plain obj or detached DOM)
+			// Only add window if we got to document (e.g., not plain obj or detached 08_HTML DOM)
 			if ( tmp === ( elem.ownerDocument || document ) ) {
 				eventPath.push( tmp.defaultView || tmp.parentWindow || window );
 			}
@@ -5150,7 +5150,7 @@ jQuery.event = {
 				) && acceptData( elem )
 			) {
 
-				// Call a native DOM method on the target with the same name name as the event.
+				// Call a native 08_HTML DOM method on the target with the same name name as the event.
 				// Can't use an .isFunction() check here because IE6/7 fails that test.
 				// Don't do default actions on window, that's where global variables be (#6170)
 				if ( ontype && elem[ type ] && !jQuery.isWindow( elem ) ) {
@@ -5896,7 +5896,7 @@ function manipulationTarget( elem, content ) {
 		elem;
 }
 
-// Replace/restore the type attribute of script elements for safe DOM manipulation
+// Replace/restore the type attribute of script elements for safe 08_HTML DOM manipulation
 function disableScript( elem ) {
 	elem.type = ( jQuery.find.attr( elem, "type" ) !== null ) + "/" + elem.type;
 	return elem;
@@ -6228,7 +6228,7 @@ jQuery.extend( {
 							elem.removeAttribute( internalKey );
 
 						// Webkit & Blink performance suffers when deleting properties
-						// from DOM nodes, so set to undefined instead
+						// from 08_HTML DOM nodes, so set to undefined instead
 						// https://code.google.com/p/chromium/issues/detail?id=378607
 						} else {
 							elem[ internalKey ] = undefined;
@@ -7076,7 +7076,7 @@ jQuery.extend( {
 		"float": support.cssFloat ? "cssFloat" : "styleFloat"
 	},
 
-	// Get and set the style property on a DOM Node
+	// Get and set the style property on a 08_HTML DOM Node
 	style: function( elem, name, value, extra ) {
 
 		// Don't set styles on text and comment nodes
@@ -7427,7 +7427,7 @@ Tween.propHooks = {
 		get: function( tween ) {
 			var result;
 
-			// Use a property on the element directly when it is not a DOM element,
+			// Use a property on the element directly when it is not a 08_HTML DOM element,
 			// or when there is no matching style property that exists.
 			if ( tween.elem.nodeType !== 1 ||
 				tween.elem[ tween.prop ] != null && tween.elem.style[ tween.prop ] == null ) {
@@ -9483,7 +9483,7 @@ jQuery.extend( {
 			// Callbacks context
 			callbackContext = s.context || s,
 
-			// Context for global events is callbackContext if it is a DOM node or jQuery collection
+			// Context for global events is callbackContext if it is a 08_HTML DOM node or jQuery collection
 			globalEventContext = s.context &&
 				( callbackContext.nodeType || callbackContext.jquery ) ?
 					jQuery( callbackContext ) :
@@ -10433,7 +10433,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 				};
 
 				// Circumvent IE6 bugs with base elements (#2709 and #4378) by prepending
-				// Use native DOM manipulation to avoid our domManip AJAX trickery
+				// Use native 08_HTML DOM manipulation to avoid our domManip AJAX trickery
 				head.insertBefore( script, head.firstChild );
 			},
 
@@ -10758,7 +10758,7 @@ jQuery.fn.extend( {
 
 		docElem = doc.documentElement;
 
-		// Make sure it's not a disconnected DOM node
+		// Make sure it's not a disconnected 08_HTML DOM node
 		if ( !jQuery.contains( docElem, elem ) ) {
 			return box;
 		}

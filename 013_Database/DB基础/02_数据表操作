@@ -1,0 +1,350 @@
+
+-- 创建 employee表
+create table employee(
+    id int primary key auto_increment,
+    name varchar(20),
+    gender bit default 1,
+    birthday date,
+    entry_date date,
+    job varchar(20),
+    salary double(4,2) unsigned,
+    resume text
+) character set utf8;
+
+Create Table employee(
+    id TINYINT primary key auto_increment,
+    name Varchar(25),
+    gender boolean,
+    age int,
+    department varchar(20),
+    salary Double(7,2)
+    );
+
+-- 查看表结构
+mysql> desc employee;
++------------+----------------------+------+-----+---------+----------------+
+| Field      | Type                 | Null | Key | Default | Extra          |
++------------+----------------------+------+-----+---------+----------------+
+| id         | int(11)              | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(20)          | YES  |     | NULL    |                |
+| gender     | bit(1)               | YES  |     | b'1'    |                |
+| birthday   | date                 | YES  |     | NULL    |                |
+| entry_date | date                 | YES  |     | NULL    |                |
+| job        | varchar(20)          | YES  |     | NULL    |                |
+| salary     | double(4,2) unsigned | YES  |     | NULL    |                |
+| resume     | text                 | YES  |     | NULL    |                |
++------------+----------------------+------+-----+---------+----------------+
+
+-- 查看表结构
+mysql> show columns from employee;
++------------+----------------------+------+-----+---------+----------------+
+| Field      | Type                 | Null | Key | Default | Extra          |
++------------+----------------------+------+-----+---------+----------------+
+| id         | int(11)              | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(20)          | YES  |     | NULL    |                |
+| gender     | bit(1)               | YES  |     | b'1'    |                |
+| birthday   | date                 | YES  |     | NULL    |                |
+| entry_date | date                 | YES  |     | NULL    |                |
+| job        | varchar(20)          | YES  |     | NULL    |                |
+| salary     | double(4,2) unsigned | YES  |     | NULL    |                |
+| resume     | text                 | YES  |     | NULL    |                |
++------------+----------------------+------+-----+---------+----------------+
+
+-- 查看数据库中当前所有表
+mysql> show tables;
++------------------+
+| Tables_in_testdb |
++------------------+
+| employee         |
+| table1           |
+| table2           |
++------------------+
+
+-- 查看当前数据库表的简表语句
+mysql> show create table employee;
++----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                                                                                                                                                                                                                                      |
++----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| employee | CREATE TABLE `employee` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `gender` bit(1) DEFAULT b'1',
+  `birthday` date DEFAULT NULL,
+  `entry_date` date DEFAULT NULL,
+  `job` varchar(20) DEFAULT NULL,
+  `salary` double(4,2) unsigned DEFAULT NULL,
+  `resume` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 |
++----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+-- 修改表结构（1），添加一个字段
+mysql> alter table employee add addr varchar(20) not null unique ;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++------------+----------------------+------+-----+---------+----------------+
+| Field      | Type                 | Null | Key | Default | Extra          |
++------------+----------------------+------+-----+---------+----------------+
+| id         | int(11)              | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(20)          | YES  |     | NULL    |                |
+| gender     | bit(1)               | YES  |     | b'1'    |                |
+| birthday   | date                 | YES  |     | NULL    |                |
+| entry_date | date                 | YES  |     | NULL    |                |
+| job        | varchar(20)          | YES  |     | NULL    |                |
+| salary     | double(4,2) unsigned | YES  |     | NULL    |                |
+| resume     | text                 | YES  |     | NULL    |                |
+| addr       | varchar(20)          | NO   | UNI | NULL    |                |
++------------+----------------------+------+-----+---------+----------------+
+
+-- 修改表结构（2），添加多个字段:home_addr,age,complany
+mysql> alter table employee
+    ->     add home_addr varchar(20),
+    ->     add age int first,   -- first ,将字段age插入第一位
+    ->     add complany varchar(20) after job;  -- 将字段complany插入到job字段后面
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++------------+----------------------+------+-----+---------+----------------+
+| Field      | Type                 | Null | Key | Default | Extra          |
++------------+----------------------+------+-----+---------+----------------+
+| age        | int(11)              | YES  |     | NULL    |                |
+| id         | int(11)              | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(20)          | YES  |     | NULL    |                |
+| gender     | bit(1)               | YES  |     | b'1'    |                |
+| birthday   | date                 | YES  |     | NULL    |                |
+| entry_date | date                 | YES  |     | NULL    |                |
+| job        | varchar(20)          | YES  |     | NULL    |                |
+| complany   | varchar(20)          | YES  |     | NULL    |                |
+| salary     | double(4,2) unsigned | YES  |     | NULL    |                |
+| resume     | text                 | YES  |     | NULL    |                |
+| addr       | varchar(20)          | NO   | UNI | NULL    |                |
+| home_addr  | varchar(20)          | YES  |     | NULL    |                |
++------------+----------------------+------+-----+---------+----------------+
+
+-- 修改表结构（3），修改旧列名age为新列名myage，设置默认值为28，并且放到表格第一行
+mysql> alter table employee change age myage int default 28 first;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++------------+----------------------+------+-----+---------+----------------+
+| Field      | Type                 | Null | Key | Default | Extra          |
++------------+----------------------+------+-----+---------+----------------+
+| myage      | int(11)              | YES  |     | 28      |                |
+| id         | int(11)              | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(20)          | YES  |     | NULL    |                |
+| gender     | bit(1)               | YES  |     | b'1'    |                |
+| birthday   | date                 | YES  |     | NULL    |                |
+| entry_date | date                 | YES  |     | NULL    |                |
+| job        | varchar(20)          | YES  |     | NULL    |                |
+| complany   | varchar(20)          | YES  |     | NULL    |                |
+| salary     | double(4,2) unsigned | YES  |     | NULL    |                |
+| resume     | text                 | YES  |     | NULL    |                |
+| addr       | varchar(20)          | NO   | UNI | NULL    |                |
+| home_addr  | varchar(20)          | YES  |     | NULL    |                |
++------------+----------------------+------+-----+---------+----------------+
+
+-- 修改表结构（4），删除一列
+mysql> alter table employee drop home_addr;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++------------+----------------------+------+-----+---------+----------------+
+| Field      | Type                 | Null | Key | Default | Extra          |
++------------+----------------------+------+-----+---------+----------------+
+| myage      | int(11)              | YES  |     | 28      |                |
+| id         | int(11)              | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(20)          | YES  |     | NULL    |                |
+| gender     | bit(1)               | YES  |     | b'1'    |                |
+| birthday   | date                 | YES  |     | NULL    |                |
+| entry_date | date                 | YES  |     | NULL    |                |
+| job        | varchar(20)          | YES  |     | NULL    |                |
+| complany   | varchar(20)          | YES  |     | NULL    |                |
+| salary     | double(4,2) unsigned | YES  |     | NULL    |                |
+| resume     | text                 | YES  |     | NULL    |                |
+| addr       | varchar(20)          | NO   | UNI | NULL    |                |
++------------+----------------------+------+-----+---------+----------------+
+
+-- 添加字段，包含约束条件 not null
+    mysql> alter table employee add entry_date date not null;
+    Query OK, 0 rows affected (0.02 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+
+    mysql> desc employee;
+    +------------+-------------+------+-----+---------+----------------+
+    | Field      | Type        | Null | Key | Default | Extra          |
+    +------------+-------------+------+-----+---------+----------------+
+    | id         | tinyint(4)  | NO   | PRI | NULL    | auto_increment |
+    | name       | varchar(25) | YES  |     | NULL    |                |
+    | gender     | tinyint(1)  | YES  |     | NULL    |                |
+    | age        | int(11)     | YES  |     | NULL    |                |
+    | department | varchar(20) | YES  |     | NULL    |                |
+    | salary     | double(7,2) | YES  |     | NULL    |                |
+    | is_married | tinyint(1)  | YES  |     | NULL    |                |
+    | is_hello   | tinyint(1)  | YES  |     | NULL    |                |
+    | entry_date | date        | NO   |     | NULL    |                |
+    +------------+-------------+------+-----+---------+----------------+
+    9 rows in set (0.00 sec)
+
+-- 删除一个字段
+    mysql> desc employee;
+    +------------+-------------+------+-----+---------+----------------+
+    | Field      | Type        | Null | Key | Default | Extra          |
+    +------------+-------------+------+-----+---------+----------------+
+    | id         | tinyint(4)  | NO   | PRI | NULL    | auto_increment |
+    | name       | varchar(25) | YES  |     | NULL    |                |
+    | gender     | tinyint(1)  | YES  |     | NULL    |                |
+    | age        | int(11)     | YES  |     | NULL    |                |
+    | department | varchar(20) | YES  |     | NULL    |                |
+    | salary     | double(7,2) | YES  |     | NULL    |                |
+    | is_married | tinyint(1)  | YES  |     | NULL    |                |
+    | is_hello   | tinyint(1)  | YES  |     | NULL    |                |
+    | entry_date | date        | NO   |     | NULL    |                |
+    +------------+-------------+------+-----+---------+----------------+
+    9 rows in set (0.00 sec)
+
+    mysql> alter table employee drop is_hello;
+    Query OK, 0 rows affected (0.03 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+
+    mysql> desc employee;
+    +------------+-------------+------+-----+---------+----------------+
+    | Field      | Type        | Null | Key | Default | Extra          |
+    +------------+-------------+------+-----+---------+----------------+
+    | id         | tinyint(4)  | NO   | PRI | NULL    | auto_increment |
+    | name       | varchar(25) | YES  |     | NULL    |                |
+    | gender     | tinyint(1)  | YES  |     | NULL    |                |
+    | age        | int(11)     | YES  |     | NULL    |                |
+    | department | varchar(20) | YES  |     | NULL    |                |
+    | salary     | double(7,2) | YES  |     | NULL    |                |
+    | is_married | tinyint(1)  | YES  |     | NULL    |                |
+    | entry_date | date        | NO   |     | NULL    |                |
+    +------------+-------------+------+-----+---------+----------------+
+    8 rows in set (0.01 sec)
+
+-- 修改列的属性
+    mysql> desc employee;
+    +------------+-------------+------+-----+---------+----------------+
+    | Field      | Type        | Null | Key | Default | Extra          |
+    +------------+-------------+------+-----+---------+----------------+
+    | id         | tinyint(4)  | NO   | PRI | NULL    | auto_increment |
+    | name       | varchar(25) | YES  |     | NULL    |                |
+    | gender     | tinyint(1)  | YES  |     | NULL    |                |
+    | age        | int(11)     | YES  |     | NULL    |                |
+    | department | varchar(20) | YES  |     | NULL    |                |
+    | salary     | double(7,2) | YES  |     | NULL    |                |
+    | is_married | tinyint(1)  | YES  |     | NULL    |                |
+    | entry_date | date        | NO   |     | NULL    |                |
+    +------------+-------------+------+-----+---------+----------------+
+    8 rows in set (0.00 sec)
+
+    mysql> alter table employee modify age smallint not null default 18 after id;
+    Query OK, 0 rows affected (0.03 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+
+    mysql> desc employee;
+    +------------+-------------+------+-----+---------+----------------+
+    | Field      | Type        | Null | Key | Default | Extra          |
+    +------------+-------------+------+-----+---------+----------------+
+    | id         | tinyint(4)  | NO   | PRI | NULL    | auto_increment |
+    | age        | smallint(6) | NO   |     | 18      |                |
+    | name       | varchar(25) | YES  |     | NULL    |                |
+    | gender     | tinyint(1)  | YES  |     | NULL    |                |
+    | department | varchar(20) | YES  |     | NULL    |                |
+    | salary     | double(7,2) | YES  |     | NULL    |                |
+    | is_married | tinyint(1)  | YES  |     | NULL    |                |
+    | entry_date | date        | NO   |     | NULL    |                |
+    +------------+-------------+------+-----+---------+----------------+
+    8 rows in set (0.00 sec)
+
+-- 修改列的名字department 为 depart，并放在salary后面
+    mysql> desc employee;
+    +------------+-------------+------+-----+---------+----------------+
+    | Field      | Type        | Null | Key | Default | Extra          |
+    +------------+-------------+------+-----+---------+----------------+
+    | id         | tinyint(4)  | NO   | PRI | NULL    | auto_increment |
+    | age        | smallint(6) | NO   |     | 18      |                |
+    | name       | varchar(25) | YES  |     | NULL    |                |
+    | gender     | tinyint(1)  | YES  |     | NULL    |                |
+    | department | varchar(20) | YES  |     | NULL    |                |
+    | salary     | double(7,2) | YES  |     | NULL    |                |
+    | is_married | tinyint(1)  | YES  |     | NULL    |                |
+    | entry_date | date        | NO   |     | NULL    |                |
+    +------------+-------------+------+-----+---------+----------------+
+    8 rows in set (0.00 sec)
+
+    mysql> alter table employee change department depart varchar(20) not null after salary;
+    Query OK, 0 rows affected (0.03 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+
+    mysql> desc employee;
+    +------------+-------------+------+-----+---------+----------------+
+    | Field      | Type        | Null | Key | Default | Extra          |
+    +------------+-------------+------+-----+---------+----------------+
+    | id         | tinyint(4)  | NO   | PRI | NULL    | auto_increment |
+    | age        | smallint(6) | NO   |     | 18      |                |
+    | name       | varchar(25) | YES  |     | NULL    |                |
+    | gender     | tinyint(1)  | YES  |     | NULL    |                |
+    | salary     | double(7,2) | YES  |     | NULL    |                |
+    | depart     | varchar(20) | NO   |     | NULL    |                |
+    | is_married | tinyint(1)  | YES  |     | NULL    |                |
+    | entry_date | date        | NO   |     | NULL    |                |
+    +------------+-------------+------+-----+---------+----------------+
+    8 rows in set (0.00 sec)
+
+-- 修改表的名字employee 为 emp
+    mysql> show tables;
+    +------------------+
+    | Tables_in_testdb |
+    +------------------+
+    | employee         |
+    | table1           |
+    | table2           |
+    +------------------+
+    3 rows in set (0.00 sec)
+
+    mysql> rename table employee to emp;
+    Query OK, 0 rows affected (0.00 sec)
+
+    mysql> show tables;
+    +------------------+
+    | Tables_in_testdb |
+    +------------------+
+    | emp              |
+    | table1           |
+    | table2           |
+    +------------------+
+    3 rows in set (0.00 sec)
+
+-- 删除一个表，先新建一个表A，然后在删除
+    mysql> create table A(id int);
+    Query OK, 0 rows affected (0.02 sec)
+
+    mysql> show tables;
+    +------------------+
+    | Tables_in_testdb |
+    +------------------+
+    | A                |
+    | emp              |
+    | table1           |
+    | table2           |
+    +------------------+
+    4 rows in set (0.00 sec)
+
+    mysql> drop table A;
+    Query OK, 0 rows affected (0.00 sec)
+
+    mysql> show tables;
+    +------------------+
+    | Tables_in_testdb |
+    +------------------+
+    | emp              |
+    | table1           |
+    | table2           |
+    +------------------+
+    3 rows in set (0.00 sec)

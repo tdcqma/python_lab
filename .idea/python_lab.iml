@@ -9,6 +9,8 @@
     <orderEntry type="module" module-name="Limon" />
     <orderEntry type="module" module-name="chose_course_v1" />
     <orderEntry type="module" module-name="course_other" />
+    <orderEntry type="module" module-name="pahysrc" />
+    <orderEntry type="module" module-name="yidisrc" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../chose_course_v1/.idea/chose_course_v1.iml" filepath="$PROJECT_DIR$/../chose_course_v1/.idea/chose_course_v1.iml" />
       <module fileurl="file://$USER_HOME$/PycharmProjects/course_other/.idea/course_other.iml" filepath="$USER_HOME$/PycharmProjects/course_other/.idea/course_other.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/src/wwwroot/pahysrc/.idea/pahysrc.iml" filepath="$USER_HOME$/PycharmProjects/src/wwwroot/pahysrc/.idea/pahysrc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/python_lab.iml" filepath="$PROJECT_DIR$/.idea/python_lab.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/yidisrc/data/wwwroot/yidisrc/.idea/yidisrc.iml" filepath="$USER_HOME$/PycharmProjects/yidisrc/data/wwwroot/yidisrc/.idea/yidisrc.iml" />
     </modules>
   </component>
 </project>

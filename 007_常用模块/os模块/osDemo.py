@@ -18,7 +18,8 @@ import os
 # print(os.name)#输出字符串指示当前使用平台。win->'nt'; Linux->'posix'
 # print(os.system("ls"))  #运行shell命令，直接显示
 # print(os.environ) #获取系统环境变量
-# print(os.path.abspath('.'))  #返回path规范化的绝对路径
+# path = os.path.abspath('.')  #返回path规范化的绝对路径
+# print('path:',path)
 # os.path.split(path)  #将path分割成目录和文件名二元组返回
 # print(os.path.dirname(path))  #返回path的目录。其实就是os.path.split(path)的第一个元素
 # path = "/Users/***/Documents/GitHub/python_lab/007_常用模块/os模块/osDemo.py"

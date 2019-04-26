@@ -1,0 +1,60 @@
+【 以下信息参考《玩转Django2.0》 --- 黄永祥 】
+
+
+在Pycharm的Terminal下开启shell模式，输入
+    (MyDjango) tdcqma:MyDjango $ python3 manage.py shell
+    Python 3.6.1 (v3.6.1:69c0db5050, Mar 21 2017, 01:21:04)
+    [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+    (InteractiveConsole)
+    >>>
+
+查看index_product2的表信息
+    mysql> desc index_product2;
+    +---------+-------------+------+-----+---------+----------------+
+    | Field   | Type        | Null | Key | Default | Extra          |
+    +---------+-------------+------+-----+---------+----------------+
+    | id      | int(11)     | NO   | PRI | NULL    | auto_increment |
+    | name    | varchar(50) | NO   |     | NULL    |                |
+    | weight  | varchar(20) | NO   |     | NULL    |                |
+    | size    | varchar(20) | NO   |     | NULL    |                |
+    | type_id | int(11)     | NO   | MUL | NULL    |                |
+    +---------+-------------+------+-----+---------+----------------+
+    5 rows in set (0.00 sec)
+
+    mysql> select * from index_product2;
+    Empty set (0.00 sec)
+
+    mysql>
+
+一、数据插入的方式
+
+  （方式 1）在shell模式下，对数据表index_product2插入数据
+      >>> from index.models import *
+      >>> p = Product2()
+      >>> p.name = "荣耀v9"
+      >>> p.weight = "111g"
+      >>> p.size = "120*75*7mm"
+      >>> p.type_id = 1
+      >>> p.save()
+
+      查看插入数据的情况
+      mysql> select * from index_product2;
+      +----+----------+--------+------------+---------+
+      | id | name     | weight | size       | type_id |
+      +----+----------+--------+------------+---------+
+      | 10 | 荣耀v9   | 111g   | 120*75*7mm |       1 |
+      +----+----------+--------+------------+---------+
+      1 row in set (0.00 sec)
+
+  （方式 2）通过Django的ORM框架提供的API实现，使用create方法实现数据插入
+      >>> Product2.objects.create(name = "iphone7plus",weight = "132g", size = "110*73*9mm", type_id = 2);
+      <Product2: Product2 object (11)>
+
+  （方式3）在实例化时直接设置属性值
+      >>> p = Product2(name = "vivo手机",weight="121g",size="125*77*12mm",type_id=1)
+      >>> p.save()
+
+二、数据的更新方式
+  （方式1）
+

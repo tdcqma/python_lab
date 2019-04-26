@@ -1,0 +1,101 @@
+-- 参考 http://www.cnblogs.com/yuanchenqi/articles/6357507.html
+
+-- 添加一条信息
+    mysql> insert  into emp(id,age,name,gender,salary,depart,is_married)
+        -> values (1,18,"natasha",0,2000,"技术部",1);
+    Query OK, 1 row affected (0.00 sec)
+
+    mysql> select * from emp;
+    +----+-----+---------+--------+---------+-----------+------------+
+    | id | age | name    | gender | salary  | depart    | is_married |
+    +----+-----+---------+--------+---------+-----------+------------+
+    |  1 |  18 | natasha |      0 | 2000.00 | 技术部    |          1 |
+    +----+-----+---------+--------+---------+-----------+------------+
+    1 row in set (0.01 sec)
+
+-- 可以为空的值可以先不用设置
+    mysql> insert into emp (name,salary,depart) values("susan",5000,"人事部");
+    Query OK, 1 row affected (0.01 sec)
+
+    mysql> select * from emp;
+    +----+-----+---------+--------+---------+-----------+------------+
+    | id | age | name    | gender | salary  | depart    | is_married |
+    +----+-----+---------+--------+---------+-----------+------------+
+    |  1 |  18 | natasha |      0 | 2000.00 | 技术部    |          1 |
+    |  2 |  18 | susan   |   NULL | 5000.00 | 人事部    |       NULL |
+    +----+-----+---------+--------+---------+-----------+------------+
+    2 rows in set (0.00 sec)
+
+-- 插入多条数据 values后面每个（）代表一条记录，用逗号隔开。
+    mysql> insert into emp (name,salary,depart) values("susan",5000,"人事部"),
+    ("zhangfei",9000,"销售部"),
+    ("刘备",29,"办公室主任");
+    Query OK, 3 rows affected (0.00 sec)
+    Records: 3  Duplicates: 0  Warnings: 0
+
+    mysql> select * from emp;
+    +----+-----+----------+--------+---------+-----------------+------------+
+    | id | age | name     | gender | salary  | depart          | is_married |
+    +----+-----+----------+--------+---------+-----------------+------------+
+    |  1 |  18 | natasha  |      0 | 2000.00 | 技术部          |          1 |
+    |  2 |  18 | susan    |   NULL | 5000.00 | 人事部          |       NULL |
+    |  3 |  18 | susan    |   NULL | 5000.00 | 人事部          |       NULL |
+    |  4 |  18 | zhangfei |   NULL | 9000.00 | 销售部          |       NULL |
+    |  5 |  18 | 刘备     |   NULL |   29.00 | 办公室主任      |       NULL |
+    +----+-----+----------+--------+---------+-----------------+------------+
+    5 rows in set (0.00 sec)
+
+-- 插入数据时不添加列名的插入
+    mysql> insert into emp values(10,29,"关羽",0,20000,"销售部",0);
+    Query OK, 1 row affected (0.00 sec)
+
+    mysql> select * from emp;
+    +----+-----+----------+--------+----------+-----------------+------------+
+    | id | age | name     | gender | salary   | depart          | is_married |
+    +----+-----+----------+--------+----------+-----------------+------------+
+    |  1 |  18 | natasha  |      0 |  2000.00 | 技术部          |          1 |
+    |  2 |  18 | susan    |   NULL |  5000.00 | 人事部          |       NULL |
+    |  3 |  18 | susan    |   NULL |  5000.00 | 人事部          |       NULL |
+    |  4 |  18 | zhangfei |   NULL |  9000.00 | 销售部          |       NULL |
+    |  5 |  18 | 刘备     |   NULL |    29.00 | 办公室主任      |       NULL |
+    | 10 |  29 | 关羽     |      0 | 20000.00 | 销售部          |          0 |
+    +----+-----+----------+--------+----------+-----------------+------------+
+    6 rows in set (0.00 sec)
+
+-- 问题：如果在插入一条数据时，id这个字段时从6开始走，还是从10开始走呢 ？ 答案是从10开始继续走！
+    mysql> insert into emp (name,salary,depart) values("占三峰",15000,"后勤部");
+    Query OK, 1 row affected (0.00 sec)
+
+    mysql> select * from emp;
+    +----+-----+-----------+--------+----------+-----------------+------------+
+    | id | age | name      | gender | salary   | depart          | is_married |
+    +----+-----+-----------+--------+----------+-----------------+------------+
+    |  1 |  18 | natasha   |      0 |  2000.00 | 技术部          |          1 |
+    |  2 |  18 | susan     |   NULL |  5000.00 | 人事部          |       NULL |
+    |  3 |  18 | susan     |   NULL |  5000.00 | 人事部          |       NULL |
+    |  4 |  18 | zhangfei  |   NULL |  9000.00 | 销售部          |       NULL |
+    |  5 |  18 | 刘备      |   NULL |    29.00 | 办公室主任      |       NULL |
+    | 10 |  29 | 关羽      |      0 | 20000.00 | 销售部          |          0 |
+    | 11 |  18 | 占三峰    |   NULL | 15000.00 | 后勤部          |       NULL |
+    +----+-----+-----------+--------+----------+-----------------+------------+
+    7 rows in set (0.00 sec)
+
+-- 使用键值对的形式赋值
+    mysql> insert into emp set name="小龙女";
+    Query OK, 1 row affected, 1 warning (0.00 sec)
+
+    mysql> select * from emp;
+    +----+-----+-----------+--------+----------+-----------------+------------+
+    | id | age | name      | gender | salary   | depart          | is_married |
+    +----+-----+-----------+--------+----------+-----------------+------------+
+    |  1 |  18 | natasha   |      0 |  2000.00 | 技术部          |          1 |
+    |  2 |  18 | susan     |   NULL |  5000.00 | 人事部          |       NULL |
+    |  3 |  18 | susan     |   NULL |  5000.00 | 人事部          |       NULL |
+    |  4 |  18 | zhangfei  |   NULL |  9000.00 | 销售部          |       NULL |
+    |  5 |  18 | 刘备      |   NULL |    29.00 | 办公室主任      |       NULL |
+    | 10 |  29 | 关羽      |      0 | 20000.00 | 销售部          |          0 |
+    | 11 |  18 | 占三峰    |   NULL | 15000.00 | 后勤部          |       NULL |
+    | 12 |  18 | 小龙女    |   NULL |     NULL |                 |       NULL |
+    +----+-----+-----------+--------+----------+-----------------+------------+
+    8 rows in set (0.00 sec)
+

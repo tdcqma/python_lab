@@ -1,5 +1,5 @@
 # python内置了很多有用的函数，我们只需要记住函数名和需要的参数既可以调用函数，
-# 函数的帮助文档可以在python的官网查看https://docs.python.org/3/library/index.html
+# 函数的帮助文档可以在python的官网查看https://docs.python.org/3/library/index_bak2.html
 # 也可以使用help()来查看，如：
 help(abs)
 print(abs(-2))

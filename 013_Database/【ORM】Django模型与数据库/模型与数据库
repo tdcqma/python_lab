@@ -1,0 +1,76 @@
+【 以下信息参考《玩转Django2.0》 --- 黄永祥 】
+
+Django 对多种数据库均提供了很好的支持，包括PostgreSQL、MySQL、SQLite、Oracle等，
+而且为这些数据库提供了统一的调用API，这些API统称为ORM框架。
+
+通过使用Django内置的ORM框架，可以实现数据库的连接和读写操作。
+
+ORM框架是一种程序技术，从效果上看，其实是创建了一个可在编辑语言中使用的"虚拟对象数据库"，
+通过对虚拟对象数据库的操作从而实现对目标数据库的操作，虚拟对象数据库与目标数据库是相互对应的。
+在Django中，虚拟对象数据库也称作为模型，通过模型实现对目标数据库的读写操作，实现方式如下：
+
+（1）配置目标数据库信息，主要是在settings.py中设置数据库信息，具体配置类似：
+
+    DATABASES = {
+        # 第一个数据库
+        'default': {
+            # 'ENGINE': 'django.db.backends.sqlite3',
+            # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE':'django.db.backends.mysql',
+            'NAME':'MyDjango_db',
+            'USER':'root',
+            'PASSWORD':'******',
+            'HOST':'127.0.0.1',
+            'PORT':'3306',
+            'OPTIONS': {
+                "init_command": "SET foreign_key_checks = 0;",
+            },
+        },
+
+        # 第二个数据库
+        # 'MyDjango':{
+        #     'ENGINE':'django.db.backends.mysql',
+        #     'NAME':'django_db',
+        #     'USER':'user',
+        #     'PASSWORD':'******',
+        #     'HOST':'127.0.0.1',
+        #     'PORT':'3306',
+        # },
+
+        # 第三个数据库
+        # 'my_sqlite3':{
+        #     'ENGINE':'django.db.backends.sqlite3',
+        #     'NAME':os.path.join(BASE_DIR,'sqlite3'),
+        # },
+
+    }
+
+（2）构建虚拟对象数据库，在App的models.py文件中以类的形式定义模型，如：
+      from django.db import models
+      # Create your models here.
+
+      class Product(models.Model):
+          id = models.IntegerField(primary_key=True)
+          name = models.CharField(max_length=50)
+          type = models.CharField(max_length=20)
+
+      # 创建产品分类表
+      class GoodsType(models.Model):
+          id = models.AutoField(primary_key=True)
+          type_name = models.CharField(max_length=20)
+
+      # 创建产品信息表
+      class Product2(models.Model):
+          id = models.AutoField(primary_key=True)
+          name = models.CharField(max_length=50)
+          weight = models.CharField(max_length=20)
+          size = models.CharField(max_length=20)
+          type = models.ForeignKey(GoodsType,on_delete=models.CASCADE)
+
+（3）通过模型在数据库中创建对应的数据表
+    $ python3 manage.py makemigrations
+    $ python3 manage.py migrate
+
+（4）在试图函数中，通过对模型操作实现目标数据库的读写操作。
+
+

@@ -1,1 +1,1 @@
-https://api.jk.cn/m.api?_aid=0&_mt=doctor.getBalance&_sm=md5&_sig=2982fc195b30f9d97eb9832fddf6d9cb
+asdf
