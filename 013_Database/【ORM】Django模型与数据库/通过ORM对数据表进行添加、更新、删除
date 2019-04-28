@@ -56,5 +56,56 @@
       >>> p.save()
 
 二、数据的更新方式
-  （方式1）
+  （方式1）进行一次数据查询，将查询结果以对象形式付给p，最后对p的属性赋值就能实现数据的更新。
+    >>> p = Product2.objects.get(id=10)
+    >>> p
+    <Product2: Product2 object (10)>
+    >>> p.__init__
+    <bound method Model.__init__ of <Product2: Product2 object (10)>>
+    >>> p.name
+    '荣耀v9'
+    >>> p.name = "华为荣耀V10"
+    >>> p.save()
+  （方式2）通过update方法实现单条或多条数据的更新
+    A:更新全部
+    Product2.objects.all().update(name="iphone 7p")
 
+    B：部分更新
+    Product2.objects.filter(name="iphone 7p").update(name="iphone X")
+
+    C：更新单条
+    Product2.objects.get(id=10).update(name="iphone 7p")
+
+    D:删除单挑
+    Product2.objects.get(id=10).delete()
+
+    * 当前数据情况 *
+    mysql> select * from index_product2;
+    +----+------------+--------+-------------+---------+
+    | id | name       | weight | size        | type_id |
+    +----+------------+--------+-------------+---------+
+    | 11 | iphone X   | 132g   | 110*73*9mm  |       2 |
+    | 12 | iphone X   | 121g   | 125*77*12mm |       1 |
+    | 13 | 小米NOTE   | 132g   | 110*73*9mm  |       2 |
+    +----+------------+--------+-------------+---------+
+    3 rows in set (0.00 sec)
+
+    E：删除多条，将name是iphone X的全部删除
+    Product2.objects.filter(name = "iphone X").delete()
+
+    再次确认数据情况
+    mysql> select * from index_product2;
+    +----+------------+--------+------------+---------+
+    | id | name       | weight | size       | type_id |
+    +----+------------+--------+------------+---------+
+    | 13 | 小米NOTE   | 132g   | 110*73*9mm |       2 |
+    +----+------------+--------+------------+---------+
+    1 row in set (0.00 sec)
+
+
+    F：删除全部数据
+    Product2.objects.all().delete()
+
+    再次确认数据情况
+    mysql> select * from index_product2;
+    Empty set (0.00 sec)

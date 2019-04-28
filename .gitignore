@@ -6729,3 +6729,5 @@ venv/lib/python3.6/site-packages/urllib3/util/timeout.py
 venv/lib/python3.6/site-packages/urllib3/util/url.py
 venv/lib/python3.6/site-packages/urllib3/util/wait.py
 venv/pip-selfcheck.json
+.idea/python_lab.iml
+.idea/python_lab.iml

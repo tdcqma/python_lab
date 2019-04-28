@@ -1,0 +1,112 @@
+【 以下信息参考《玩转Django2.0》 --- 黄永祥 】
+
+1. 查询所有数据
+    >>> p = Product2.objects.all()
+    >>> p[1].name
+    '三星智能高端机器'
+
+2. 查询前5条数据
+    >>> p = Product2.objects.all()[:5]
+    >>> p
+    <QuerySet [<Product2: Product2 object (14)>, <Product2: Product2 object (15)>, <Product2: Product2 object (16)>, <Product2: Product2 object (17)>]>
+
+3. 查询某个字段，等同于select name from product2;
+
+    A:使用values方法，以列表的形式返回数据，列表元素以字典格式表示
+    >>> p = Product2.objects.values("name")
+    >>> p[1]["name"]
+    '三星智能高端机器'
+    >>> p[2]["name"]
+    'Vivo宇宙牌手机'
+
+    B:使用values_list方法，以列表表示返回的数据，列表元素以元组格式表示
+    >>> p = Product2.objects.values_list("name")[:3]
+    >>> p
+    <QuerySet [('iphone7plus',), ('三星智能高端机器',), ('Vivo宇宙牌手机',)]>
+
+4. 使用get方法查询数据
+    >>> p = Product2.objects.get(id = 14)
+    >>> p.name
+    'iphone7plus'
+    >>> p
+    <Product2: Product2 object (14)>
+
+5. 使用filter方法查询数据，注意区分get和filter
+    get：查询字段必须是主键或唯一约束的字段，并且查询数据必须存在，如果查询的字段有重复值或者查询的数据不存在，程序会爆出异常。
+    filter：查询字段没有限制，只要该字段是数据表的某一字段即可，查询结果以列表的形式返回
+
+    >>> p = Product2.objects.filter(type_id = 1)
+    >>> p
+    <QuerySet [<Product2: Product2 object (14)>, <Product2: Product2 object (16)>, <Product2: Product2 object (17)>]>
+    >>> p[0].name
+    'iphone7plus'
+
+6. and查询，在filter里添加多个查询条件
+    >>> p = Product2.objects.filter(id = 14,name = "iphone7plus")
+    >>> p
+    <QuerySet [<Product2: Product2 object (14)>]>
+    >>> p[0].name
+    'iphone7plus'
+
+7. SQL的or查询，需要引入Q，编写格式： Q(field=value ) | Q(field = value )，需要导入
+    >>> from django.db.models import Q
+    >>> p = Product2.objects.filter(Q(name = "三星智能高端机器") | Q(name = "钢铁侠牌手机"))
+    >>> p
+    <QuerySet [<Product2: Product2 object (15)>, <Product2: Product2 object (17)>]>
+    >>> p[0]
+    <Product2: Product2 object (15)>
+    >>> p[0].name
+    '三星智能高端机器'
+    >>> p[1].name
+    '钢铁侠牌手机'
+
+8. 用count方法统计查询数据的数据量
+    当前数据情况
+    +----+--------------------------+--------+------------+---------+
+    | id | name                     | weight | size       | type_id |
+    +----+--------------------------+--------+------------+---------+
+    | 14 | iphone7plus              | 132g   | 110*73*9mm |       1 |
+    | 15 | 三星智能高端机器         | 232g   | 210*73*9mm |       2 |
+    | 16 | Vivo宇宙牌手机           | 232g   | 210*73*9mm |       1 |
+    | 17 | 钢铁侠牌手机             | 3232g  | 10*73*9mm  |       1 |
+    +----+--------------------------+--------+------------+---------+
+
+    >>> p = Product2.objects.filter(type_id = 1).count()
+    >>> p
+    3
+    >>> p = Product2.objects.filter(type_id = 2).count()
+    >>> p
+
+9. 去重查询，distinct方法无需设定参数，去重方式根据values设置的字段执行
+    当前数据情况
+    mysql> select * from index_product2;
+    +----+--------------------------+--------+------------+---------+
+    | id | name                     | weight | size       | type_id |
+    +----+--------------------------+--------+------------+---------+
+    | 14 | iphone7plus              | 132g   | 110*73*9mm |       1 |
+    | 15 | 三星智能高端机器         | 232g   | 210*73*9mm |       2 |
+    | 16 | Vivo宇宙牌手机           | 232g   | 210*73*9mm |       1 |
+    | 17 | 钢铁侠牌手机             | 3232g  | 10*73*9mm  |       1 |
+    | 18 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    | 19 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    | 20 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    | 21 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    | 22 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    +----+--------------------------+--------+------------+---------+
+
+    A：不使用去重的情况下
+    >>> p = Product2.objects.values('name').filter(name = "iphone7plus").count()
+    >>> p
+    6
+
+    B：使用去重的情况下
+
+
+
+
+
+
+
+
+
+

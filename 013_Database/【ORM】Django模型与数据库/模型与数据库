@@ -71,6 +71,5 @@ ORM框架是一种程序技术，从效果上看，其实是创建了一个可�
     $ python3 manage.py makemigrations
     $ python3 manage.py migrate
 
-（4）在试图函数中，通过对模型操作实现目标数据库的读写操作。
 
 
