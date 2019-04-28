@@ -94,12 +94,52 @@
     | 22 | iphone7plus              | 132g   | 110*73*9mm |       2 |
     +----+--------------------------+--------+------------+---------+
 
-    A：不使用去重的情况下
+    A：不使用去重的情况下，等同于select distinct name from index_Product2 where name = "iphone7plus"
     >>> p = Product2.objects.values('name').filter(name = "iphone7plus").count()
     >>> p
     6
 
     B：使用去重的情况下
+    >>> p = Product2.objects.values('name').filter(name = "iphone7plus").distinct().count()
+    >>> p
+    1
+
+10. 根据字段ID讲叙排列，降序只要在order_by里面的字段签名加上"-"就可以来。
+    当前数据情况：
+    mysql> select * from index_product2;
+    +----+--------------------------+--------+------------+---------+
+    | id | name                     | weight | size       | type_id |
+    +----+--------------------------+--------+------------+---------+
+    | 14 | iphone7plus              | 132g   | 110*73*9mm |       1 |
+    | 15 | 三星智能高端机器         | 232g   | 210*73*9mm |       2 |
+    | 16 | Vivo宇宙牌手机           | 232g   | 210*73*9mm |       1 |
+    | 17 | 钢铁侠牌手机             | 3232g  | 10*73*9mm  |       1 |
+    | 18 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    | 19 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    | 20 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    | 21 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    | 22 | iphone7plus              | 132g   | 110*73*9mm |       2 |
+    +----+--------------------------+--------+------------+---------+
+    9 rows in set (0.00 sec)
+
+    >>> p = Product2.objects.order_by("-id")
+    >>> p
+    <QuerySet [<Product2: Product2 object (22)>, <Product2: Product2 object (21)>, <Product2: Product2 object (20)>, <Product2: Product2 object (19)>, <Product2: Product2 object (18)>, <Product2: Product2 object (17)>, <Product2: Product2 object (16)>, <Product2: Product2 object (15)>, <Product2: Product2 object (14)>]>
+    >>> p[0].id
+    22
+    >>> p[0].name
+    'iphone7plus'
+    >>>
+
+10. 聚合查询，实现对数据的求和、求平均值等
+
+    A：annotate类似SQL里面的GROUP BY方法，如果不设置values，就默认对主键进行，等同于
+   
+    B: arggregate是将某个字段的值进行计算并返回计算结果
+    >>> Product2.objects.aggregate(id_count = Count('id'))
+    {'id_count': 9}
+
+
 
 
 
