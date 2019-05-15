@@ -53,6 +53,7 @@ m1.update(b'ldpython')
 # 到目前为止总共传参2次，组合后值为"helloworldpython"
 # print(m1.hexdigest())   # 35cb3f29dee71040a0dc91b4af9d475e
 
+# 6CBA798D3C0EDD721C6C9A523DAC5192
 # 3.3 校验视频等文件完整性，获取视频文件的hash值。以下两种方式逐行读取计算hash与一次性读取得到的hash值相同。
 m2 = hashlib.md5() # test
 with open('test_video.mp4',mode='rb') as f:

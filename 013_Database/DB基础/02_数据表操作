@@ -348,3 +348,7 @@ mysql> desc employee;
     | table2           |
     +------------------+
     3 rows in set (0.00 sec)
+
+-- 删除表的所有数据
+    delete from 表名 （系统留记录，日志可恢复）
+    truncate table 表名 （系统不留记录，不可护肤，相当于把表结构都干掉了重新建表）
