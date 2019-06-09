@@ -3,7 +3,7 @@
 一、首先要格式化"Confluence_vul.xlsx"这个邮件
     1. 除建议修复日期、实际修复日期、备注信息外，其他所有字段都必须要填写完成
     2. 邮件列是到达邮件催促期限内的收件人列表，如果需要抄送其他人可将相关收件人邮件地址全部填写进去，
-       以英文逗号分割，例如"mahaibin@imdada.cn,liuxin02@imdada.cn"
+       以英文逗号分割，例如"helloworld@helloworld.cn,helloworld@helloworld.cn"
 
 二、执行脚本data_to_mysql.py，完成以下两个任务
 
