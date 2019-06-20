@@ -10,7 +10,7 @@ mail_user = 'tdcqma@126.com' # 用户名
 mail_pass = '123456' # 密码,此处的密码是授权码
 
 sender = 'tdcqma@126.com'
-receivers = ['tdcqma@163.com','mahaibin@imdada.cn'] # 指定多个收件人
+receivers = ['world@163.com','hello@hello.cn'] # 指定多个收件人
 
 # content = '我用Python'
 content = """
