@@ -10,11 +10,11 @@ from email.mime.text import MIMEText
 
 # # 第三方 SMTP 服务
 mail_host = 'smtp.126.com' # 设置服务器名
-mail_user = 'tdcqma@126.com' # 用户名
-mail_pass = '123456' # 密码,此处的密码是授权码
+mail_user = 'hello@126.com' # 用户名
+mail_pass = 'hello' # 密码,此处的密码是授权码
 
-sender = 'tdcqma@126.com'
-receivers = ['tdcqma@163.com','mahaibin@imdada.cn'] # 指定多个收件人
+sender = 'hello@126.com'
+receivers = ['hello@163.com','hello@hello.cn'] # 指定多个收件人
 
 
 content = """
